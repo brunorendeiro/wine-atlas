@@ -1,0 +1,58 @@
+[
+  {
+    "id": "citrus",
+    "color": "#e4ad3f",
+    "name": { "pt": "Cítricos", "en": "Citrus", "de": "Zitrus" },
+    "description": { "pt": "Frescura luminosa, comum em muitos brancos e espumantes.", "en": "Bright freshness, common in many whites and sparkling wines.", "de": "Leuchtende Frische, häufig in Weiss- und Schaumweinen." },
+    "descriptors": { "pt": ["Limão", "Lima", "Toranja", "Tangerina", "Casca de laranja"], "en": ["Lemon", "Lime", "Grapefruit", "Tangerine", "Orange peel"], "de": ["Zitrone", "Limette", "Grapefruit", "Mandarine", "Orangenschale"] }
+  },
+  {
+    "id": "fruit",
+    "color": "#bd4a5c",
+    "name": { "pt": "Fruta", "en": "Fruit", "de": "Frucht" },
+    "description": { "pt": "Da maçã e pêssego aos frutos vermelhos, negros e tropicais.", "en": "From apple and peach to red, black and tropical fruit.", "de": "Von Apfel und Pfirsich bis zu roten, dunklen und tropischen Früchten." },
+    "descriptors": { "pt": ["Maçã", "Pera", "Pêssego", "Morango", "Cereja", "Amora", "Manga"], "en": ["Apple", "Pear", "Peach", "Strawberry", "Cherry", "Blackberry", "Mango"], "de": ["Apfel", "Birne", "Pfirsich", "Erdbeere", "Kirsche", "Brombeere", "Mango"] }
+  },
+  {
+    "id": "floral",
+    "color": "#9c67a5",
+    "name": { "pt": "Floral", "en": "Floral", "de": "Blüten" },
+    "description": { "pt": "Perfumes delicados ou exuberantes que lembram flores frescas e secas.", "en": "Delicate or exuberant scents recalling fresh and dried flowers.", "de": "Feine oder üppige Düfte, die an frische und getrocknete Blüten erinnern." },
+    "descriptors": { "pt": ["Violeta", "Rosa", "Jasmim", "Flor de laranjeira", "Camomila"], "en": ["Violet", "Rose", "Jasmine", "Orange blossom", "Chamomile"], "de": ["Veilchen", "Rose", "Jasmin", "Orangenblüte", "Kamille"] }
+  },
+  {
+    "id": "green",
+    "color": "#4e8060",
+    "name": { "pt": "Vegetal e ervas", "en": "Green & herbal", "de": "Grün & kräutrig" },
+    "description": { "pt": "Notas frescas, secas ou balsâmicas vindas da casta e do lugar.", "en": "Fresh, dried or balsamic notes coming from grape and place.", "de": "Frische, getrocknete oder balsamische Noten aus Sorte und Herkunft." },
+    "descriptors": { "pt": ["Erva cortada", "Pimento verde", "Hortelã", "Eucalipto", "Funcho"], "en": ["Cut grass", "Green pepper", "Mint", "Eucalyptus", "Fennel"], "de": ["Geschnittenes Gras", "Grüne Paprika", "Minze", "Eukalyptus", "Fenchel"] }
+  },
+  {
+    "id": "spice",
+    "color": "#b76b3d",
+    "name": { "pt": "Especiarias", "en": "Spice", "de": "Gewürze" },
+    "description": { "pt": "Especiarias frescas, doces ou quentes, da uva, madeira ou evolução.", "en": "Fresh, sweet or warm spice from grape, oak or development.", "de": "Frische, süsse oder warme Würze aus Traube, Holz oder Reife." },
+    "descriptors": { "pt": ["Pimenta preta", "Canela", "Cravinho", "Alcaçuz", "Gengibre"], "en": ["Black pepper", "Cinnamon", "Clove", "Liquorice", "Ginger"], "de": ["Schwarzer Pfeffer", "Zimt", "Nelke", "Lakritz", "Ingwer"] }
+  },
+  {
+    "id": "craft",
+    "color": "#b98b62",
+    "name": { "pt": "Adega", "en": "Winemaking", "de": "Keller" },
+    "description": { "pt": "Aromas criados pela fermentação, borras, madeira e outras escolhas de adega.", "en": "Aromas created by fermentation, lees, oak and other cellar choices.", "de": "Aromen aus Gärung, Hefelager, Holz und weiteren Kellerentscheidungen." },
+    "descriptors": { "pt": ["Pão", "Brioche", "Manteiga", "Baunilha", "Fumo", "Café"], "en": ["Bread", "Brioche", "Butter", "Vanilla", "Smoke", "Coffee"], "de": ["Brot", "Brioche", "Butter", "Vanille", "Rauch", "Kaffee"] }
+  },
+  {
+    "id": "age",
+    "color": "#79544a",
+    "name": { "pt": "Evolução", "en": "Development", "de": "Reife" },
+    "description": { "pt": "Sinais positivos do tempo em garrafa ou de envelhecimento oxidativo intencional.", "en": "Positive signs of bottle age or deliberately oxidative ageing.", "de": "Positive Zeichen von Flaschenreife oder bewusst oxidativem Ausbau." },
+    "descriptors": { "pt": ["Couro", "Tabaco", "Cogumelos", "Mel", "Noz", "Fruta seca"], "en": ["Leather", "Tobacco", "Mushroom", "Honey", "Walnut", "Dried fruit"], "de": ["Leder", "Tabak", "Pilze", "Honig", "Walnuss", "Trockenfrucht"] }
+  },
+  {
+    "id": "earth",
+    "color": "#507783",
+    "name": { "pt": "Terra e mineral", "en": "Earth & mineral", "de": "Erde & mineralisch" },
+    "description": { "pt": "Impressões que evocam pedra, solo, mar e ambientes naturais.", "en": "Impressions evoking stone, soil, sea and natural environments.", "de": "Eindrücke von Stein, Boden, Meer und natürlichen Umgebungen." },
+    "descriptors": { "pt": ["Pedra molhada", "Sílex", "Terra húmida", "Sal marinho", "Giz"], "en": ["Wet stone", "Flint", "Damp earth", "Sea salt", "Chalk"], "de": ["Nasser Stein", "Feuerstein", "Feuchte Erde", "Meersalz", "Kreide"] }
+  }
+]

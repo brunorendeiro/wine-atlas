@@ -1,0 +1,65 @@
+{
+  "eyebrow": { "pt": "Uma viagem com oito mil anos", "en": "A journey across eight thousand years", "de": "Eine Reise durch achttausend Jahre" },
+  "title": { "pt": "A história do vinho", "en": "The history of wine", "de": "Die Geschichte des Weins" },
+  "intro": {
+    "pt": "O vinho não foi inventado num único momento. Nasceu quando comunidades aprenderam a cuidar da videira, guardar uvas e orientar uma fermentação que também podia acontecer espontaneamente.",
+    "en": "Wine was not invented in a single moment. It emerged as communities learned to tend vines, store grapes and guide a fermentation that could also happen spontaneously.",
+    "de": "Wein wurde nicht in einem einzigen Moment erfunden. Er entstand, als Gemeinschaften lernten, Reben zu pflegen, Trauben zu lagern und eine auch spontan mögliche Gärung zu lenken."
+  },
+  "events": [
+    {
+      "period": { "pt": "c. 7000 a.C.", "en": "c. 7000 BCE", "de": "ca. 7000 v. Chr." },
+      "place": { "pt": "Jiahu, China", "en": "Jiahu, China", "de": "Jiahu, China" },
+      "title": { "pt": "Antes do vinho de uva", "en": "Before grape wine", "de": "Vor dem Traubenwein" },
+      "body": { "pt": "Vasos preservaram vestígios de uma bebida fermentada de arroz, mel e fruta. É uma antepassada das bebidas alcoólicas, mas não era vinho de uva puro.", "en": "Vessels preserved traces of a fermented drink made from rice, honey and fruit. It is an ancestor of alcoholic beverages, but was not pure grape wine.", "de": "Gefässe bewahrten Spuren eines vergorenen Getränks aus Reis, Honig und Früchten. Es ist ein Vorläufer alkoholischer Getränke, aber kein reiner Traubenwein." }
+    },
+    {
+      "period": { "pt": "6000–5800 a.C.", "en": "6000–5800 BCE", "de": "6000–5800 v. Chr." },
+      "place": { "pt": "Geórgia, Cáucaso Sul", "en": "Georgia, South Caucasus", "de": "Georgien, Südkaukasus" },
+      "title": { "pt": "A evidência mais antiga de vinho de uva", "en": "The earliest evidence of grape wine", "de": "Der früheste Nachweis von Traubenwein" },
+      "body": { "pt": "Análises químicas e botânicas em cerâmica neolítica revelaram vinho de uva. A região é hoje considerada um dos grandes berços da vitivinicultura.", "en": "Chemical and botanical analysis of Neolithic pottery revealed grape wine. The region is now considered one of the great cradles of viticulture.", "de": "Chemische und botanische Analysen neolithischer Keramik wiesen Traubenwein nach. Die Region gilt heute als eine der grossen Wiegen des Weinbaus." }
+    },
+    {
+      "period": { "pt": "5400–5000 a.C.", "en": "5400–5000 BCE", "de": "5400–5000 v. Chr." },
+      "place": { "pt": "Hajji Firuz, atual Irão", "en": "Hajji Firuz, present-day Iran", "de": "Hajji Firuz, heutiger Iran" },
+      "title": { "pt": "Vinho guardado e protegido", "en": "Wine stored and protected", "de": "Gelagerter und geschützter Wein" },
+      "body": { "pt": "Um jarro de cerca de nove litros continha resíduos de vinho e resina de terebinto, provavelmente usada para conservar e aromatizar.", "en": "A jar holding about nine litres contained wine residue and terebinth resin, probably used for preservation and flavour.", "de": "Ein etwa neun Liter fassender Krug enthielt Weinrückstände und Terebinthenharz, vermutlich zur Konservierung und Aromatisierung." }
+    },
+    {
+      "period": { "pt": "c. 3000–1000 a.C.", "en": "c. 3000–1000 BCE", "de": "ca. 3000–1000 v. Chr." },
+      "place": { "pt": "Egito e Mediterrâneo oriental", "en": "Egypt and the eastern Mediterranean", "de": "Ägypten und östlicher Mittelmeerraum" },
+      "title": { "pt": "Vinhas, ânforas e os primeiros rótulos", "en": "Vineyards, amphorae and early labels", "de": "Weinberge, Amphoren und frühe Etiketten" },
+      "body": { "pt": "A produção tornou-se organizada. Inscrições em jarros egípcios identificavam ano, vinha, produtor e conteúdo — uma surpreendente antepassada do rótulo.", "en": "Production became organised. Egyptian jar inscriptions identified year, vineyard, maker and contents — a remarkable ancestor of the label.", "de": "Die Produktion wurde organisiert. Ägyptische Kruginschriften nannten Jahr, Weinberg, Hersteller und Inhalt – erstaunliche Vorläufer des Etiketts." }
+    },
+    {
+      "period": { "pt": "c. 1000 a.C.–500 d.C.", "en": "c. 1000 BCE–500 CE", "de": "ca. 1000 v. Chr.–500 n. Chr." },
+      "place": { "pt": "Fenícia, Grécia e Roma", "en": "Phoenicia, Greece and Rome", "de": "Phönizien, Griechenland und Rom" },
+      "title": { "pt": "O vinho atravessa o Mediterrâneo", "en": "Wine crosses the Mediterranean", "de": "Wein überquert das Mittelmeer" },
+      "body": { "pt": "Comerciantes e colonizadores espalharam videiras, técnicas e ânforas. Roma levou a viticultura a muitas zonas que continuam hoje ligadas ao vinho.", "en": "Traders and settlers spread vines, techniques and amphorae. Rome carried viticulture into many areas still associated with wine today.", "de": "Händler und Siedler verbreiteten Reben, Techniken und Amphoren. Rom brachte den Weinbau in viele Gebiete, die bis heute mit Wein verbunden sind." }
+    },
+    {
+      "period": { "pt": "Séculos V–XV", "en": "5th–15th centuries", "de": "5.–15. Jahrhundert" },
+      "place": { "pt": "Europa medieval", "en": "Medieval Europe", "de": "Mittelalterliches Europa" },
+      "title": { "pt": "Mosteiros, cidades e conhecimento", "en": "Monasteries, towns and knowledge", "de": "Klöster, Städte und Wissen" },
+      "body": { "pt": "Comunidades religiosas, agricultores e mercadores conservaram vinhas e refinaram práticas. O vinho tinha papéis litúrgicos, alimentares, medicinais e comerciais.", "en": "Religious communities, farmers and merchants maintained vineyards and refined practices. Wine had liturgical, dietary, medicinal and commercial roles.", "de": "Religiöse Gemeinschaften, Bauern und Händler erhielten Weinberge und verfeinerten Praktiken. Wein erfüllte liturgische, ernährungsbezogene, medizinische und wirtschaftliche Rollen." }
+    },
+    {
+      "period": { "pt": "1756", "en": "1756", "de": "1756" },
+      "place": { "pt": "Douro, Portugal", "en": "Douro, Portugal", "de": "Douro, Portugal" },
+      "title": { "pt": "Origem, qualidade e território", "en": "Origin, quality and territory", "de": "Herkunft, Qualität und Gebiet" },
+      "body": { "pt": "A Região Demarcada do Douro recebeu regras pioneiras para proteger proveniência e qualidade do Vinho do Porto, tornando-se uma referência da denominação de origem moderna.", "en": "The Douro Demarcated Region received pioneering rules protecting the origin and quality of Port, becoming a landmark of the modern appellation system.", "de": "Die abgegrenzte Douro-Region erhielt wegweisende Regeln zum Schutz von Herkunft und Qualität des Portweins und wurde zum Meilenstein moderner Herkunftssysteme." }
+    },
+    {
+      "period": { "pt": "Século XIX", "en": "19th century", "de": "19. Jahrhundert" },
+      "place": { "pt": "Europa", "en": "Europe", "de": "Europa" },
+      "title": { "pt": "A crise da filoxera", "en": "The phylloxera crisis", "de": "Die Reblauskrise" },
+      "body": { "pt": "O inseto devastou grande parte das vinhas europeias. A reconstrução com videiras enxertadas em porta-enxertos americanos mudou para sempre a viticultura.", "en": "The insect devastated much of Europe's vineyards. Rebuilding with vines grafted onto American rootstocks changed viticulture forever.", "de": "Das Insekt verwüstete grosse Teile der europäischen Weinberge. Der Wiederaufbau mit auf amerikanische Unterlagen gepfropften Reben veränderte den Weinbau dauerhaft." }
+    },
+    {
+      "period": { "pt": "Séculos XX–XXI", "en": "20th–21st centuries", "de": "20.–21. Jahrhundert" },
+      "place": { "pt": "Um vinho verdadeiramente global", "en": "A truly global wine world", "de": "Eine wirklich globale Weinwelt" },
+      "title": { "pt": "Ciência, diversidade e regresso às origens", "en": "Science, diversity and a return to origins", "de": "Wissenschaft, Vielfalt und Rückkehr zu den Ursprüngen" },
+      "body": { "pt": "Controlo de temperatura, microbiologia e precisão convivem hoje com talhas, qvevri, castas recuperadas e práticas de baixa intervenção.", "en": "Temperature control, microbiology and precision now coexist with clay vessels, qvevri, revived grapes and low-intervention practices.", "de": "Temperaturkontrolle, Mikrobiologie und Präzision stehen heute neben Tonamphoren, Qvevri, wiederbelebten Sorten und schonenden Methoden." }
+    }
+  ]
+}

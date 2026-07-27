@@ -34,10 +34,12 @@ const navItems = [
   { to: '/castas', key: 'navGrapes', icon: Grape, end: false },
   { to: '/guia', key: 'navGuide', icon: BookOpen, end: false },
   { to: '/guia/sommelier', key: 'navSommelier', icon: Sparkles, end: true },
+  { to: '/guia/aromas', key: 'navAromas', icon: Wine, end: true },
+  { to: '/guia/historia', key: 'navHistory', icon: BookOpen, end: true },
   { to: '/favoritos', key: 'navFavorites', icon: Heart, end: false },
 ] as const
 
-const mobileNavItems = navItems.filter(({ key }) => key !== 'navSommelier')
+const mobileNavItems = navItems.filter(({ key }) => ['navHome', 'navRegions', 'navGrapes', 'navGuide', 'navFavorites'].includes(key))
 
 export function Layout({ children }: { children: ReactNode }) {
   const { locale, setLocale, theme, toggleTheme, t } = useApp()
@@ -66,7 +68,7 @@ export function Layout({ children }: { children: ReactNode }) {
       <header className="sticky top-0 z-40 border-b border-line/70 bg-canvas/88 backdrop-blur-xl dark:border-white/10 dark:bg-night/88">
         <div className="page-shell flex h-16 items-center justify-between gap-4 lg:h-[74px]">
           <Brand />
-          <nav className="hidden items-center gap-1 lg:flex" aria-label="Main navigation">
+          <nav className="hidden items-center gap-1 xl:flex" aria-label="Main navigation">
             {navItems.map(({ to, key, end }) => (
               <NavLink
                 key={to}
@@ -99,7 +101,7 @@ export function Layout({ children }: { children: ReactNode }) {
               <Wine size={18} fill={theme === 'dark' ? 'currentColor' : 'none'} />
               <span>{theme === 'light' ? t('whiteWine') : t('redWine')}</span>
             </button>
-            <button type="button" className="icon-button lg:hidden" onClick={() => setMenuOpen(true)} aria-label={t('menu')}>
+            <button type="button" className="icon-button xl:hidden" onClick={() => setMenuOpen(true)} aria-label={t('menu')}>
               <Menu size={20} />
             </button>
           </div>
@@ -107,7 +109,7 @@ export function Layout({ children }: { children: ReactNode }) {
       </header>
 
       {menuOpen && (
-        <div className="fixed inset-0 z-50 bg-night/45 backdrop-blur-sm lg:hidden" onClick={() => setMenuOpen(false)}>
+        <div className="fixed inset-0 z-50 bg-night/45 backdrop-blur-sm xl:hidden" onClick={() => setMenuOpen(false)}>
           <div className="ml-auto flex h-full w-[84%] max-w-sm flex-col bg-canvas p-5 shadow-2xl dark:bg-night-soft" onClick={(event) => event.stopPropagation()}>
             <div className="mb-8 flex items-center justify-between">
               <Brand />

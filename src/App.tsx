@@ -26,10 +26,12 @@ import {
   useSearchParams,
 } from 'react-router-dom'
 import { ArticleCard, EmptyState, FavoriteButton, GrapeCard, RegionCard } from './components/Cards'
+import { AromaWheel } from './components/AromaWheel'
 import { GuideIcon } from './components/GuideIcon'
 import { Layout } from './components/Layout'
 import { LocationIntro } from './components/Overlays'
 import { useApp } from './context/AppContext'
+import historyJson from './data/history.json'
 import {
   articles,
   countryFlag,
@@ -45,7 +47,14 @@ import {
   sommelierGuide,
   text,
 } from './lib/data'
-import type { Grape as GrapeType, Region } from './types'
+import type { Grape as GrapeType, LocalizedText, Region } from './types'
+
+const wineHistory = historyJson as {
+  eyebrow: LocalizedText
+  title: LocalizedText
+  intro: LocalizedText
+  events: { period: LocalizedText; place: LocalizedText; title: LocalizedText; body: LocalizedText }[]
+}
 
 function SectionHeading({ eyebrow, title, body, action, to }: { eyebrow?: string; title: string; body?: string; action?: string; to?: string }) {
   return (
@@ -180,8 +189,9 @@ function HomePage() {
         <div className="page-shell relative grid min-h-[670px] items-center gap-10 py-16 lg:grid-cols-[1.15fr_.85fr] lg:py-24">
           <div className="relative z-10 max-w-3xl">
             <p className="eyebrow mb-4">{t('heroEyebrow')}</p>
-            <h1 className="font-display text-[clamp(3.25rem,8vw,6.8rem)] font-semibold leading-[.91] tracking-[-0.055em]">
-              {t('heroTitleA')}<br /><span className="text-wine-light dark:text-gold">{t('heroTitleB')}</span>
+            <h1 className="font-display text-[clamp(3.25rem,8vw,6.8rem)] font-semibold leading-[.98] tracking-[-0.055em]">
+              <span className="block">{t('heroTitleA')}</span>
+              <span className="block pt-[.06em] text-wine-light dark:text-gold">{t('heroTitleB')}</span>
             </h1>
             <p className="mt-6 max-w-xl text-lg leading-8 text-muted">{t('heroBody')}</p>
             <div className="mt-8">
@@ -480,6 +490,24 @@ function GuidePage() {
             <span className="mt-6 inline-flex items-center gap-2 text-sm font-bold text-gold">{t('openGuide')}<ArrowRight className="transition-transform group-hover:translate-x-1" size={17} /></span>
           </div>
         </Link>
+        <Link to="/guia/aromas" className="aroma-feature group mb-7">
+          <div className="aroma-feature-wheel" aria-hidden="true"><span /><span /><span /><span /><span /><span /><span /><span /></div>
+          <div>
+            <p className="eyebrow mb-2">{t('aromaWheelEyebrow')}</p>
+            <h2 className="font-display text-3xl font-semibold">{t('aromaWheelTitle')}</h2>
+            <p className="mt-2 max-w-2xl leading-7 text-muted">{t('aromaWheelIntro')}</p>
+            <span className="mt-5 inline-flex items-center gap-2 text-sm font-bold text-wine-light dark:text-gold">{t('aromaOpen')}<ArrowRight size={17} /></span>
+          </div>
+        </Link>
+        <Link to="/guia/historia" className="history-feature group mb-7">
+          <div className="history-feature-mark" aria-hidden="true"><span>6000</span><i /><span>1756</span><i /><span>Hoje</span></div>
+          <div>
+            <p className="eyebrow mb-2">{text(wineHistory.eyebrow, locale)}</p>
+            <h2 className="font-display text-3xl font-semibold">{text(wineHistory.title, locale)}</h2>
+            <p className="mt-2 max-w-2xl leading-7 text-muted">{text(wineHistory.intro, locale)}</p>
+            <span className="mt-5 inline-flex items-center gap-2 text-sm font-bold text-wine-light dark:text-gold">{t('historyOpen')}<ArrowRight size={17} /></span>
+          </div>
+        </Link>
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">{articles.map((article) => <ArticleCard key={article.id} article={article} />)}</div>
       </section>
     </>
@@ -551,6 +579,48 @@ function SommelierPage() {
               <span className="grid size-7 shrink-0 place-items-center rounded-full bg-leaf/10 text-xs font-bold text-leaf dark:bg-leaf-light/10 dark:text-leaf-light">{index + 1}</span>
               <p className="pt-0.5 leading-6">{rule}</p>
             </div>
+          ))}
+        </div>
+      </section>
+    </>
+  )
+}
+
+function AromaWheelPage() {
+  const { t } = useApp()
+  return (
+    <>
+      <PageHero eyebrow={t('aromaWheelEyebrow')} title={t('aromaWheelTitle')} body={t('aromaWheelIntro')}>
+        <Link to="/guia" className="mt-7 inline-flex items-center gap-2 text-sm font-bold text-wine-light dark:text-gold"><ArrowLeft size={17} />{t('backGuide')}</Link>
+      </PageHero>
+      <section className="page-shell py-10 sm:py-16">
+        <AromaWheel />
+      </section>
+    </>
+  )
+}
+
+function HistoryPage() {
+  const { locale, t } = useApp()
+  return (
+    <>
+      <PageHero eyebrow={text(wineHistory.eyebrow, locale)} title={text(wineHistory.title, locale)} body={text(wineHistory.intro, locale)}>
+        <Link to="/guia" className="mt-7 inline-flex items-center gap-2 text-sm font-bold text-wine-light dark:text-gold"><ArrowLeft size={17} />{t('backGuide')}</Link>
+      </PageHero>
+      <section className="page-shell py-10 sm:py-16">
+        <div className="mb-10 rounded-2xl border border-gold/30 bg-gold/10 p-4 text-sm leading-6 text-gold-dark dark:text-[#f0d59e]">
+          <Sparkles className="mr-2 inline-block align-text-bottom" size={18} />{t('historyEvidence')}
+        </div>
+        <div className="wine-history">
+          {wineHistory.events.map((event, index) => (
+            <article key={`${event.period.pt}-${index}`} className="history-event">
+              <div className="history-node"><span>{String(index + 1).padStart(2, '0')}</span></div>
+              <div className="history-card">
+                <p className="eyebrow mb-2">{text(event.period, locale)} · {text(event.place, locale)}</p>
+                <h2 className="font-display text-2xl font-semibold sm:text-3xl">{text(event.title, locale)}</h2>
+                <p className="mt-3 leading-7 text-muted">{text(event.body, locale)}</p>
+              </div>
+            </article>
           ))}
         </div>
       </section>
@@ -696,6 +766,8 @@ function AppRoutes() {
         <Route path="/castas/:id" element={<GrapeDetailPage />} />
         <Route path="/guia" element={<GuidePage />} />
         <Route path="/guia/sommelier" element={<SommelierPage />} />
+        <Route path="/guia/aromas" element={<AromaWheelPage />} />
+        <Route path="/guia/historia" element={<HistoryPage />} />
         <Route path="/guia/:id" element={<ArticleDetailPage />} />
         <Route path="/favoritos" element={<FavoritesPage />} />
         <Route path="/pesquisa" element={<SearchPage />} />
