@@ -112,25 +112,25 @@ export function Layout({ children }: { children: ReactNode }) {
 
       {menuOpen && (
         <div className="fixed inset-0 z-50 bg-night/45 backdrop-blur-sm xl:hidden" onClick={() => setMenuOpen(false)}>
-          <div className="ml-auto flex h-full w-[84%] max-w-sm flex-col bg-canvas p-5 shadow-2xl dark:bg-night-soft" onClick={(event) => event.stopPropagation()}>
-            <div className="mb-8 flex items-center justify-between">
+          <div className="ml-auto flex h-full w-[88%] max-w-sm flex-col overflow-y-auto bg-canvas p-4 shadow-2xl dark:bg-night-soft sm:w-[84%] sm:p-5" onClick={(event) => event.stopPropagation()}>
+            <div className="mb-4 flex items-center justify-between">
               <Brand />
               <button type="button" className="icon-button" onClick={() => setMenuOpen(false)} aria-label={t('close')}><X size={20} /></button>
             </div>
-            <nav className="flex flex-col gap-2">
+            <nav className="grid grid-cols-2 gap-1.5">
               {navItems.map(({ to, key, icon: Icon, end }) => (
                 <NavLink
                   key={to}
                   to={to}
                   end={end}
-                  className={({ isActive }) => `flex items-center gap-3 rounded-2xl px-4 py-3.5 font-semibold ${isActive ? 'bg-wine text-white' : 'hover:bg-wine/8'}`}
+                  className={({ isActive }) => `flex min-h-11 items-center gap-2 rounded-xl px-3 py-2.5 text-sm font-semibold ${isActive ? 'bg-wine text-white' : 'hover:bg-wine/8'}`}
                 >
-                  <Icon size={20} /> {t(key)}
+                  <Icon className="shrink-0" size={18} /> <span className="truncate">{t(key)}</span>
                 </NavLink>
               ))}
             </nav>
-            <div className="mt-auto border-t border-line pt-5 dark:border-white/10">
-              <p className="mb-3 text-xs font-bold uppercase tracking-widest text-muted">{t('language')}</p>
+            <div className="mt-4 border-t border-line pt-4 dark:border-white/10">
+              <p className="mb-2 text-xs font-bold uppercase tracking-widest text-muted">{t('language')}</p>
               <div className="grid grid-cols-3 gap-2">
                 {(['pt', 'en', 'de'] as Locale[]).map((item) => (
                   <button
@@ -143,7 +143,7 @@ export function Layout({ children }: { children: ReactNode }) {
                   </button>
                 ))}
               </div>
-              <p className="mb-3 mt-6 text-xs font-bold uppercase tracking-widest text-muted">{t('theme')}</p>
+              <p className="mb-2 mt-4 text-xs font-bold uppercase tracking-widest text-muted">{t('theme')}</p>
               <div className="grid grid-cols-2 gap-2">
                 <button
                   type="button"
