@@ -1,0 +1,178 @@
+[
+  {
+    "id": "temperatures",
+    "title": { "pt": "Temperaturas de serviço", "en": "Serving temperatures", "de": "Serviertemperaturen" },
+    "eyebrow": { "pt": "Servir melhor", "en": "Serve it right", "de": "Richtig servieren" },
+    "summary": {
+      "pt": "Nem branco gelado, nem tinto à temperatura de uma sala quente.",
+      "en": "Neither ice-cold white nor red at the temperature of a warm room.",
+      "de": "Weder eiskalter Weisswein noch Rotwein bei warmer Zimmertemperatur."
+    },
+    "intro": {
+      "pt": "A temperatura muda aromas, textura e equilíbrio. Mais frio esconde aromas e acentua frescura; mais quente torna o álcool mais evidente.",
+      "en": "Temperature changes aroma, texture and balance. Colder hides aromas and sharpens freshness; warmer makes alcohol more obvious.",
+      "de": "Temperatur verändert Aroma, Textur und Balance. Kälte dämpft Aromen und betont Frische; Wärme lässt Alkohol stärker hervortreten."
+    },
+    "tips": {
+      "pt": ["Espumante: 6–8 °C", "Branco leve: 7–10 °C", "Branco encorpado: 10–13 °C", "Tinto leve: 12–15 °C", "Tinto encorpado: 16–18 °C"],
+      "en": ["Sparkling: 6–8°C", "Light white: 7–10°C", "Full white: 10–13°C", "Light red: 12–15°C", "Full red: 16–18°C"],
+      "de": ["Schaumwein: 6–8 °C", "Leichter Weisswein: 7–10 °C", "Kräftiger Weisswein: 10–13 °C", "Leichter Rotwein: 12–15 °C", "Kräftiger Rotwein: 16–18 °C"]
+    },
+    "icon": "thermometer",
+    "featured": true
+  },
+  {
+    "id": "glasses",
+    "title": { "pt": "Copos sem complicações", "en": "Glassware made simple", "de": "Gläser, einfach erklärt" },
+    "eyebrow": { "pt": "Escolher o copo", "en": "Choose a glass", "de": "Das Glas wählen" },
+    "summary": {
+      "pt": "Três formatos resolvem quase todas as garrafas.",
+      "en": "Three shapes cover almost every bottle.",
+      "de": "Drei Formen reichen für fast jede Flasche."
+    },
+    "intro": {
+      "pt": "Um copo limpo, transparente e com haste é mais importante do que ter dezenas de formatos. O bojo deve deixar espaço para rodar o vinho.",
+      "en": "A clean, clear stemmed glass matters more than owning dozens of shapes. The bowl should leave room to swirl.",
+      "de": "Ein sauberes, klares Stielglas ist wichtiger als Dutzende Formen. Der Kelch sollte Platz zum Schwenken lassen."
+    },
+    "tips": {
+      "pt": ["Universal: a escolha segura para quase tudo", "Borgonha: bojo largo para Pinot e tintos delicados", "Bordeaux: alto para tintos estruturados", "Espumante: tulipa em vez de flute muito estreita"],
+      "en": ["Universal: the safe choice for almost everything", "Burgundy: broad bowl for Pinot and delicate reds", "Bordeaux: tall for structured reds", "Sparkling: choose a tulip over a very narrow flute"],
+      "de": ["Universal: die sichere Wahl für fast alles", "Burgund: breiter Kelch für Pinot und feine Rotweine", "Bordeaux: hoch für strukturierte Rotweine", "Schaumwein: Tulpe statt sehr schmaler Flöte"]
+    },
+    "icon": "wine",
+    "featured": true
+  },
+  {
+    "id": "pairing",
+    "title": { "pt": "Harmonizar sem regras rígidas", "en": "Pair without rigid rules", "de": "Kombinieren ohne starre Regeln" },
+    "eyebrow": { "pt": "Vinho & comida", "en": "Wine & food", "de": "Wein & Essen" },
+    "summary": {
+      "pt": "Olha para o peso, molho e preparação — não apenas para a carne.",
+      "en": "Look at weight, sauce and preparation — not only the meat.",
+      "de": "Achte auf Gewicht, Sauce und Zubereitung – nicht nur auf das Fleisch."
+    },
+    "intro": {
+      "pt": "A intensidade do prato e do vinho deve estar próxima. Acidez limpa gordura, tanino gosta de proteína e um toque doce acalma picante.",
+      "en": "Dish and wine should have similar intensity. Acidity cuts fat, tannin likes protein and a touch of sweetness calms heat.",
+      "de": "Gericht und Wein sollten ähnlich intensiv sein. Säure schneidet Fett, Tannin liebt Protein und etwas Süsse beruhigt Schärfe."
+    },
+    "tips": {
+      "pt": ["Carne vermelha: tintos com tanino", "Peixe gordo: branco ácido ou tinto leve", "Picante: vinho aromático com alguma doçura", "Sobremesa: o vinho deve ser pelo menos tão doce"],
+      "en": ["Red meat: reds with tannin", "Oily fish: acidic white or light red", "Spice: aromatic wine with some sweetness", "Dessert: wine should be at least as sweet"],
+      "de": ["Rotes Fleisch: Rotwein mit Tannin", "Fettreicher Fisch: säurebetonter Weisswein oder leichter Rotwein", "Scharf: aromatischer Wein mit etwas Süsse", "Dessert: der Wein sollte mindestens ebenso süss sein"]
+    },
+    "icon": "utensils",
+    "featured": true
+  },
+  {
+    "id": "decanting",
+    "title": { "pt": "Quando decantar", "en": "When to decant", "de": "Wann dekantieren?" },
+    "eyebrow": { "pt": "Dar ar ao vinho", "en": "Give wine air", "de": "Luft an den Wein" },
+    "summary": {
+      "pt": "Ar para abrir vinhos jovens; cuidado para não cansar os antigos.",
+      "en": "Air opens young wines; care keeps old wines from fading.",
+      "de": "Luft öffnet junge Weine; Vorsicht schützt alte vor dem Verblassen."
+    },
+    "intro": {
+      "pt": "Decantar pode separar depósito ou acelerar o contacto com oxigénio. Prova primeiro: se o vinho estiver fechado, dá-lhe tempo.",
+      "en": "Decanting can separate sediment or accelerate oxygen contact. Taste first: if the wine feels closed, give it time.",
+      "de": "Dekantieren trennt Depot oder beschleunigt den Sauerstoffkontakt. Erst probieren: wirkt der Wein verschlossen, gib ihm Zeit."
+    },
+    "tips": {
+      "pt": ["Jovem e tânico: 30–90 minutos", "Branco complexo: 10–20 minutos", "Garrafa antiga: deixa-a em pé antes", "Vinho frágil: prefere evolução lenta no copo"],
+      "en": ["Young and tannic: 30–90 minutes", "Complex white: 10–20 minutes", "Old bottle: stand it upright first", "Fragile wine: prefer slow evolution in the glass"],
+      "de": ["Jung und tanninreich: 30–90 Minuten", "Komplexer Weisswein: 10–20 Minuten", "Alte Flasche: vorher aufrecht stellen", "Fragiler Wein: lieber langsam im Glas entwickeln lassen"]
+    },
+    "icon": "timer",
+    "featured": false
+  },
+  {
+    "id": "storage",
+    "title": { "pt": "Guardar e conservar", "en": "Store and preserve", "de": "Lagern und bewahren" },
+    "eyebrow": { "pt": "Antes e depois de abrir", "en": "Before and after opening", "de": "Vor und nach dem Öffnen" },
+    "summary": {
+      "pt": "Escuro, fresco, estável — e frigorífico depois de abrir.",
+      "en": "Dark, cool, stable — and refrigerate after opening.",
+      "de": "Dunkel, kühl, stabil – und nach dem Öffnen in den Kühlschrank."
+    },
+    "intro": {
+      "pt": "Luz, calor e variações aceleram o envelhecimento. Para consumo corrente, estabilidade importa mais do que uma cave perfeita.",
+      "en": "Light, heat and swings accelerate ageing. For everyday bottles, stability matters more than a perfect cellar.",
+      "de": "Licht, Wärme und Schwankungen beschleunigen die Reifung. Für Alltagsflaschen zählt Stabilität mehr als ein perfekter Keller."
+    },
+    "tips": {
+      "pt": ["Guarda longe de luz e vibração", "Evita temperaturas acima de 20 °C", "Depois de abrir, fecha e refrigera todos os estilos", "Espumante: 1–2 dias; tranquilos: 3–5 dias"],
+      "en": ["Keep away from light and vibration", "Avoid temperatures above 20°C", "After opening, seal and refrigerate every style", "Sparkling: 1–2 days; still wine: 3–5 days"],
+      "de": ["Vor Licht und Vibration schützen", "Temperaturen über 20 °C vermeiden", "Nach dem Öffnen jeden Stil verschliessen und kühlen", "Schaumwein: 1–2 Tage; Stillwein: 3–5 Tage"]
+    },
+    "icon": "warehouse",
+    "featured": false
+  },
+  {
+    "id": "tasting",
+    "title": { "pt": "Provar com atenção", "en": "Taste with attention", "de": "Aufmerksam verkosten" },
+    "eyebrow": { "pt": "Ver, cheirar, provar", "en": "See, smell, taste", "de": "Sehen, riechen, schmecken" },
+    "summary": {
+      "pt": "Um método simples para reparar em mais, sem pretensão.",
+      "en": "A simple way to notice more, without pretence.",
+      "de": "Eine einfache Methode, um ohne Getue mehr wahrzunehmen."
+    },
+    "intro": {
+      "pt": "Não existe uma resposta certa. A prova é memória e atenção: observa, cheira antes e depois de rodar, prova e nota o que muda.",
+      "en": "There is no single right answer. Tasting is memory and attention: observe, smell before and after swirling, taste and notice change.",
+      "de": "Es gibt nicht die eine richtige Antwort. Verkosten ist Erinnerung und Aufmerksamkeit: ansehen, vor und nach dem Schwenken riechen, probieren und Veränderungen bemerken."
+    },
+    "tips": {
+      "pt": ["Olha para cor e limpidez", "Cheira sem rodar e depois roda suavemente", "Repara em doçura, acidez, tanino, álcool e corpo", "No fim, pergunta: é equilibrado e quero outro gole?"],
+      "en": ["Look at colour and clarity", "Smell without swirling, then swirl gently", "Notice sweetness, acidity, tannin, alcohol and body", "Finally ask: is it balanced, and do I want another sip?"],
+      "de": ["Farbe und Klarheit ansehen", "Erst ohne Schwenken riechen, dann sanft schwenken", "Süsse, Säure, Tannin, Alkohol und Körper beachten", "Am Ende fragen: Ist er ausgewogen, möchte ich noch einen Schluck?"]
+    },
+    "icon": "eye",
+    "featured": false
+  },
+  {
+    "id": "labels",
+    "title": { "pt": "Ler um rótulo", "en": "Read a wine label", "de": "Ein Etikett lesen" },
+    "eyebrow": { "pt": "Decifrar a garrafa", "en": "Decode the bottle", "de": "Die Flasche entschlüsseln" },
+    "summary": {
+      "pt": "Produtor, origem, ano e álcool contam a história essencial.",
+      "en": "Producer, origin, vintage and alcohol tell the essential story.",
+      "de": "Erzeuger, Herkunft, Jahrgang und Alkohol erzählen die wesentliche Geschichte."
+    },
+    "intro": {
+      "pt": "Alguns rótulos destacam a casta, outros a região. Identifica primeiro a origem e o produtor; depois procura ano, classificação e teor alcoólico.",
+      "en": "Some labels highlight the grape, others the region. First identify origin and producer; then find vintage, classification and alcohol.",
+      "de": "Manche Etiketten betonen die Sorte, andere die Region. Zuerst Herkunft und Erzeuger erkennen, dann Jahrgang, Klassifikation und Alkohol."
+    },
+    "tips": {
+      "pt": ["Origem pode indicar estilo e regras", "Ano é a colheita das uvas", "Reserva não significa o mesmo em todos os países", "DOC, AOC e DO são denominações de origem"],
+      "en": ["Origin can indicate style and rules", "Vintage is the grape harvest year", "Reserva does not mean the same in every country", "DOC, AOC and DO are origin designations"],
+      "de": ["Herkunft kann Stil und Regeln anzeigen", "Der Jahrgang ist das Erntejahr", "Reserva bedeutet nicht in jedem Land dasselbe", "DOC, AOC und DO sind Herkunftsbezeichnungen"]
+    },
+    "icon": "tag",
+    "featured": false
+  },
+  {
+    "id": "faults",
+    "title": { "pt": "Defeitos comuns", "en": "Common wine faults", "de": "Häufige Weinfehler" },
+    "eyebrow": { "pt": "Quando algo não está bem", "en": "When something is off", "de": "Wenn etwas nicht stimmt" },
+    "summary": {
+      "pt": "Rolha, oxidação e calor deixam sinais reconhecíveis.",
+      "en": "Cork taint, oxidation and heat leave recognisable signs.",
+      "de": "Kork, Oxidation und Hitze hinterlassen erkennbare Spuren."
+    },
+    "intro": {
+      "pt": "Nem todo aroma estranho é defeito, mas cartão molhado, fruta apagada ou vinho cozido são bons alertas. Se estiver num restaurante, pede uma segunda opinião.",
+      "en": "Not every unusual aroma is a fault, but wet cardboard, faded fruit or cooked wine are useful warnings. In a restaurant, ask for a second opinion.",
+      "de": "Nicht jedes ungewöhnliche Aroma ist ein Fehler, aber nasser Karton, verblasste Frucht oder gekochter Wein sind Warnzeichen. Im Restaurant um eine zweite Meinung bitten."
+    },
+    "tips": {
+      "pt": ["TCA/rolha: cartão molhado e fruta abafada", "Oxidação: maçã passada e cor acastanhada", "Calor: fruta cozida e rolha empurrada", "Acidez volátil: vinagre ou verniz em excesso"],
+      "en": ["TCA/cork: wet cardboard and muted fruit", "Oxidation: bruised apple and brown colour", "Heat: cooked fruit and pushed cork", "Volatile acidity: excessive vinegar or nail varnish"],
+      "de": ["TCA/Kork: nasser Karton und gedämpfte Frucht", "Oxidation: brauner Apfel und bräunliche Farbe", "Hitze: gekochte Frucht und herausgedrückter Kork", "Flüchtige Säure: zu viel Essig oder Nagellack"]
+    },
+    "icon": "triangle-alert",
+    "featured": false
+  }
+]

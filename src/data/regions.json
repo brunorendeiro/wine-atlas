@@ -1,0 +1,550 @@
+[
+  {
+    "id": "douro",
+    "name": { "pt": "Douro", "en": "Douro", "de": "Douro" },
+    "country": { "pt": "Portugal", "en": "Portugal", "de": "Portugal" },
+    "countryCode": "PT",
+    "coordinates": { "lat": 41.1621, "lng": -7.7906 },
+    "description": {
+      "pt": "Vales íngremes de xisto acompanhando o rio Douro, onde nascem vinhos intensos e o célebre Vinho do Porto.",
+      "en": "Steep schist valleys following the Douro River, home to intense wines and the celebrated Port.",
+      "de": "Steile Schiefertäler entlang des Douro, Heimat kraftvoller Weine und des berühmten Portweins."
+    },
+    "grapeIds": ["touriga-nacional", "tinta-roriz"],
+    "wineTypes": {
+      "pt": ["Tinto", "Branco", "Fortificado"],
+      "en": ["Red", "White", "Fortified"],
+      "de": ["Rotwein", "Weisswein", "Likörwein"]
+    },
+    "climate": {
+      "pt": "Continental, com verões muito quentes e secos.",
+      "en": "Continental, with very hot, dry summers.",
+      "de": "Kontinental, mit sehr heissen und trockenen Sommern."
+    },
+    "service": { "pt": "Tintos: 16–18 °C · Porto: 12–16 °C", "en": "Reds: 16–18°C · Port: 12–16°C", "de": "Rotwein: 16–18 °C · Port: 12–16 °C" },
+    "pairings": {
+      "pt": ["Cabrito assado", "Carne de caça", "Queijo curado"],
+      "en": ["Roast goat", "Game", "Aged cheese"],
+      "de": ["Gebratene Ziege", "Wild", "Gereifter Käse"]
+    },
+    "fact": {
+      "pt": "A paisagem vinhateira do Alto Douro é Património Mundial da UNESCO.",
+      "en": "The Alto Douro wine landscape is a UNESCO World Heritage Site.",
+      "de": "Die Weinlandschaft Alto Douro gehört zum UNESCO-Welterbe."
+    },
+    "featured": true,
+    "color": "#7a2747"
+  },
+  {
+    "id": "dao",
+    "name": { "pt": "Dão", "en": "Dão", "de": "Dão" },
+    "country": { "pt": "Portugal", "en": "Portugal", "de": "Portugal" },
+    "countryCode": "PT",
+    "coordinates": { "lat": 40.5229, "lng": -7.8968 },
+    "description": {
+      "pt": "Região de altitude protegida por serras, conhecida por tintos elegantes e brancos frescos de grande longevidade.",
+      "en": "A high-altitude region sheltered by mountains, known for elegant reds and fresh, age-worthy whites.",
+      "de": "Eine von Bergen geschützte Höhenregion, bekannt für elegante Rotweine und frische, lagerfähige Weissweine."
+    },
+    "grapeIds": ["touriga-nacional", "encruzado"],
+    "wineTypes": { "pt": ["Tinto", "Branco"], "en": ["Red", "White"], "de": ["Rotwein", "Weisswein"] },
+    "climate": {
+      "pt": "Continental moderado, com elevada amplitude térmica.",
+      "en": "Moderate continental climate with wide temperature swings.",
+      "de": "Gemässigt kontinental mit grossen Temperaturunterschieden."
+    },
+    "service": { "pt": "Tintos: 16 °C · Brancos: 10–12 °C", "en": "Reds: 16°C · Whites: 10–12°C", "de": "Rotwein: 16 °C · Weisswein: 10–12 °C" },
+    "pairings": {
+      "pt": ["Vitela assada", "Arroz de pato", "Cogumelos"],
+      "en": ["Roast veal", "Duck rice", "Mushrooms"],
+      "de": ["Kalbsbraten", "Entenreis", "Pilze"]
+    },
+    "fact": {
+      "pt": "Os solos graníticos dão aos vinhos uma frescura e mineralidade muito próprias.",
+      "en": "Granite soils give the wines a distinctive freshness and minerality.",
+      "de": "Granitböden verleihen den Weinen eine besondere Frische und Mineralität."
+    },
+    "featured": true,
+    "color": "#355b46"
+  },
+  {
+    "id": "alentejo",
+    "name": { "pt": "Alentejo", "en": "Alentejo", "de": "Alentejo" },
+    "country": { "pt": "Portugal", "en": "Portugal", "de": "Portugal" },
+    "countryCode": "PT",
+    "coordinates": { "lat": 38.5714, "lng": -7.9135 },
+    "description": {
+      "pt": "Planícies soalheiras, vinhas entre sobreiros e vinhos generosos, frutados e acolhedores.",
+      "en": "Sunny plains, vineyards among cork oaks and generous, fruit-forward wines.",
+      "de": "Sonnige Ebenen, Reben zwischen Korkeichen und grosszügige, fruchtbetonte Weine."
+    },
+    "grapeIds": ["arinto", "tinta-roriz", "touriga-nacional"],
+    "wineTypes": { "pt": ["Tinto", "Branco", "Talha"], "en": ["Red", "White", "Clay amphora"], "de": ["Rotwein", "Weisswein", "Amphorenwein"] },
+    "climate": {
+      "pt": "Mediterrânico, muito quente e seco.",
+      "en": "Mediterranean, very hot and dry.",
+      "de": "Mediterran, sehr heiss und trocken."
+    },
+    "service": { "pt": "Tintos: 15–17 °C · Brancos: 8–11 °C", "en": "Reds: 15–17°C · Whites: 8–11°C", "de": "Rotwein: 15–17 °C · Weisswein: 8–11 °C" },
+    "pairings": {
+      "pt": ["Porco preto", "Ensopado de borrego", "Queijos de ovelha"],
+      "en": ["Iberian pork", "Lamb stew", "Sheep's cheese"],
+      "de": ["Iberisches Schwein", "Lammeintopf", "Schafskäse"]
+    },
+    "fact": {
+      "pt": "A tradição do vinho de talha remonta a técnicas romanas com mais de dois mil anos.",
+      "en": "Clay amphora winemaking follows Roman techniques over two thousand years old.",
+      "de": "Die Amphorenwein-Tradition folgt über zweitausend Jahre alten römischen Techniken."
+    },
+    "featured": true,
+    "color": "#aa6337"
+  },
+  {
+    "id": "vinho-verde",
+    "name": { "pt": "Vinho Verde", "en": "Vinho Verde", "de": "Vinho Verde" },
+    "country": { "pt": "Portugal", "en": "Portugal", "de": "Portugal" },
+    "countryCode": "PT",
+    "coordinates": { "lat": 41.6932, "lng": -8.8341 },
+    "description": {
+      "pt": "O noroeste atlântico de Portugal produz vinhos vibrantes, leves e reconhecidos pela frescura.",
+      "en": "Portugal's Atlantic northwest produces vibrant, light wines celebrated for freshness.",
+      "de": "Portugals atlantischer Nordwesten erzeugt lebendige, leichte Weine mit besonderer Frische."
+    },
+    "grapeIds": ["alvarinho", "arinto"],
+    "wineTypes": { "pt": ["Branco", "Rosé", "Tinto", "Espumante"], "en": ["White", "Rosé", "Red", "Sparkling"], "de": ["Weisswein", "Rosé", "Rotwein", "Schaumwein"] },
+    "climate": {
+      "pt": "Atlântico, húmido, fresco e chuvoso.",
+      "en": "Atlantic, humid, cool and rainy.",
+      "de": "Atlantisch, feucht, kühl und regenreich."
+    },
+    "service": { "pt": "Brancos: 7–10 °C", "en": "Whites: 7–10°C", "de": "Weisswein: 7–10 °C" },
+    "pairings": {
+      "pt": ["Marisco", "Peixe grelhado", "Saladas"],
+      "en": ["Shellfish", "Grilled fish", "Salads"],
+      "de": ["Meeresfrüchte", "Gegrillter Fisch", "Salate"]
+    },
+    "fact": {
+      "pt": "“Verde” refere-se à juventude e vivacidade do vinho, não à sua cor.",
+      "en": "“Verde” refers to the wine's youth and liveliness, not its colour.",
+      "de": "„Verde“ bezeichnet Jugend und Lebendigkeit des Weins, nicht seine Farbe."
+    },
+    "featured": true,
+    "color": "#55865c"
+  },
+  {
+    "id": "bairrada",
+    "name": { "pt": "Bairrada", "en": "Bairrada", "de": "Bairrada" },
+    "country": { "pt": "Portugal", "en": "Portugal", "de": "Portugal" },
+    "countryCode": "PT",
+    "coordinates": { "lat": 40.3979, "lng": -8.4494 },
+    "description": {
+      "pt": "Entre o Atlântico e as serras, solos argilosos dão origem a Baga expressiva e espumantes de referência.",
+      "en": "Between the Atlantic and the hills, clay soils shape expressive Baga and benchmark sparkling wines.",
+      "de": "Zwischen Atlantik und Hügeln prägen Lehmböden ausdrucksstarken Baga und hervorragende Schaumweine."
+    },
+    "grapeIds": ["baga", "arinto"],
+    "wineTypes": { "pt": ["Tinto", "Branco", "Espumante"], "en": ["Red", "White", "Sparkling"], "de": ["Rotwein", "Weisswein", "Schaumwein"] },
+    "climate": {
+      "pt": "Atlântico ameno e húmido.",
+      "en": "Mild, humid Atlantic climate.",
+      "de": "Mildes, feuchtes Atlantikklima."
+    },
+    "service": { "pt": "Tintos: 15–17 °C · Espumantes: 6–8 °C", "en": "Reds: 15–17°C · Sparkling: 6–8°C", "de": "Rotwein: 15–17 °C · Schaumwein: 6–8 °C" },
+    "pairings": {
+      "pt": ["Leitão assado", "Pato", "Peixes gordos"],
+      "en": ["Roast suckling pig", "Duck", "Oily fish"],
+      "de": ["Spanferkel", "Ente", "Fettreicher Fisch"]
+    },
+    "fact": {
+      "pt": "A acidez natural da Baga corta a riqueza do tradicional leitão da Bairrada.",
+      "en": "Baga's natural acidity cuts through the richness of traditional roast suckling pig.",
+      "de": "Die natürliche Säure des Baga gleicht die Fülle des traditionellen Spanferkels aus."
+    },
+    "featured": false,
+    "color": "#744057"
+  },
+  {
+    "id": "valais",
+    "name": { "pt": "Valais", "en": "Valais", "de": "Wallis" },
+    "country": { "pt": "Suíça", "en": "Switzerland", "de": "Schweiz" },
+    "countryCode": "CH",
+    "coordinates": { "lat": 46.2331, "lng": 7.3606 },
+    "description": {
+      "pt": "Encostas alpinas soalheiras, enorme diversidade de castas e alguns dos vinhedos mais altos da Europa.",
+      "en": "Sunny Alpine slopes, remarkable grape diversity and some of Europe's highest vineyards.",
+      "de": "Sonnige Alpenhänge, bemerkenswerte Sortenvielfalt und einige der höchsten Weinberge Europas."
+    },
+    "grapeIds": ["chasselas", "pinot-noir"],
+    "wineTypes": { "pt": ["Branco", "Tinto", "Doce"], "en": ["White", "Red", "Sweet"], "de": ["Weisswein", "Rotwein", "Süsswein"] },
+    "climate": {
+      "pt": "Alpino seco, soalheiro e com grande amplitude térmica.",
+      "en": "Dry, sunny Alpine climate with wide temperature swings.",
+      "de": "Trockenes, sonniges Alpenklima mit grossen Temperaturunterschieden."
+    },
+    "service": { "pt": "Brancos: 8–11 °C · Tintos: 14–16 °C", "en": "Whites: 8–11°C · Reds: 14–16°C", "de": "Weisswein: 8–11 °C · Rotwein: 14–16 °C" },
+    "pairings": {
+      "pt": ["Raclette", "Carne seca", "Truta"],
+      "en": ["Raclette", "Air-dried beef", "Trout"],
+      "de": ["Raclette", "Trockenfleisch", "Forelle"]
+    },
+    "fact": {
+      "pt": "As levadas históricas chamadas bisses levam água às vinhas de montanha.",
+      "en": "Historic irrigation channels called bisses carry water to mountain vineyards.",
+      "de": "Historische Suonen bringen Wasser zu den Bergweinbergen."
+    },
+    "featured": true,
+    "color": "#b26046"
+  },
+  {
+    "id": "vaud",
+    "name": { "pt": "Vaud", "en": "Vaud", "de": "Waadt" },
+    "country": { "pt": "Suíça", "en": "Switzerland", "de": "Schweiz" },
+    "countryCode": "CH",
+    "coordinates": { "lat": 46.6154, "lng": 6.6323 },
+    "description": {
+      "pt": "Vinhedos junto ao Léman onde a Chasselas traduz com delicadeza diferentes solos e exposições.",
+      "en": "Vineyards by Lake Geneva where Chasselas delicately reflects soils and exposures.",
+      "de": "Weinberge am Genfersee, wo Chasselas Böden und Lagen fein zum Ausdruck bringt."
+    },
+    "grapeIds": ["chasselas", "pinot-noir"],
+    "wineTypes": { "pt": ["Branco", "Tinto"], "en": ["White", "Red"], "de": ["Weisswein", "Rotwein"] },
+    "climate": {
+      "pt": "Temperado pelos lagos, com boa exposição solar.",
+      "en": "Lake-moderated with good sun exposure.",
+      "de": "Durch die Seen gemildert, mit guter Sonneneinstrahlung."
+    },
+    "service": { "pt": "Chasselas: 8–10 °C · Tintos: 14–16 °C", "en": "Chasselas: 8–10°C · Reds: 14–16°C", "de": "Chasselas: 8–10 °C · Rotwein: 14–16 °C" },
+    "pairings": {
+      "pt": ["Fondue", "Peixe do lago", "Queijos suaves"],
+      "en": ["Fondue", "Lake fish", "Mild cheeses"],
+      "de": ["Fondue", "Seefisch", "Milder Käse"]
+    },
+    "fact": {
+      "pt": "Em Vaud, a Chasselas é muitas vezes identificada pelo nome da aldeia ou vinha.",
+      "en": "In Vaud, Chasselas is often identified by village or vineyard name.",
+      "de": "In der Waadt wird Chasselas oft nach Dorf oder Weinberg bezeichnet."
+    },
+    "featured": false,
+    "color": "#72816d"
+  },
+  {
+    "id": "lavaux",
+    "name": { "pt": "Lavaux", "en": "Lavaux", "de": "Lavaux" },
+    "country": { "pt": "Suíça", "en": "Switzerland", "de": "Schweiz" },
+    "countryCode": "CH",
+    "coordinates": { "lat": 46.4931, "lng": 6.7468 },
+    "description": {
+      "pt": "Terraços históricos suspensos sobre o Léman, moldados para captar o sol e produzir Chasselas mineral.",
+      "en": "Historic terraces above Lake Geneva, shaped to capture sunlight and produce mineral Chasselas.",
+      "de": "Historische Terrassen über dem Genfersee, die Sonne einfangen und mineralischen Chasselas hervorbringen."
+    },
+    "grapeIds": ["chasselas", "pinot-noir"],
+    "wineTypes": { "pt": ["Branco", "Tinto"], "en": ["White", "Red"], "de": ["Weisswein", "Rotwein"] },
+    "climate": {
+      "pt": "Temperado, beneficiando da reflexão solar do lago e dos muros.",
+      "en": "Temperate, benefiting from sunlight reflected by lake and walls.",
+      "de": "Gemässigt, begünstigt durch die Sonnenreflexion von See und Mauern."
+    },
+    "service": { "pt": "Chasselas: 8–10 °C", "en": "Chasselas: 8–10°C", "de": "Chasselas: 8–10 °C" },
+    "pairings": {
+      "pt": ["Fondue", "Filetes de perca", "Aperitivos"],
+      "en": ["Fondue", "Perch fillets", "Aperitifs"],
+      "de": ["Fondue", "Eglifilets", "Apéro"]
+    },
+    "fact": {
+      "pt": "Os terraços de Lavaux são Património Mundial da UNESCO desde 2007.",
+      "en": "The Lavaux terraces have been a UNESCO World Heritage Site since 2007.",
+      "de": "Die Terrassen von Lavaux gehören seit 2007 zum UNESCO-Welterbe."
+    },
+    "featured": true,
+    "color": "#607c68"
+  },
+  {
+    "id": "ticino",
+    "name": { "pt": "Ticino", "en": "Ticino", "de": "Tessin" },
+    "country": { "pt": "Suíça", "en": "Switzerland", "de": "Schweiz" },
+    "countryCode": "CH",
+    "coordinates": { "lat": 46.3317, "lng": 8.8005 },
+    "description": {
+      "pt": "A Suíça de influência mediterrânica, marcada por Merlot elegante em tinto e branco.",
+      "en": "Mediterranean-influenced Switzerland, defined by elegant red and white Merlot.",
+      "de": "Die mediterran geprägte Schweiz, bekannt für eleganten roten und weissen Merlot."
+    },
+    "grapeIds": ["merlot"],
+    "wineTypes": { "pt": ["Tinto", "Branco de uvas tintas"], "en": ["Red", "White from red grapes"], "de": ["Rotwein", "Weiss aus roten Trauben"] },
+    "climate": {
+      "pt": "Alpino com forte influência mediterrânica e precipitação elevada.",
+      "en": "Alpine with strong Mediterranean influence and high rainfall.",
+      "de": "Alpin mit starkem mediterranem Einfluss und hohen Niederschlägen."
+    },
+    "service": { "pt": "Merlot: 15–17 °C · Bianco di Merlot: 8–10 °C", "en": "Merlot: 15–17°C · Bianco di Merlot: 8–10°C", "de": "Merlot: 15–17 °C · Bianco di Merlot: 8–10 °C" },
+    "pairings": {
+      "pt": ["Polenta", "Risotto de cogumelos", "Vitela"],
+      "en": ["Polenta", "Mushroom risotto", "Veal"],
+      "de": ["Polenta", "Pilzrisotto", "Kalbfleisch"]
+    },
+    "fact": {
+      "pt": "A Merlot representa a grande maioria das vinhas do Ticino.",
+      "en": "Merlot accounts for the great majority of Ticino's vineyards.",
+      "de": "Merlot macht den Grossteil der Rebfläche im Tessin aus."
+    },
+    "featured": false,
+    "color": "#876149"
+  },
+  {
+    "id": "basel-landschaft",
+    "name": { "pt": "Basel-Landschaft", "en": "Basel-Landschaft", "de": "Basel-Landschaft" },
+    "country": { "pt": "Suíça", "en": "Switzerland", "de": "Schweiz" },
+    "countryCode": "CH",
+    "coordinates": { "lat": 47.4418, "lng": 7.7644 },
+    "description": {
+      "pt": "Pequenos vinhedos entre colinas jurássicas, à porta de Basel, com tintos frescos e brancos precisos.",
+      "en": "Small vineyards among Jura hills near Basel, producing fresh reds and precise whites.",
+      "de": "Kleine Weinberge im Jurahügelland vor Basel mit frischen Rot- und präzisen Weissweinen."
+    },
+    "grapeIds": ["pinot-noir", "riesling"],
+    "wineTypes": { "pt": ["Tinto", "Branco", "Espumante"], "en": ["Red", "White", "Sparkling"], "de": ["Rotwein", "Weisswein", "Schaumwein"] },
+    "climate": {
+      "pt": "Temperado, relativamente seco e protegido pelo Jura.",
+      "en": "Temperate, relatively dry and sheltered by the Jura.",
+      "de": "Gemässigt, relativ trocken und durch den Jura geschützt."
+    },
+    "service": { "pt": "Tintos: 14–16 °C · Brancos: 8–10 °C", "en": "Reds: 14–16°C · Whites: 8–10°C", "de": "Rotwein: 14–16 °C · Weisswein: 8–10 °C" },
+    "pairings": {
+      "pt": ["Tarte flambée", "Vitela", "Queijos alpinos"],
+      "en": ["Flammkuchen", "Veal", "Alpine cheeses"],
+      "de": ["Flammkuchen", "Kalbfleisch", "Alpkäse"]
+    },
+    "fact": {
+      "pt": "É uma região pequena: muitas vinhas podem ser visitadas numa curta viagem desde Basel.",
+      "en": "It is a compact region: many vineyards are a short trip from Basel.",
+      "de": "Die kompakte Region bietet viele Rebberge nur eine kurze Fahrt von Basel entfernt."
+    },
+    "featured": true,
+    "color": "#6c3245"
+  },
+  {
+    "id": "aargau",
+    "name": { "pt": "Aargau", "en": "Aargau", "de": "Aargau" },
+    "country": { "pt": "Suíça", "en": "Switzerland", "de": "Schweiz" },
+    "countryCode": "CH",
+    "coordinates": { "lat": 47.3904, "lng": 8.0457 },
+    "description": {
+      "pt": "Vinhas dispersas junto ao Reno, Aare e Limmat, onde a Pinot Noir encontra uma expressão delicada.",
+      "en": "Vineyards along the Rhine, Aare and Limmat, where Pinot Noir finds a delicate expression.",
+      "de": "Rebberge an Rhein, Aare und Limmat, wo Pinot Noir einen feinen Ausdruck findet."
+    },
+    "grapeIds": ["pinot-noir", "riesling"],
+    "wineTypes": { "pt": ["Tinto", "Branco"], "en": ["Red", "White"], "de": ["Rotwein", "Weisswein"] },
+    "climate": {
+      "pt": "Temperado, com rios que moderam as temperaturas.",
+      "en": "Temperate, with rivers moderating temperatures.",
+      "de": "Gemässigt, durch die Flüsse temperaturausgleichend."
+    },
+    "service": { "pt": "Tintos: 14–16 °C · Brancos: 8–10 °C", "en": "Reds: 14–16°C · Whites: 8–10°C", "de": "Rotwein: 14–16 °C · Weisswein: 8–10 °C" },
+    "pairings": {
+      "pt": ["Salsichas grelhadas", "Cogumelos", "Queijo semiduro"],
+      "en": ["Grilled sausages", "Mushrooms", "Semi-hard cheese"],
+      "de": ["Bratwurst", "Pilze", "Halbhartkäse"]
+    },
+    "fact": {
+      "pt": "A região reúne muitos pequenos produtores e parcelas com exposições variadas.",
+      "en": "The region brings together many small producers and varied vineyard exposures.",
+      "de": "Die Region vereint viele kleine Betriebe und unterschiedlich ausgerichtete Lagen."
+    },
+    "featured": false,
+    "color": "#8a6641"
+  },
+  {
+    "id": "bordeaux",
+    "name": { "pt": "Bordeaux", "en": "Bordeaux", "de": "Bordeaux" },
+    "country": { "pt": "França", "en": "France", "de": "Frankreich" },
+    "countryCode": "FR",
+    "coordinates": { "lat": 44.8378, "lng": -0.5792 },
+    "description": {
+      "pt": "Mosaico de solos e estuários, referência mundial para lotes estruturados e vinhos de longa guarda.",
+      "en": "A mosaic of soils and estuaries, a world benchmark for structured blends and long-lived wines.",
+      "de": "Ein Mosaik aus Böden und Flussmündungen, weltweit prägend für strukturierte Cuvées und langlebige Weine."
+    },
+    "grapeIds": ["cabernet-sauvignon", "merlot"],
+    "wineTypes": { "pt": ["Tinto", "Branco", "Doce"], "en": ["Red", "White", "Sweet"], "de": ["Rotwein", "Weisswein", "Süsswein"] },
+    "climate": {
+      "pt": "Oceânico ameno, húmido e variável.",
+      "en": "Mild, humid and variable oceanic climate.",
+      "de": "Mildes, feuchtes und wechselhaftes ozeanisches Klima."
+    },
+    "service": { "pt": "Tintos: 16–18 °C · Brancos: 8–11 °C", "en": "Reds: 16–18°C · Whites: 8–11°C", "de": "Rotwein: 16–18 °C · Weisswein: 8–11 °C" },
+    "pairings": {
+      "pt": ["Entrecôte", "Borrego", "Queijo curado"],
+      "en": ["Rib steak", "Lamb", "Aged cheese"],
+      "de": ["Entrecôte", "Lamm", "Gereifter Käse"]
+    },
+    "fact": {
+      "pt": "A margem esquerda privilegia Cabernet Sauvignon; a direita, Merlot.",
+      "en": "The left bank favours Cabernet Sauvignon; the right bank, Merlot.",
+      "de": "Am linken Ufer dominiert Cabernet Sauvignon, am rechten Merlot."
+    },
+    "featured": true,
+    "color": "#69223c"
+  },
+  {
+    "id": "bourgogne",
+    "name": { "pt": "Borgonha", "en": "Burgundy", "de": "Burgund" },
+    "country": { "pt": "França", "en": "France", "de": "Frankreich" },
+    "countryCode": "FR",
+    "coordinates": { "lat": 47.0525, "lng": 4.3837 },
+    "description": {
+      "pt": "Um território de parcelas minuciosas onde Pinot Noir e Chardonnay revelam cada lugar.",
+      "en": "A territory of finely divided plots where Pinot Noir and Chardonnay reveal each place.",
+      "de": "Ein Gebiet fein gegliederter Parzellen, in dem Pinot Noir und Chardonnay jeden Ort spiegeln."
+    },
+    "grapeIds": ["pinot-noir", "chardonnay"],
+    "wineTypes": { "pt": ["Tinto", "Branco", "Espumante"], "en": ["Red", "White", "Sparkling"], "de": ["Rotwein", "Weisswein", "Schaumwein"] },
+    "climate": {
+      "pt": "Continental fresco, sujeito a grande variação entre anos.",
+      "en": "Cool continental climate with significant vintage variation.",
+      "de": "Kühles Kontinentalklima mit deutlichen Jahrgangsschwankungen."
+    },
+    "service": { "pt": "Tintos: 14–16 °C · Brancos: 10–12 °C", "en": "Reds: 14–16°C · Whites: 10–12°C", "de": "Rotwein: 14–16 °C · Weisswein: 10–12 °C" },
+    "pairings": {
+      "pt": ["Coq au vin", "Cogumelos", "Peixe com manteiga"],
+      "en": ["Coq au vin", "Mushrooms", "Butter-cooked fish"],
+      "de": ["Coq au Vin", "Pilze", "Fisch mit Butter"]
+    },
+    "fact": {
+      "pt": "Os climats da Borgonha são parcelas delimitadas e reconhecidas pela UNESCO.",
+      "en": "Burgundy's climats are precisely defined vineyard plots recognised by UNESCO.",
+      "de": "Die Climats des Burgund sind genau abgegrenzte, von der UNESCO anerkannte Weinlagen."
+    },
+    "featured": false,
+    "color": "#804238"
+  },
+  {
+    "id": "alsace",
+    "name": { "pt": "Alsácia", "en": "Alsace", "de": "Elsass" },
+    "country": { "pt": "França", "en": "France", "de": "Frankreich" },
+    "countryCode": "FR",
+    "coordinates": { "lat": 48.1684, "lng": 7.2977 },
+    "description": {
+      "pt": "Uma faixa de aldeias e vinhas protegida pelos Vosges, famosa por brancos aromáticos e precisos.",
+      "en": "A ribbon of villages and vineyards sheltered by the Vosges, famed for precise aromatic whites.",
+      "de": "Ein Band aus Dörfern und Weinbergen im Schutz der Vogesen, berühmt für präzise, aromatische Weissweine."
+    },
+    "grapeIds": ["riesling", "gewurztraminer", "pinot-noir"],
+    "wineTypes": { "pt": ["Branco", "Tinto", "Espumante", "Doce"], "en": ["White", "Red", "Sparkling", "Sweet"], "de": ["Weisswein", "Rotwein", "Schaumwein", "Süsswein"] },
+    "climate": {
+      "pt": "Continental seco e soalheiro, protegido pelos Vosges.",
+      "en": "Dry, sunny continental climate sheltered by the Vosges.",
+      "de": "Trockenes, sonniges Kontinentalklima im Schutz der Vogesen."
+    },
+    "service": { "pt": "Brancos: 8–11 °C · Pinot Noir: 14–16 °C", "en": "Whites: 8–11°C · Pinot Noir: 14–16°C", "de": "Weisswein: 8–11 °C · Pinot Noir: 14–16 °C" },
+    "pairings": {
+      "pt": ["Choucroute", "Tarte flambée", "Comida asiática"],
+      "en": ["Choucroute", "Flammkuchen", "Asian food"],
+      "de": ["Choucroute", "Flammkuchen", "Asiatische Küche"]
+    },
+    "fact": {
+      "pt": "Ao contrário de muitas regiões francesas, o rótulo costuma destacar a casta.",
+      "en": "Unlike many French regions, the label commonly highlights the grape variety.",
+      "de": "Anders als in vielen französischen Regionen steht die Rebsorte oft auf dem Etikett."
+    },
+    "featured": true,
+    "color": "#9b7442"
+  },
+  {
+    "id": "baden",
+    "name": { "pt": "Baden", "en": "Baden", "de": "Baden" },
+    "country": { "pt": "Alemanha", "en": "Germany", "de": "Deutschland" },
+    "countryCode": "DE",
+    "coordinates": { "lat": 47.9959, "lng": 7.8522 },
+    "description": {
+      "pt": "A região vinícola mais quente da Alemanha acompanha o Reno, com Pinot expressiva e gastronomia generosa.",
+      "en": "Germany's warmest wine region follows the Rhine, with expressive Pinot and generous food.",
+      "de": "Deutschlands wärmste Weinregion folgt dem Rhein, mit ausdrucksstarkem Burgunder und herzhafter Küche."
+    },
+    "grapeIds": ["pinot-noir", "chardonnay", "riesling"],
+    "wineTypes": { "pt": ["Tinto", "Branco", "Espumante"], "en": ["Red", "White", "Sparkling"], "de": ["Rotwein", "Weisswein", "Sekt"] },
+    "climate": {
+      "pt": "Continental quente e soalheiro, influenciado pelo Reno.",
+      "en": "Warm, sunny continental climate influenced by the Rhine.",
+      "de": "Warmes, sonniges Kontinentalklima, geprägt vom Rhein."
+    },
+    "service": { "pt": "Pinot Noir: 14–16 °C · Brancos: 8–11 °C", "en": "Pinot Noir: 14–16°C · Whites: 8–11°C", "de": "Spätburgunder: 14–16 °C · Weisswein: 8–11 °C" },
+    "pairings": {
+      "pt": ["Pato", "Espargos", "Flammkuchen"],
+      "en": ["Duck", "Asparagus", "Flammkuchen"],
+      "de": ["Ente", "Spargel", "Flammkuchen"]
+    },
+    "fact": {
+      "pt": "Em alemão, a Pinot Noir chama-se Spätburgunder.",
+      "en": "In German, Pinot Noir is called Spätburgunder.",
+      "de": "Pinot Noir heisst auf Deutsch Spätburgunder."
+    },
+    "featured": false,
+    "color": "#7d5145"
+  },
+  {
+    "id": "rioja",
+    "name": { "pt": "Rioja", "en": "Rioja", "de": "Rioja" },
+    "country": { "pt": "Espanha", "en": "Spain", "de": "Spanien" },
+    "countryCode": "ES",
+    "coordinates": { "lat": 42.2871, "lng": -2.5396 },
+    "description": {
+      "pt": "Região atravessada pelo Ebro onde a Tempranillo ganha especiaria, elegância e capacidade de guarda.",
+      "en": "A region crossed by the Ebro where Tempranillo gains spice, elegance and ageing potential.",
+      "de": "Eine vom Ebro durchzogene Region, in der Tempranillo Würze, Eleganz und Reifepotenzial entwickelt."
+    },
+    "grapeIds": ["tempranillo"],
+    "wineTypes": { "pt": ["Tinto", "Branco", "Rosé"], "en": ["Red", "White", "Rosé"], "de": ["Rotwein", "Weisswein", "Rosé"] },
+    "climate": {
+      "pt": "Encontro de influências atlântica, continental e mediterrânica.",
+      "en": "A meeting point of Atlantic, continental and Mediterranean influences.",
+      "de": "Treffpunkt atlantischer, kontinentaler und mediterraner Einflüsse."
+    },
+    "service": { "pt": "Tintos: 15–17 °C", "en": "Reds: 15–17°C", "de": "Rotwein: 15–17 °C" },
+    "pairings": {
+      "pt": ["Borrego", "Chouriço", "Queijo manchego"],
+      "en": ["Lamb", "Chorizo", "Manchego cheese"],
+      "de": ["Lamm", "Chorizo", "Manchego"]
+    },
+    "fact": {
+      "pt": "As categorias Crianza, Reserva e Gran Reserva refletem tempos mínimos de envelhecimento.",
+      "en": "Crianza, Reserva and Gran Reserva indicate minimum ageing periods.",
+      "de": "Crianza, Reserva und Gran Reserva stehen für Mindestzeiten der Reifung."
+    },
+    "featured": true,
+    "color": "#8e3e2f"
+  },
+  {
+    "id": "tuscany",
+    "name": { "pt": "Toscana", "en": "Tuscany", "de": "Toskana" },
+    "country": { "pt": "Itália", "en": "Italy", "de": "Italien" },
+    "countryCode": "IT",
+    "coordinates": { "lat": 43.7711, "lng": 11.2486 },
+    "description": {
+      "pt": "Colinas ondulantes, aldeias antigas e Sangiovese vibrante no centro de uma cultura gastronómica única.",
+      "en": "Rolling hills, ancient villages and vibrant Sangiovese at the heart of a singular food culture.",
+      "de": "Sanfte Hügel, alte Dörfer und lebendiger Sangiovese im Zentrum einer einzigartigen Esskultur."
+    },
+    "grapeIds": ["sangiovese", "cabernet-sauvignon"],
+    "wineTypes": { "pt": ["Tinto", "Branco", "Doce"], "en": ["Red", "White", "Sweet"], "de": ["Rotwein", "Weisswein", "Süsswein"] },
+    "climate": {
+      "pt": "Mediterrânico, moderado pela altitude e pelo mar.",
+      "en": "Mediterranean, moderated by altitude and the sea.",
+      "de": "Mediterran, durch Höhe und Meer gemildert."
+    },
+    "service": { "pt": "Tintos: 16–18 °C", "en": "Reds: 16–18°C", "de": "Rotwein: 16–18 °C" },
+    "pairings": {
+      "pt": ["Bistecca alla fiorentina", "Massa com ragù", "Pecorino"],
+      "en": ["Florentine steak", "Pasta with ragù", "Pecorino"],
+      "de": ["Bistecca alla fiorentina", "Pasta mit Ragù", "Pecorino"]
+    },
+    "fact": {
+      "pt": "Chianti Classico distingue-se pelo símbolo do galo negro.",
+      "en": "Chianti Classico is distinguished by the black rooster symbol.",
+      "de": "Chianti Classico erkennt man am Symbol des schwarzen Hahns."
+    },
+    "featured": false,
+    "color": "#a4663e"
+  }
+]

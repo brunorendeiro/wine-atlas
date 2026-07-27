@@ -1,0 +1,452 @@
+[
+  {
+    "id": "touriga-nacional",
+    "name": { "pt": "Touriga Nacional", "en": "Touriga Nacional", "de": "Touriga Nacional" },
+    "aliases": [],
+    "origin": { "pt": "Portugal, provavelmente Dão", "en": "Portugal, probably Dão", "de": "Portugal, vermutlich Dão" },
+    "description": {
+      "pt": "Casta portuguesa de grande concentração, perfume floral e estrutura, capaz de vinhos profundos e longevos.",
+      "en": "A concentrated Portuguese grape with floral perfume and structure, capable of deep, long-lived wines.",
+      "de": "Konzentrierte portugiesische Sorte mit Blütenduft und Struktur für tiefe, langlebige Weine."
+    },
+    "type": "red",
+    "aromas": {
+      "pt": ["Violeta", "Amora", "Mirtilo", "Ervas"],
+      "en": ["Violet", "Blackberry", "Blueberry", "Herbs"],
+      "de": ["Veilchen", "Brombeere", "Heidelbeere", "Kräuter"]
+    },
+    "body": "full",
+    "acidity": "high",
+    "tannins": "high",
+    "regionIds": ["douro", "dao", "alentejo"],
+    "pairings": {
+      "pt": ["Borrego assado", "Carne de caça", "Costeleta de vaca", "Queijos curados"],
+      "en": ["Roast lamb", "Game", "Beef rib", "Aged cheeses"],
+      "de": ["Lammbraten", "Wild", "Rindskotelett", "Gereifter Käse"]
+    },
+    "service": { "pt": "16–18 °C", "en": "16–18°C", "de": "16–18 °C" },
+    "glass": { "pt": "Copo grande de tinto, com bojo largo", "en": "Large red-wine glass with a broad bowl", "de": "Grosses Rotweinglas mit breitem Kelch" },
+    "decanting": { "pt": "30–60 minutos quando jovem", "en": "30–60 minutes when young", "de": "Jung 30–60 Minuten" },
+    "color": "#6e1c39"
+  },
+  {
+    "id": "tinta-roriz",
+    "name": { "pt": "Tinta Roriz", "en": "Tinta Roriz", "de": "Tinta Roriz" },
+    "aliases": ["Tempranillo", "Aragonez"],
+    "origin": { "pt": "Península Ibérica", "en": "Iberian Peninsula", "de": "Iberische Halbinsel" },
+    "description": {
+      "pt": "Versátil e frutada, combina cereja e ameixa com especiaria, ganhando complexidade com estágio em madeira.",
+      "en": "Versatile and fruity, combining cherry and plum with spice and gaining complexity in oak.",
+      "de": "Vielseitig und fruchtig, mit Kirsche, Pflaume und Würze; im Holz gewinnt sie an Komplexität."
+    },
+    "type": "red",
+    "aromas": {
+      "pt": ["Cereja", "Ameixa", "Tabaco", "Baunilha"],
+      "en": ["Cherry", "Plum", "Tobacco", "Vanilla"],
+      "de": ["Kirsche", "Pflaume", "Tabak", "Vanille"]
+    },
+    "body": "medium",
+    "acidity": "medium",
+    "tannins": "medium",
+    "regionIds": ["douro", "alentejo", "rioja"],
+    "pairings": {
+      "pt": ["Porco assado", "Borrego", "Enchidos", "Cogumelos"],
+      "en": ["Roast pork", "Lamb", "Cured meats", "Mushrooms"],
+      "de": ["Schweinebraten", "Lamm", "Wurstwaren", "Pilze"]
+    },
+    "service": { "pt": "15–17 °C", "en": "15–17°C", "de": "15–17 °C" },
+    "glass": { "pt": "Copo universal de tinto", "en": "Universal red-wine glass", "de": "Universelles Rotweinglas" },
+    "decanting": { "pt": "20–30 minutos se estruturado", "en": "20–30 minutes if structured", "de": "Bei kräftigem Stil 20–30 Minuten" },
+    "color": "#8b3043"
+  },
+  {
+    "id": "alvarinho",
+    "name": { "pt": "Alvarinho", "en": "Albariño", "de": "Albariño" },
+    "aliases": ["Albariño"],
+    "origin": { "pt": "Noroeste da Península Ibérica", "en": "Northwest Iberian Peninsula", "de": "Nordwestliche Iberische Halbinsel" },
+    "description": {
+      "pt": "Branca aromática e energética, com fruta de caroço, citrinos, salinidade e acidez refrescante.",
+      "en": "An energetic aromatic white with stone fruit, citrus, salinity and refreshing acidity.",
+      "de": "Energetische aromatische Weissweinsorte mit Steinobst, Zitrus, Salzigkeit und frischer Säure."
+    },
+    "type": "white",
+    "aromas": {
+      "pt": ["Pêssego", "Lima", "Flor de laranjeira", "Sal marinho"],
+      "en": ["Peach", "Lime", "Orange blossom", "Sea salt"],
+      "de": ["Pfirsich", "Limette", "Orangenblüte", "Meersalz"]
+    },
+    "body": "medium",
+    "acidity": "high",
+    "tannins": "low",
+    "regionIds": ["vinho-verde"],
+    "pairings": {
+      "pt": ["Marisco", "Ceviche", "Peixe grelhado", "Queijo de cabra"],
+      "en": ["Shellfish", "Ceviche", "Grilled fish", "Goat cheese"],
+      "de": ["Meeresfrüchte", "Ceviche", "Gegrillter Fisch", "Ziegenkäse"]
+    },
+    "service": { "pt": "8–10 °C", "en": "8–10°C", "de": "8–10 °C" },
+    "glass": { "pt": "Copo branco médio, ligeiramente fechado", "en": "Medium white-wine glass, slightly tapered", "de": "Mittleres, leicht verjüngtes Weissweinglas" },
+    "decanting": { "pt": "Não é necessário; 10 minutos para versões complexas", "en": "Not needed; 10 minutes for complex examples", "de": "Nicht nötig; bei komplexen Weinen 10 Minuten" },
+    "color": "#bd9f3f"
+  },
+  {
+    "id": "arinto",
+    "name": { "pt": "Arinto", "en": "Arinto", "de": "Arinto" },
+    "aliases": ["Pedernã"],
+    "origin": { "pt": "Portugal", "en": "Portugal", "de": "Portugal" },
+    "description": {
+      "pt": "Uma das grandes fontes de frescura portuguesa, com citrinos, maçã e perfil mineral.",
+      "en": "One of Portugal's great sources of freshness, with citrus, apple and a mineral profile.",
+      "de": "Eine der grossen Frischequellen Portugals, mit Zitrus, Apfel und mineralischem Profil."
+    },
+    "type": "white",
+    "aromas": {
+      "pt": ["Limão", "Maçã verde", "Pedra molhada", "Ervas"],
+      "en": ["Lemon", "Green apple", "Wet stone", "Herbs"],
+      "de": ["Zitrone", "Grüner Apfel", "Nasser Stein", "Kräuter"]
+    },
+    "body": "light",
+    "acidity": "high",
+    "tannins": "low",
+    "regionIds": ["vinho-verde", "bairrada", "alentejo"],
+    "pairings": {
+      "pt": ["Ostras", "Sardinha", "Sushi", "Saladas frescas"],
+      "en": ["Oysters", "Sardines", "Sushi", "Fresh salads"],
+      "de": ["Austern", "Sardinen", "Sushi", "Frische Salate"]
+    },
+    "service": { "pt": "8–10 °C", "en": "8–10°C", "de": "8–10 °C" },
+    "glass": { "pt": "Copo pequeno a médio de branco", "en": "Small to medium white-wine glass", "de": "Kleines bis mittleres Weissweinglas" },
+    "decanting": { "pt": "Não necessita", "en": "No decanting needed", "de": "Kein Dekantieren nötig" },
+    "color": "#9caa58"
+  },
+  {
+    "id": "baga",
+    "name": { "pt": "Baga", "en": "Baga", "de": "Baga" },
+    "aliases": [],
+    "origin": { "pt": "Portugal, Beiras", "en": "Portugal, Beiras", "de": "Portugal, Beiras" },
+    "description": {
+      "pt": "Tinta de pele espessa e acidez firme, austera na juventude e fascinante depois de evoluir.",
+      "en": "A thick-skinned red with firm acidity, austere when young and fascinating with age.",
+      "de": "Dickschalige rote Sorte mit kräftiger Säure, jung streng und mit Reife faszinierend."
+    },
+    "type": "red",
+    "aromas": {
+      "pt": ["Cereja ácida", "Amora", "Folha seca", "Fumo"],
+      "en": ["Sour cherry", "Blackberry", "Dried leaf", "Smoke"],
+      "de": ["Sauerkirsche", "Brombeere", "Trockenes Laub", "Rauch"]
+    },
+    "body": "full",
+    "acidity": "high",
+    "tannins": "high",
+    "regionIds": ["bairrada"],
+    "pairings": {
+      "pt": ["Leitão", "Pato assado", "Carne de caça", "Queijo da Serra"],
+      "en": ["Suckling pig", "Roast duck", "Game", "Mountain cheese"],
+      "de": ["Spanferkel", "Ente", "Wild", "Bergkäse"]
+    },
+    "service": { "pt": "15–17 °C", "en": "15–17°C", "de": "15–17 °C" },
+    "glass": { "pt": "Copo grande de tinto", "en": "Large red-wine glass", "de": "Grosses Rotweinglas" },
+    "decanting": { "pt": "45–90 minutos quando jovem", "en": "45–90 minutes when young", "de": "Jung 45–90 Minuten" },
+    "color": "#75263b"
+  },
+  {
+    "id": "encruzado",
+    "name": { "pt": "Encruzado", "en": "Encruzado", "de": "Encruzado" },
+    "aliases": [],
+    "origin": { "pt": "Portugal, Dão", "en": "Portugal, Dão", "de": "Portugal, Dão" },
+    "description": {
+      "pt": "Branca elegante do Dão, une textura, mineralidade, aromas discretos e grande capacidade de envelhecimento.",
+      "en": "An elegant Dão white combining texture, minerality, subtle aromas and strong ageing ability.",
+      "de": "Elegante weisse Sorte aus dem Dão mit Textur, Mineralität, feiner Aromatik und grossem Reifepotenzial."
+    },
+    "type": "white",
+    "aromas": {
+      "pt": ["Maçã", "Pera", "Flor branca", "Pedra"],
+      "en": ["Apple", "Pear", "White flowers", "Stone"],
+      "de": ["Apfel", "Birne", "Weisse Blüten", "Stein"]
+    },
+    "body": "medium",
+    "acidity": "high",
+    "tannins": "low",
+    "regionIds": ["dao"],
+    "pairings": {
+      "pt": ["Bacalhau", "Peixe no forno", "Aves", "Queijos cremosos"],
+      "en": ["Salt cod", "Baked fish", "Poultry", "Creamy cheeses"],
+      "de": ["Stockfisch", "Ofenfisch", "Geflügel", "Cremiger Käse"]
+    },
+    "service": { "pt": "10–12 °C", "en": "10–12°C", "de": "10–12 °C" },
+    "glass": { "pt": "Copo branco amplo", "en": "Broad white-wine glass", "de": "Breites Weissweinglas" },
+    "decanting": { "pt": "15–20 minutos para versões com madeira", "en": "15–20 minutes for oak-aged styles", "de": "Bei Holzausbau 15–20 Minuten" },
+    "color": "#aa9a55"
+  },
+  {
+    "id": "pinot-noir",
+    "name": { "pt": "Pinot Noir", "en": "Pinot Noir", "de": "Pinot Noir" },
+    "aliases": ["Spätburgunder", "Blauburgunder"],
+    "origin": { "pt": "França, Borgonha", "en": "France, Burgundy", "de": "Frankreich, Burgund" },
+    "description": {
+      "pt": "Tinta delicada e transparente ao lugar, com fruta vermelha, textura sedosa e grande subtileza.",
+      "en": "A delicate red transparent to place, with red fruit, silky texture and great subtlety.",
+      "de": "Eine feine rote Sorte, die ihren Ort zeigt, mit roten Früchten, seidiger Textur und grosser Subtilität."
+    },
+    "type": "red",
+    "aromas": {
+      "pt": ["Cereja", "Framboesa", "Rosa", "Terra húmida"],
+      "en": ["Cherry", "Raspberry", "Rose", "Forest floor"],
+      "de": ["Kirsche", "Himbeere", "Rose", "Waldboden"]
+    },
+    "body": "light",
+    "acidity": "high",
+    "tannins": "low",
+    "regionIds": ["basel-landschaft", "aargau", "valais", "vaud", "lavaux", "bourgogne", "alsace", "baden"],
+    "pairings": {
+      "pt": ["Pato", "Salmão", "Cogumelos", "Vitela"],
+      "en": ["Duck", "Salmon", "Mushrooms", "Veal"],
+      "de": ["Ente", "Lachs", "Pilze", "Kalbfleisch"]
+    },
+    "service": { "pt": "14–16 °C", "en": "14–16°C", "de": "14–16 °C" },
+    "glass": { "pt": "Copo Borgonha, largo e arredondado", "en": "Wide, rounded Burgundy glass", "de": "Breites, rundes Burgunderglas" },
+    "decanting": { "pt": "15–30 minutos; cuidado com exemplares antigos", "en": "15–30 minutes; be gentle with old bottles", "de": "15–30 Minuten; alte Flaschen vorsichtig behandeln" },
+    "color": "#a43c4c"
+  },
+  {
+    "id": "chasselas",
+    "name": { "pt": "Chasselas", "en": "Chasselas", "de": "Chasselas" },
+    "aliases": ["Fendant", "Gutedel"],
+    "origin": { "pt": "Arco alpino ocidental", "en": "Western Alpine arc", "de": "Westlicher Alpenraum" },
+    "description": {
+      "pt": "Branca subtil que privilegia textura e mineralidade, profundamente ligada aos terroirs suíços.",
+      "en": "A subtle white focused on texture and minerality, deeply tied to Swiss terroirs.",
+      "de": "Subtile weisse Sorte mit Fokus auf Textur und Mineralität, tief mit Schweizer Terroirs verbunden."
+    },
+    "type": "white",
+    "aromas": {
+      "pt": ["Flor branca", "Pera", "Pedra", "Amêndoa"],
+      "en": ["White flowers", "Pear", "Stone", "Almond"],
+      "de": ["Weisse Blüten", "Birne", "Stein", "Mandel"]
+    },
+    "body": "light",
+    "acidity": "medium",
+    "tannins": "low",
+    "regionIds": ["valais", "vaud", "lavaux"],
+    "pairings": {
+      "pt": ["Fondue", "Raclette", "Peixe do lago", "Aperitivos"],
+      "en": ["Fondue", "Raclette", "Lake fish", "Aperitifs"],
+      "de": ["Fondue", "Raclette", "Seefisch", "Apéro"]
+    },
+    "service": { "pt": "8–10 °C", "en": "8–10°C", "de": "8–10 °C" },
+    "glass": { "pt": "Copo branco médio", "en": "Medium white-wine glass", "de": "Mittleres Weissweinglas" },
+    "decanting": { "pt": "Não necessita; servir fresco, não gelado", "en": "Not needed; serve cool, not ice-cold", "de": "Nicht nötig; kühl, nicht eiskalt servieren" },
+    "color": "#bba95f"
+  },
+  {
+    "id": "merlot",
+    "name": { "pt": "Merlot", "en": "Merlot", "de": "Merlot" },
+    "aliases": [],
+    "origin": { "pt": "França, Bordeaux", "en": "France, Bordeaux", "de": "Frankreich, Bordeaux" },
+    "description": {
+      "pt": "Tinta macia e generosa, combina ameixa e frutos escuros com textura redonda e taninos acessíveis.",
+      "en": "A soft, generous red combining plum and dark fruit with a rounded texture and approachable tannins.",
+      "de": "Weiche, grosszügige rote Sorte mit Pflaume, dunkler Frucht, runder Textur und zugänglichem Tannin."
+    },
+    "type": "red",
+    "aromas": {
+      "pt": ["Ameixa", "Amora", "Chocolate", "Ervas"],
+      "en": ["Plum", "Blackberry", "Chocolate", "Herbs"],
+      "de": ["Pflaume", "Brombeere", "Schokolade", "Kräuter"]
+    },
+    "body": "full",
+    "acidity": "medium",
+    "tannins": "medium",
+    "regionIds": ["ticino", "bordeaux"],
+    "pairings": {
+      "pt": ["Vitela", "Hambúrguer", "Cogumelos", "Polenta"],
+      "en": ["Veal", "Burger", "Mushrooms", "Polenta"],
+      "de": ["Kalbfleisch", "Burger", "Pilze", "Polenta"]
+    },
+    "service": { "pt": "15–17 °C", "en": "15–17°C", "de": "15–17 °C" },
+    "glass": { "pt": "Copo Bordeaux, alto e amplo", "en": "Tall, broad Bordeaux glass", "de": "Hohes, breites Bordeauxglas" },
+    "decanting": { "pt": "20–40 minutos para vinhos jovens", "en": "20–40 minutes for young wines", "de": "Bei jungen Weinen 20–40 Minuten" },
+    "color": "#71243a"
+  },
+  {
+    "id": "cabernet-sauvignon",
+    "name": { "pt": "Cabernet Sauvignon", "en": "Cabernet Sauvignon", "de": "Cabernet Sauvignon" },
+    "aliases": [],
+    "origin": { "pt": "França, Bordeaux", "en": "France, Bordeaux", "de": "Frankreich, Bordeaux" },
+    "description": {
+      "pt": "Estruturada, reconhecível e longeva, com cassis, ervas e taninos firmes que pedem tempo ou comida.",
+      "en": "Structured, recognisable and age-worthy, with cassis, herbs and firm tannins that call for time or food.",
+      "de": "Strukturiert, markant und langlebig, mit Cassis, Kräutern und festem Tannin, das Zeit oder Essen verlangt."
+    },
+    "type": "red",
+    "aromas": {
+      "pt": ["Cassis", "Cedro", "Pimento", "Grafite"],
+      "en": ["Cassis", "Cedar", "Bell pepper", "Graphite"],
+      "de": ["Cassis", "Zeder", "Paprika", "Graphit"]
+    },
+    "body": "full",
+    "acidity": "high",
+    "tannins": "high",
+    "regionIds": ["bordeaux", "tuscany"],
+    "pairings": {
+      "pt": ["Bife grelhado", "Borrego", "Costelas", "Queijo curado"],
+      "en": ["Grilled steak", "Lamb", "Ribs", "Aged cheese"],
+      "de": ["Grillsteak", "Lamm", "Rippchen", "Gereifter Käse"]
+    },
+    "service": { "pt": "16–18 °C", "en": "16–18°C", "de": "16–18 °C" },
+    "glass": { "pt": "Copo Bordeaux alto", "en": "Tall Bordeaux glass", "de": "Hohes Bordeauxglas" },
+    "decanting": { "pt": "45–90 minutos quando jovem", "en": "45–90 minutes when young", "de": "Jung 45–90 Minuten" },
+    "color": "#57192f"
+  },
+  {
+    "id": "chardonnay",
+    "name": { "pt": "Chardonnay", "en": "Chardonnay", "de": "Chardonnay" },
+    "aliases": [],
+    "origin": { "pt": "França, Borgonha", "en": "France, Burgundy", "de": "Frankreich, Burgund" },
+    "description": {
+      "pt": "Branca camaleónica que pode ser tensa e mineral ou ampla, amanteigada e marcada pela madeira.",
+      "en": "A chameleon white that can be taut and mineral or broad, buttery and oak-shaped.",
+      "de": "Chamäleonartige weisse Sorte, von straff und mineralisch bis breit, buttrig und holzgeprägt."
+    },
+    "type": "white",
+    "aromas": {
+      "pt": ["Maçã", "Limão", "Manteiga", "Avelã"],
+      "en": ["Apple", "Lemon", "Butter", "Hazelnut"],
+      "de": ["Apfel", "Zitrone", "Butter", "Haselnuss"]
+    },
+    "body": "medium",
+    "acidity": "high",
+    "tannins": "low",
+    "regionIds": ["bourgogne", "baden"],
+    "pairings": {
+      "pt": ["Frango assado", "Lagosta", "Peixe com molho", "Queijos cremosos"],
+      "en": ["Roast chicken", "Lobster", "Fish with sauce", "Creamy cheeses"],
+      "de": ["Brathähnchen", "Hummer", "Fisch mit Sauce", "Cremiger Käse"]
+    },
+    "service": { "pt": "9–12 °C", "en": "9–12°C", "de": "9–12 °C" },
+    "glass": { "pt": "Copo branco amplo para versões encorpadas", "en": "Broad white-wine glass for fuller styles", "de": "Breites Weissweinglas für kräftigere Stile" },
+    "decanting": { "pt": "10–20 minutos para versões complexas", "en": "10–20 minutes for complex styles", "de": "Bei komplexen Weinen 10–20 Minuten" },
+    "color": "#c2a24b"
+  },
+  {
+    "id": "tempranillo",
+    "name": { "pt": "Tempranillo", "en": "Tempranillo", "de": "Tempranillo" },
+    "aliases": ["Tinta Roriz", "Aragonez"],
+    "origin": { "pt": "Espanha", "en": "Spain", "de": "Spanien" },
+    "description": {
+      "pt": "A grande tinta espanhola, equilibrando fruta madura, couro e especiaria com afinidade pela madeira.",
+      "en": "Spain's great red grape, balancing ripe fruit, leather and spice with an affinity for oak.",
+      "de": "Spaniens grosse rote Sorte, die reife Frucht, Leder und Würze mit einer Affinität zu Holz verbindet."
+    },
+    "type": "red",
+    "aromas": {
+      "pt": ["Cereja", "Figo", "Couro", "Endro"],
+      "en": ["Cherry", "Fig", "Leather", "Dill"],
+      "de": ["Kirsche", "Feige", "Leder", "Dill"]
+    },
+    "body": "medium",
+    "acidity": "medium",
+    "tannins": "medium",
+    "regionIds": ["rioja", "douro"],
+    "pairings": {
+      "pt": ["Borrego", "Tapas", "Chouriço", "Legumes assados"],
+      "en": ["Lamb", "Tapas", "Chorizo", "Roast vegetables"],
+      "de": ["Lamm", "Tapas", "Chorizo", "Ofengemüse"]
+    },
+    "service": { "pt": "15–17 °C", "en": "15–17°C", "de": "15–17 °C" },
+    "glass": { "pt": "Copo universal de tinto", "en": "Universal red-wine glass", "de": "Universelles Rotweinglas" },
+    "decanting": { "pt": "30 minutos para jovens; reservas antigas com cuidado", "en": "30 minutes when young; handle old reservas carefully", "de": "Jung 30 Minuten; alte Reservas vorsichtig behandeln" },
+    "color": "#883040"
+  },
+  {
+    "id": "sangiovese",
+    "name": { "pt": "Sangiovese", "en": "Sangiovese", "de": "Sangiovese" },
+    "aliases": ["Brunello", "Prugnolo Gentile"],
+    "origin": { "pt": "Itália central", "en": "Central Italy", "de": "Mittelitalien" },
+    "description": {
+      "pt": "Tinta italiana vibrante, marcada por cereja ácida, ervas, terra e uma afinidade natural com comida.",
+      "en": "A vibrant Italian red marked by sour cherry, herbs, earth and a natural affinity with food.",
+      "de": "Lebendige italienische Rotweinsorte mit Sauerkirsche, Kräutern, Erde und natürlicher Speisenaffinität."
+    },
+    "type": "red",
+    "aromas": {
+      "pt": ["Cereja ácida", "Tomate seco", "Orégãos", "Terra"],
+      "en": ["Sour cherry", "Dried tomato", "Oregano", "Earth"],
+      "de": ["Sauerkirsche", "Getrocknete Tomate", "Oregano", "Erde"]
+    },
+    "body": "medium",
+    "acidity": "high",
+    "tannins": "high",
+    "regionIds": ["tuscany"],
+    "pairings": {
+      "pt": ["Massa com tomate", "Bistecca", "Pizza", "Pecorino"],
+      "en": ["Tomato pasta", "Steak", "Pizza", "Pecorino"],
+      "de": ["Tomatenpasta", "Steak", "Pizza", "Pecorino"]
+    },
+    "service": { "pt": "16–18 °C", "en": "16–18°C", "de": "16–18 °C" },
+    "glass": { "pt": "Copo de tinto médio a grande", "en": "Medium to large red-wine glass", "de": "Mittleres bis grosses Rotweinglas" },
+    "decanting": { "pt": "30–60 minutos para estilos estruturados", "en": "30–60 minutes for structured styles", "de": "Bei kräftigen Stilen 30–60 Minuten" },
+    "color": "#9b3f3a"
+  },
+  {
+    "id": "riesling",
+    "name": { "pt": "Riesling", "en": "Riesling", "de": "Riesling" },
+    "aliases": [],
+    "origin": { "pt": "Vale do Reno, Alemanha", "en": "Rhine Valley, Germany", "de": "Rheintal, Deutschland" },
+    "description": {
+      "pt": "Branca de acidez luminosa, capaz de atravessar todos os níveis de doçura e envelhecer magnificamente.",
+      "en": "A bright-acid white capable of every sweetness level and magnificent ageing.",
+      "de": "Weisse Sorte mit leuchtender Säure, die jede Süsse abbildet und grossartig reifen kann."
+    },
+    "type": "white",
+    "aromas": {
+      "pt": ["Lima", "Maçã verde", "Pêssego", "Petróleo"],
+      "en": ["Lime", "Green apple", "Peach", "Petrol"],
+      "de": ["Limette", "Grüner Apfel", "Pfirsich", "Petrol"]
+    },
+    "body": "light",
+    "acidity": "high",
+    "tannins": "low",
+    "regionIds": ["alsace", "baden", "basel-landschaft", "aargau"],
+    "pairings": {
+      "pt": ["Comida picante", "Porco", "Peixe fumado", "Queijo azul"],
+      "en": ["Spicy food", "Pork", "Smoked fish", "Blue cheese"],
+      "de": ["Scharfe Speisen", "Schwein", "Räucherfisch", "Blauschimmelkäse"]
+    },
+    "service": { "pt": "7–10 °C", "en": "7–10°C", "de": "7–10 °C" },
+    "glass": { "pt": "Copo branco estreito e aromático", "en": "Narrow aromatic white-wine glass", "de": "Schmales Aromaglas für Weisswein" },
+    "decanting": { "pt": "Não necessita; versões maduras podem abrir no copo", "en": "Not needed; mature wines can unfold in the glass", "de": "Nicht nötig; gereifte Weine entfalten sich im Glas" },
+    "color": "#b3a341"
+  },
+  {
+    "id": "gewurztraminer",
+    "name": { "pt": "Gewürztraminer", "en": "Gewürztraminer", "de": "Gewürztraminer" },
+    "aliases": ["Traminer Aromatico"],
+    "origin": { "pt": "Europa central", "en": "Central Europe", "de": "Mitteleuropa" },
+    "description": {
+      "pt": "Exuberante e imediatamente aromática, com lichia, rosa e especiaria, geralmente de textura rica.",
+      "en": "Exuberant and instantly aromatic, with lychee, rose and spice, usually richly textured.",
+      "de": "Üppig und sofort aromatisch, mit Litschi, Rose und Würze, meist von reicher Textur."
+    },
+    "type": "white",
+    "aromas": {
+      "pt": ["Lichia", "Rosa", "Gengibre", "Toranja"],
+      "en": ["Lychee", "Rose", "Ginger", "Grapefruit"],
+      "de": ["Litschi", "Rose", "Ingwer", "Grapefruit"]
+    },
+    "body": "full",
+    "acidity": "low",
+    "tannins": "low",
+    "regionIds": ["alsace"],
+    "pairings": {
+      "pt": ["Caril", "Comida tailandesa", "Foie gras", "Queijos intensos"],
+      "en": ["Curry", "Thai food", "Foie gras", "Strong cheeses"],
+      "de": ["Curry", "Thailändische Küche", "Foie gras", "Kräftiger Käse"]
+    },
+    "service": { "pt": "8–10 °C", "en": "8–10°C", "de": "8–10 °C" },
+    "glass": { "pt": "Copo aromático de bojo médio", "en": "Medium-bowled aromatic glass", "de": "Aromaglas mit mittlerem Kelch" },
+    "decanting": { "pt": "Não necessita", "en": "No decanting needed", "de": "Kein Dekantieren nötig" },
+    "color": "#c38e43"
+  }
+]
