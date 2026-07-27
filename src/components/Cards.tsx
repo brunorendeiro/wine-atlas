@@ -1,7 +1,7 @@
 import { ArrowUpRight, Bookmark, Heart, MapPin } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import { useApp } from '../context/AppContext'
-import { countryFlag, getRegion, list, text } from '../lib/data'
+import { countryFlag, list, text } from '../lib/data'
 import type { Article, Grape, Region } from '../types'
 import { GuideIcon } from './GuideIcon'
 
@@ -60,9 +60,9 @@ export function RegionCard({ region, distance, featured = false }: { region: Reg
   )
 }
 
-export function GrapeCard({ grape, distance }: { grape: Grape; distance?: number }) {
+export function GrapeCard({ grape, distance, contextRegion }: { grape: Grape; distance?: number; contextRegion?: Region }) {
   const { locale, t } = useApp()
-  const nearest = grape.regionIds.map(getRegion).find(Boolean)
+  const locationLabel = contextRegion ? text(contextRegion.name, locale) : text(grape.origin, locale)
   return (
     <article className="card grape-card group relative overflow-hidden">
       <div className="flex items-center gap-4 p-5 pb-3">
@@ -72,7 +72,7 @@ export function GrapeCard({ grape, distance }: { grape: Grape; distance?: number
         <div className="min-w-0 flex-1">
           <p className="eyebrow mb-1">{t(grape.type)}</p>
           <h3 className="truncate font-display text-xl font-semibold">{text(grape.name, locale)}</h3>
-          {nearest && <p className="grape-location mt-1 flex items-center gap-1 text-xs"><MapPin size={12} />{text(nearest.name, locale)}</p>}
+          <p className="grape-location mt-1 flex items-center gap-1 text-xs"><MapPin size={12} />{locationLabel}</p>
         </div>
         <FavoriteButton type="grape" id={grape.id} />
       </div>

@@ -111,10 +111,10 @@ function LocationBlock() {
       .slice(0, 4)
   }, [location])
   const nearbyGrapes = useMemo(() => {
-    const result = new Map<string, { grape: GrapeType; distance: number }>()
+    const result = new Map<string, { grape: GrapeType; distance: number; region: Region }>()
     nearby.forEach(({ region, distance }) => region.grapeIds.forEach((id) => {
       const grape = getGrape(id)
-      if (grape && (!result.has(id) || distance < result.get(id)!.distance)) result.set(id, { grape, distance })
+      if (grape && (!result.has(id) || distance < result.get(id)!.distance)) result.set(id, { grape, distance, region })
     }))
     return [...result.values()].sort((a, b) => a.distance - b.distance).slice(0, 6)
   }, [nearby])
@@ -134,7 +134,7 @@ function LocationBlock() {
             </div>
           </div>
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {nearbyGrapes.map(({ grape, distance }) => <GrapeCard key={grape.id} grape={grape} distance={distance} />)}
+            {nearbyGrapes.map(({ grape, distance, region }) => <GrapeCard key={grape.id} grape={grape} distance={distance} contextRegion={region} />)}
           </div>
           <div className="mt-7 flex gap-3 overflow-x-auto pb-2">
             {nearby.map(({ region, distance }) => (
@@ -317,7 +317,7 @@ function RegionDetailPage() {
       </section>
       <section className="page-shell pb-12 sm:pb-16">
         <SectionHeading title={t('mainGrapes')} />
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">{regionGrapes.map((grape) => <GrapeCard key={grape.id} grape={grape} />)}</div>
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">{regionGrapes.map((grape) => <GrapeCard key={grape.id} grape={grape} contextRegion={region} />)}</div>
       </section>
       <section className="border-y border-line bg-paper dark:border-white/10 dark:bg-night-soft">
         <div className="page-shell grid gap-10 py-12 md:grid-cols-2 sm:py-16">
