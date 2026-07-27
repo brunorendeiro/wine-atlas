@@ -33,8 +33,16 @@
   }
 
   html.dark {
+    --color-muted: #d8cdd1;
+    --color-line: #57494f;
     background: var(--color-night);
     color-scheme: dark;
+  }
+
+  html.dark input::placeholder,
+  html.dark textarea::placeholder {
+    color: #bfb2b7;
+    opacity: 1;
   }
 
   body {
@@ -265,11 +273,11 @@
   }
 
   .dark .text-muted {
-    color: #b9adb0;
+    color: var(--color-muted);
   }
 
   .dark .card .text-muted {
-    color: #e0d7da;
+    color: #e8dfe2;
   }
 
   .dark .card .chip {
@@ -484,6 +492,20 @@
     transform: rotate(-18deg);
   }
 
+  .dark .grape-mark {
+    background: color-mix(in srgb, var(--grape-color) 24%, rgba(255, 255, 255, .08));
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .06);
+  }
+
+  .dark .grape-mark span {
+    background: color-mix(in srgb, var(--grape-color) 72%, white);
+    box-shadow: inset -.1rem -.1rem .2rem rgba(0, 0, 0, .2), 0 0 .35rem rgba(255, 255, 255, .08);
+  }
+
+  .dark .grape-mark::before {
+    background: #62a77e;
+  }
+
   .grape-mark-large {
     width: 6rem;
     height: 6rem;
@@ -544,7 +566,7 @@
   }
 
   .dark .mobile-nav-link {
-    color: rgba(255, 255, 255, .58);
+    color: #cfc3c7;
   }
 
   .mobile-nav-link span {
