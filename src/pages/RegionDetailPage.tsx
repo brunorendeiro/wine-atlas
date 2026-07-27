@@ -1,8 +1,8 @@
 import { ArrowLeft, Check, ChevronRight, CircleGauge, CloudSun, MapPin, Sparkles, Thermometer, Utensils, Wine } from 'lucide-react'
-import { useEffect } from 'react'
+import { lazy, Suspense, useEffect, useRef, useState } from 'react'
 import { Link, Navigate, useParams } from 'react-router-dom'
 import { FavoriteButton, GrapeCard } from '../components/Cards'
-import { DataQuality, NearbyRegionGrid, RegionMap } from '../components/DiscoveryEnhancements'
+import { DataQuality, NearbyRegionGrid } from '../components/DiscoveryEnhancements'
 import { InfoCard, SectionHeading } from '../components/PagePrimitives'
 import { useApp } from '../context/AppContext'
 import detailCopyJson from '../data/detail-copy.json'
@@ -11,6 +11,34 @@ import { countryFlag, getGrape, getRegion, list, regions, text } from '../lib/da
 import type { Grape, Locale } from '../types'
 
 const detailCopy = detailCopyJson as Record<Locale, Record<string, string>>
+const RegionMap = lazy(() => import('../components/RegionMap').then((module) => ({ default: module.RegionMap })))
+
+function DeferredRegionMap({ region }: { region: NonNullable<ReturnType<typeof getRegion>> }) {
+  const containerRef = useRef<HTMLDivElement>(null)
+  const [ready, setReady] = useState(false)
+
+  useEffect(() => {
+    const container = containerRef.current
+    if (!container || ready) return
+    const observer = new IntersectionObserver(([entry]) => {
+      if (!entry.isIntersecting) return
+      setReady(true)
+      observer.disconnect()
+    }, { rootMargin: '500px 0px' })
+    observer.observe(container)
+    return () => observer.disconnect()
+  }, [ready])
+
+  return (
+    <div ref={containerRef} className="min-h-[23rem]">
+      {ready && (
+        <Suspense fallback={<div className="h-[23rem] animate-pulse rounded-[2rem] bg-leaf/10 dark:bg-white/[0.05]" aria-hidden="true" />}>
+          <RegionMap region={region} />
+        </Suspense>
+      )}
+    </div>
+  )
+}
 
 export default function RegionDetailPage() {
   const { id } = useParams()
@@ -76,7 +104,7 @@ export default function RegionDetailPage() {
 
       <section className="page-shell pb-12 sm:pb-16">
         <SectionHeading title={d.map} />
-        <RegionMap region={region} />
+        <DeferredRegionMap region={region} />
       </section>
 
       <section className="page-shell pb-12 sm:pb-16">
