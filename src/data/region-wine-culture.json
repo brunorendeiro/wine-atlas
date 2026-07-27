@@ -1,0 +1,512 @@
+{
+  "douro": {
+    "reviewedAt": "2026-07-27",
+    "confidence": "high",
+    "wine": {
+      "style": { "pt": "Tinto do Douro de longa guarda", "en": "Long-lived Douro red", "de": "Langlebiger Douro-Rotwein" },
+      "examples": ["Casa Ferreirinha Barca Velha", "Quinta do Noval Nacional"],
+      "profile": { "pt": "Lotes estruturados de vinhas velhas, com fruta escura, especiaria e tanino firme.", "en": "Structured old-vine blends with dark fruit, spice and firm tannin.", "de": "Strukturierte Cuvées alter Reben mit dunkler Frucht, Würze und festem Tannin." },
+      "ageing": { "ready": 4, "peakStart": 10, "peakEnd": 22, "hold": 35 },
+      "source": { "title": "IVDP — Douro", "url": "https://www.ivdp.pt/pt/vinhos/vinhos-do-douro/" }
+    },
+    "person": {
+      "name": "Fernando Nicolau de Almeida",
+      "role": { "pt": "Enólogo histórico", "en": "Historic winemaker", "de": "Historischer Önologe" },
+      "note": { "pt": "Criou o Barca Velha e ajudou a demonstrar o potencial dos tintos secos de guarda do Douro.", "en": "He created Barca Velha and helped demonstrate the ageing potential of dry Douro reds.", "de": "Er schuf Barca Velha und zeigte das Reifepotenzial trockener Douro-Rotweine." },
+      "source": { "title": "Casa Ferreirinha — Barca Velha", "url": "https://www.casaferreirinha.pt/en/wines/barca-velha/" }
+    }
+  },
+  "dao": {
+    "reviewedAt": "2026-07-27",
+    "confidence": "medium",
+    "wine": {
+      "style": { "pt": "Tinto elegante do Dão", "en": "Elegant Dão red", "de": "Eleganter Dão-Rotwein" },
+      "examples": ["Quinta dos Carvalhais Único", "Quinta da Pellada Carrocel"],
+      "profile": { "pt": "Tintos de altitude com acidez viva, fruta contida, notas florais e tanino fino.", "en": "High-altitude reds with lively acidity, restrained fruit, floral notes and fine tannin.", "de": "Höhenweine mit lebendiger Säure, zurückhaltender Frucht, floralen Noten und feinem Tannin." },
+      "ageing": { "ready": 3, "peakStart": 7, "peakEnd": 15, "hold": 24 },
+      "source": { "title": "Comissão Vitivinícola Regional do Dão", "url": "https://www.cvrdao.pt/" }
+    },
+    "person": {
+      "name": "Álvaro Castro",
+      "role": { "pt": "Produtor e enólogo", "en": "Producer and winemaker", "de": "Erzeuger und Winzer" },
+      "note": { "pt": "Figura associada à Quinta da Pellada e à expressão contemporânea das vinhas velhas do Dão.", "en": "A figure associated with Quinta da Pellada and the contemporary expression of Dão old vines.", "de": "Eine prägende Figur der Quinta da Pellada und des modernen Ausdrucks alter Dão-Reben." },
+      "source": { "title": "Quinta da Pellada", "url": "https://quintadapellada.com/" }
+    }
+  },
+  "alentejo": {
+    "reviewedAt": "2026-07-27",
+    "confidence": "high",
+    "wine": {
+      "style": { "pt": "Tinto alentejano estruturado", "en": "Structured Alentejo red", "de": "Strukturierter Alentejo-Rotwein" },
+      "examples": ["Cartuxa Pêra-Manca Tinto", "Mouchão Tinto"],
+      "profile": { "pt": "Fruta madura, especiaria e textura ampla, equilibradas por acidez e tanino nas melhores parcelas.", "en": "Ripe fruit, spice and broad texture, balanced by acidity and tannin in the best sites.", "de": "Reife Frucht, Würze und Fülle, in besten Lagen von Säure und Tannin getragen." },
+      "ageing": { "ready": 3, "peakStart": 7, "peakEnd": 16, "hold": 25 },
+      "source": { "title": "Wines of Alentejo", "url": "https://www.vinhosdoalentejo.pt/en/" }
+    },
+    "person": {
+      "name": "Paulo Laureano",
+      "role": { "pt": "Enólogo", "en": "Winemaker", "de": "Önologe" },
+      "note": { "pt": "Enólogo alentejano conhecido pelo trabalho com castas portuguesas e pela comunicação educativa sobre vinho.", "en": "An Alentejo winemaker known for working with Portuguese varieties and communicating about wine.", "de": "Ein Önologe aus dem Alentejo, bekannt für portugiesische Rebsorten und Weinvermittlung." },
+      "source": { "title": "Paulo Laureano — O Enólogo", "url": "https://paulolaureano.com/o-enologo/?lang=en" }
+    }
+  },
+  "vinho-verde": {
+    "reviewedAt": "2026-07-27",
+    "confidence": "high",
+    "wine": {
+      "style": { "pt": "Alvarinho de Monção e Melgaço", "en": "Monção and Melgaço Alvarinho", "de": "Alvarinho aus Monção und Melgaço" },
+      "examples": ["Anselmo Mendes Parcela Única", "Anselmo Mendes Muros de Melgaço"],
+      "profile": { "pt": "Branco seco, cítrico e mineral, com textura e acidez capazes de evoluir em garrafa.", "en": "Dry, citrus-led and mineral white with texture and acidity that can develop in bottle.", "de": "Trockener, zitrischer und mineralischer Weißwein mit Textur und Reifefähigkeit." },
+      "ageing": { "ready": 1, "peakStart": 4, "peakEnd": 10, "hold": 18 },
+      "source": { "title": "Comissão de Viticultura da Região dos Vinhos Verdes", "url": "https://www.vinhoverde.pt/en/" }
+    },
+    "person": {
+      "name": "Anselmo Mendes",
+      "role": { "pt": "Enólogo e produtor", "en": "Winemaker and producer", "de": "Önologe und Erzeuger" },
+      "note": { "pt": "Referência no estudo e na valorização do Alvarinho, incluindo fermentação e estágio em madeira.", "en": "A reference in the study and elevation of Alvarinho, including fermentation and ageing in oak.", "de": "Eine Referenz für Alvarinho, einschließlich Gärung und Ausbau im Holz." },
+      "source": { "title": "Anselmo Mendes — Sobre", "url": "https://www.anselmomendes.pt/sobre" }
+    }
+  },
+  "bairrada": {
+    "reviewedAt": "2026-07-27",
+    "confidence": "high",
+    "wine": {
+      "style": { "pt": "Tinto de Baga", "en": "Baga red", "de": "Baga-Rotwein" },
+      "examples": ["Luís Pato Quinta do Ribeirinho Pé Franco", "Quinta das Bágeiras Garrafeira"],
+      "profile": { "pt": "Acidez alta e tanino firme dão a estes tintos uma evolução lenta e complexa.", "en": "High acidity and firm tannin give these reds a slow, complex development.", "de": "Hohe Säure und festes Tannin ermöglichen eine langsame, komplexe Entwicklung." },
+      "ageing": { "ready": 4, "peakStart": 9, "peakEnd": 20, "hold": 32 },
+      "source": { "title": "Comissão Vitivinícola da Bairrada", "url": "https://www.cvbairrada.pt/" }
+    },
+    "person": {
+      "name": "Luís Pato",
+      "role": { "pt": "Produtor e enólogo", "en": "Producer and winemaker", "de": "Erzeuger und Winzer" },
+      "note": { "pt": "Ligado à recuperação da Baga e à exploração de vinhas e parcelas distintas na Bairrada.", "en": "Closely associated with the revival of Baga and the exploration of distinct Bairrada sites.", "de": "Eng mit der Wiederentdeckung der Baga und eigenständiger Bairrada-Lagen verbunden." },
+      "source": { "title": "Luís Pato — Sobre", "url": "https://luispato.com/sobre-nos/" }
+    }
+  },
+  "valais": {
+    "reviewedAt": "2026-07-27",
+    "confidence": "medium",
+    "wine": {
+      "style": { "pt": "Tinto alpino do Valais", "en": "Alpine Valais red", "de": "Alpiner Walliser Rotwein" },
+      "examples": ["Domaine des Muses Cornalin", "Marie-Thérèse Chappaz Grain Noir"],
+      "profile": { "pt": "Tintos de encosta com frescura alpina, especiaria e fruta vermelha ou escura.", "en": "Slope-grown reds with Alpine freshness, spice and red or dark fruit.", "de": "Hangweine mit alpiner Frische, Würze und roter oder dunkler Frucht." },
+      "ageing": { "ready": 2, "peakStart": 5, "peakEnd": 11, "hold": 17 },
+      "source": { "title": "Swiss Wine — Valais", "url": "https://www.swisswine.ch/en/wine-regions/valais" }
+    },
+    "person": {
+      "name": "Marie-Thérèse Chappaz",
+      "role": { "pt": "Viticultora e produtora", "en": "Winegrower and producer", "de": "Winzerin und Erzeugerin" },
+      "note": { "pt": "Produtora de Fully ligada à viticultura biodinâmica e a castas emblemáticas do Valais.", "en": "A Fully producer associated with biodynamic farming and emblematic Valais varieties.", "de": "Eine Erzeugerin aus Fully, verbunden mit Biodynamie und typischen Walliser Sorten." },
+      "source": { "title": "Domaine Marie-Thérèse Chappaz", "url": "https://www.chappaz.ch/" }
+    }
+  },
+  "vaud": {
+    "reviewedAt": "2026-07-27",
+    "confidence": "high",
+    "wine": {
+      "style": { "pt": "Chasselas Grand Cru de Vaud", "en": "Vaud Grand Cru Chasselas", "de": "Waadtländer Chasselas Grand Cru" },
+      "examples": ["Domaine La Colombe Bayel Grand Cru", "Domaine de la Ville de Morges Servagnin"],
+      "profile": { "pt": "Branco subtil que privilegia textura, salinidade e expressão do lugar sobre aromas exuberantes.", "en": "A subtle white focused on texture, salinity and site expression rather than exuberant aroma.", "de": "Ein subtiler Weißwein, bei dem Textur, Salzigkeit und Herkunft im Vordergrund stehen." },
+      "ageing": { "ready": 1, "peakStart": 3, "peakEnd": 7, "hold": 11 },
+      "source": { "title": "Swiss Wine — Vaud", "url": "https://www.swisswine.ch/en/wine-regions/vaud" }
+    },
+    "person": {
+      "name": "Laura Paccot",
+      "role": { "pt": "Enóloga", "en": "Winemaker", "de": "Winzerin" },
+      "note": { "pt": "Representa a nova geração do Domaine La Colombe, trabalhando Chasselas e outras castas de Féchy.", "en": "She represents the new generation at Domaine La Colombe, working with Chasselas and other Féchy varieties.", "de": "Sie steht für die neue Generation der Domaine La Colombe und arbeitet mit Chasselas und weiteren Féchy-Sorten." },
+      "source": { "title": "Domaine La Colombe — Team", "url": "https://www.lacolombe.ch/en/in-order-to-know-it/" }
+    }
+  },
+  "lavaux": {
+    "reviewedAt": "2026-07-27",
+    "confidence": "high",
+    "wine": {
+      "style": { "pt": "Dézaley Grand Cru Chasselas", "en": "Dézaley Grand Cru Chasselas", "de": "Dézaley Grand Cru Chasselas" },
+      "examples": ["Domaine Louis Bovard Médinette", "Domaine Louis Bovard Grande Cuvée Dézaley"],
+      "profile": { "pt": "Chasselas de socalcos com profundidade, tensão mineral e capacidade invulgar de evolução.", "en": "Terraced Chasselas with depth, mineral tension and unusual capacity to develop.", "de": "Chasselas von Terrassen mit Tiefe, mineralischer Spannung und besonderer Reifefähigkeit." },
+      "ageing": { "ready": 2, "peakStart": 5, "peakEnd": 12, "hold": 20 },
+      "source": { "title": "Lavaux UNESCO", "url": "https://www.lavaux-unesco.ch/en/" }
+    },
+    "person": {
+      "name": "Louis-Philippe Bovard",
+      "role": { "pt": "Viticultor e produtor", "en": "Winegrower and producer", "de": "Winzer und Erzeuger" },
+      "note": { "pt": "Produtor de Cully associado à defesa do Chasselas e à expressão dos crus de Lavaux.", "en": "A Cully producer associated with championing Chasselas and the crus of Lavaux.", "de": "Ein Erzeuger aus Cully, der für Chasselas und die Crus des Lavaux steht." },
+      "source": { "title": "Domaine Louis Bovard", "url": "https://www.domainebovard.com/en-3-more-info.html" }
+    }
+  },
+  "ticino": {
+    "reviewedAt": "2026-07-27",
+    "confidence": "medium",
+    "wine": {
+      "style": { "pt": "Merlot do Ticino", "en": "Ticino Merlot", "de": "Tessiner Merlot" },
+      "examples": ["Gialdi Sassi Grossi", "Christian Zündel Terraferma"],
+      "profile": { "pt": "Merlot de influência alpina, com fruta escura, ervas, frescura e textura polida.", "en": "Alpine-influenced Merlot with dark fruit, herbs, freshness and polished texture.", "de": "Alpin geprägter Merlot mit dunkler Frucht, Kräutern, Frische und geschliffener Textur." },
+      "ageing": { "ready": 2, "peakStart": 5, "peakEnd": 11, "hold": 17 },
+      "source": { "title": "Swiss Wine — Ticino", "url": "https://www.swisswine.ch/en/wine-regions/ticino" }
+    },
+    "person": {
+      "name": "Christian Zündel",
+      "role": { "pt": "Viticultor e produtor", "en": "Winegrower and producer", "de": "Winzer und Erzeuger" },
+      "note": { "pt": "Produtor ligado a uma interpretação precisa do Merlot em Gudo, no Ticino.", "en": "A producer associated with a precise interpretation of Merlot in Gudo, Ticino.", "de": "Ein Erzeuger, der in Gudo für eine präzise Interpretation des Merlot steht." },
+      "source": { "title": "Azienda Agricola Orizzonte", "url": "https://www.orizzonte.ch/" }
+    }
+  },
+  "basel-landschaft": {
+    "reviewedAt": "2026-07-27",
+    "confidence": "medium",
+    "wine": {
+      "style": { "pt": "Pinot Noir de Basileia", "en": "Basel Pinot Noir", "de": "Basler Pinot Noir" },
+      "examples": ["Siebe Dupf Barrique Pinot Noir", "Klus 177 Pinot Noir"],
+      "profile": { "pt": "Pinot Noir de clima fresco, marcado por frutos vermelhos, ervas e tanino delicado.", "en": "Cool-climate Pinot Noir shaped by red fruit, herbs and delicate tannin.", "de": "Kühl geprägter Pinot Noir mit roter Frucht, Kräutern und feinem Tannin." },
+      "ageing": { "ready": 1, "peakStart": 3, "peakEnd": 7, "hold": 11 },
+      "source": { "title": "Swiss Wine — German-speaking Switzerland", "url": "https://www.swisswine.ch/en/wine-regions/german-speaking-switzerland" }
+    },
+    "person": {
+      "name": "Thomas Engel",
+      "role": { "pt": "Mestre de adega", "en": "Cellar master", "de": "Kellermeister" },
+      "note": { "pt": "Responsável de adega na Siebe Dupf, produtor histórico de Liestal.", "en": "Cellar master at Siebe Dupf, a historic Liestal producer.", "de": "Kellermeister bei Siebe Dupf, einem traditionsreichen Erzeuger in Liestal." },
+      "source": { "title": "Siebe Dupf — Team", "url": "https://www.siebe-dupf.ch/ueber-uns/team" }
+    }
+  },
+  "aargau": {
+    "reviewedAt": "2026-07-27",
+    "confidence": "medium",
+    "wine": {
+      "style": { "pt": "Pinot Noir de Aargau", "en": "Aargau Pinot Noir", "de": "Aargauer Pinot Noir" },
+      "examples": ["Tom Litwan Thalheim Chalofe", "Tom Litwan Obermumpf Unterem Berg"],
+      "profile": { "pt": "Pinot Noir de parcelas calcárias, com fruta vermelha, acidez fresca e estrutura fina.", "en": "Site-specific Pinot Noir with red fruit, fresh acidity and fine structure.", "de": "Lagengeprägter Pinot Noir mit roter Frucht, frischer Säure und feiner Struktur." },
+      "ageing": { "ready": 2, "peakStart": 4, "peakEnd": 9, "hold": 14 },
+      "source": { "title": "Swiss Wine — German-speaking Switzerland", "url": "https://www.swisswine.ch/en/wine-regions/german-speaking-switzerland" }
+    },
+    "person": {
+      "name": "Tom Litwan",
+      "role": { "pt": "Viticultor e produtor", "en": "Winegrower and producer", "de": "Winzer und Erzeuger" },
+      "note": { "pt": "Produtor de Aargau focado em Pinot Noir e Chardonnay de parcelas individuais.", "en": "An Aargau producer focused on site-specific Pinot Noir and Chardonnay.", "de": "Ein Aargauer Erzeuger mit Fokus auf lagenbezogenen Pinot Noir und Chardonnay." },
+      "source": { "title": "Tom Litwan", "url": "https://www.tomlitwan.ch/" }
+    }
+  },
+  "bordeaux": {
+    "reviewedAt": "2026-07-27",
+    "confidence": "high",
+    "wine": {
+      "style": { "pt": "Bordeaux tinto classificado", "en": "Classified Bordeaux red", "de": "Klassifizierter Bordeaux-Rotwein" },
+      "examples": ["Château Mouton Rothschild", "Château Margaux"],
+      "profile": { "pt": "Lotes de Cabernet e Merlot com estrutura, cassis, cedro e evolução longa em garrafa.", "en": "Cabernet and Merlot blends with structure, cassis, cedar and long bottle development.", "de": "Cabernet-Merlot-Cuvées mit Struktur, Cassis, Zeder und langer Flaschenreife." },
+      "ageing": { "ready": 5, "peakStart": 12, "peakEnd": 30, "hold": 50 },
+      "source": { "title": "Conseil Interprofessionnel du Vin de Bordeaux", "url": "https://www.bordeaux.com/" }
+    },
+    "person": {
+      "name": "Émile Peynaud",
+      "role": { "pt": "Enólogo e investigador histórico", "en": "Historic oenologist and researcher", "de": "Historischer Önologe und Forscher" },
+      "note": { "pt": "Professor de enologia em Bordéus cuja investigação influenciou profundamente a vinificação moderna.", "en": "A Bordeaux oenology professor whose research profoundly influenced modern winemaking.", "de": "Ein Bordeaux-Professor für Önologie, dessen Forschung den modernen Weinbau stark prägte." },
+      "source": { "title": "Université de Bordeaux — ISVV", "url": "https://www.isvv.u-bordeaux.fr/en/" }
+    }
+  },
+  "bourgogne": {
+    "reviewedAt": "2026-07-27",
+    "confidence": "high",
+    "wine": {
+      "style": { "pt": "Pinot Noir Grand Cru da Borgonha", "en": "Burgundy Grand Cru Pinot Noir", "de": "Burgund Grand Cru Pinot Noir" },
+      "examples": ["Domaine de la Romanée-Conti Romanée-Conti", "Domaine Leroy Musigny"],
+      "profile": { "pt": "Pinot Noir de parcela, combinando perfume, tensão, textura e grande capacidade de evolução.", "en": "Site-specific Pinot Noir combining perfume, tension, texture and major ageing potential.", "de": "Lagenbezogener Pinot Noir mit Duft, Spannung, Textur und großem Reifepotenzial." },
+      "ageing": { "ready": 5, "peakStart": 12, "peakEnd": 28, "hold": 42 },
+      "source": { "title": "Bourgogne Wine Board", "url": "https://www.bourgogne-wines.com/" }
+    },
+    "person": {
+      "name": "Lalou Bize-Leroy",
+      "role": { "pt": "Produtora", "en": "Producer", "de": "Erzeugerin" },
+      "note": { "pt": "Figura histórica da Borgonha, ligada a viticultura exigente e a vinhos de parcela de produção muito limitada.", "en": "A historic Burgundy figure associated with exacting viticulture and extremely limited site wines.", "de": "Eine historische Burgunder Persönlichkeit, verbunden mit anspruchsvollem Weinbau und raren Lagenweinen." },
+      "source": { "title": "Bourgogne Wine Board — Winegrowers", "url": "https://www.bourgogne-wines.com/winegrowers-and-expertise/the-men-and-women-of-bourgogne/" }
+    }
+  },
+  "alsace": {
+    "reviewedAt": "2026-07-27",
+    "confidence": "high",
+    "wine": {
+      "style": { "pt": "Riesling Grand Cru da Alsácia", "en": "Alsace Grand Cru Riesling", "de": "Elsass Grand Cru Riesling" },
+      "examples": ["Trimbach Clos Sainte Hune", "Zind-Humbrecht Rangen de Thann"],
+      "profile": { "pt": "Branco seco e intenso, sustentado por acidez, mineralidade e aromas que ganham complexidade.", "en": "Dry, intense white supported by acidity, minerality and aromas that gain complexity.", "de": "Trockener, intensiver Weißwein mit Säure, Mineralität und zunehmender aromatischer Komplexität." },
+      "ageing": { "ready": 2, "peakStart": 6, "peakEnd": 16, "hold": 26 },
+      "source": { "title": "Vins d’Alsace", "url": "https://www.vinsalsace.com/en/" }
+    },
+    "person": {
+      "name": "Olivier Humbrecht MW",
+      "role": { "pt": "Enólogo e produtor", "en": "Winemaker and producer", "de": "Önologe und Erzeuger" },
+      "note": { "pt": "Dirige a Domaine Zind-Humbrecht e é uma referência na leitura de terroir e viticultura biodinâmica.", "en": "He leads Domaine Zind-Humbrecht and is a reference for terroir interpretation and biodynamic farming.", "de": "Er leitet die Domaine Zind-Humbrecht und gilt als Referenz für Terroir und Biodynamie." },
+      "source": { "title": "Domaine Zind-Humbrecht", "url": "https://www.zindhumbrecht.fr/" }
+    }
+  },
+  "baden": {
+    "reviewedAt": "2026-07-27",
+    "confidence": "high",
+    "wine": {
+      "style": { "pt": "Spätburgunder de Baden", "en": "Baden Spätburgunder", "de": "Badischer Spätburgunder" },
+      "examples": ["Bernhard Huber Schlossberg GG", "Franz Keller Kirchberg GG"],
+      "profile": { "pt": "Pinot Noir alemão com fruta vermelha, especiaria, frescura e definição de parcela.", "en": "German Pinot Noir with red fruit, spice, freshness and site definition.", "de": "Deutscher Pinot Noir mit roter Frucht, Würze, Frische und klarer Lagenprägung." },
+      "ageing": { "ready": 2, "peakStart": 5, "peakEnd": 12, "hold": 19 },
+      "source": { "title": "Deutsches Weininstitut — Baden", "url": "https://www.winesofgermany.com/our-regions/growing-area/65/baden" }
+    },
+    "person": {
+      "name": "Fritz Keller",
+      "role": { "pt": "Produtor", "en": "Producer", "de": "Winzer" },
+      "note": { "pt": "Figura da família Franz Keller, ligada aos vinhos de Kaiserstuhl e à gastronomia regional.", "en": "A member of the Franz Keller family associated with Kaiserstuhl wines and regional gastronomy.", "de": "Mitglied der Familie Franz Keller, verbunden mit Kaiserstuhl-Weinen und regionaler Gastronomie." },
+      "source": { "title": "Weingut Franz Keller", "url": "https://www.franz-keller.de/" }
+    }
+  },
+  "rioja": {
+    "reviewedAt": "2026-07-27",
+    "confidence": "high",
+    "wine": {
+      "style": { "pt": "Rioja Gran Reserva", "en": "Rioja Gran Reserva", "de": "Rioja Gran Reserva" },
+      "examples": ["Marqués de Murrieta Castillo Ygay", "López de Heredia Viña Tondonia Gran Reserva"],
+      "profile": { "pt": "Tempranillo de longa criação, com fruta seca, tabaco, couro e acidez que prolonga a evolução.", "en": "Long-aged Tempranillo with dried fruit, tobacco, leather and acidity that extends development.", "de": "Lang gereifter Tempranillo mit Trockenfrucht, Tabak, Leder und tragender Säure." },
+      "ageing": { "ready": 6, "peakStart": 12, "peakEnd": 28, "hold": 42 },
+      "source": { "title": "DOCa Rioja", "url": "https://www.riojawine.com/en/" }
+    },
+    "person": {
+      "name": "María Vargas",
+      "role": { "pt": "Diretora técnica", "en": "Technical director", "de": "Technische Direktorin" },
+      "note": { "pt": "Responsável técnica da Marqués de Murrieta, ligada à continuidade do estilo histórico de Ygay.", "en": "Technical lead at Marqués de Murrieta, associated with the continuity of the historic Ygay style.", "de": "Technische Leiterin bei Marqués de Murrieta und mit dem historischen Ygay-Stil verbunden." },
+      "source": { "title": "Marqués de Murrieta", "url": "https://marquesdemurrieta.com/" }
+    }
+  },
+  "tuscany": {
+    "reviewedAt": "2026-07-27",
+    "confidence": "high",
+    "wine": {
+      "style": { "pt": "Tinto toscano de longa guarda", "en": "Long-lived Tuscan red", "de": "Langlebiger toskanischer Rotwein" },
+      "examples": ["Tenuta San Guido Sassicaia", "Biondi-Santi Brunello di Montalcino Riserva"],
+      "profile": { "pt": "Sangiovese ou lotes bordaleses com acidez, tanino e profundidade para décadas de evolução.", "en": "Sangiovese or Bordeaux blends with acidity, tannin and depth for decades of development.", "de": "Sangiovese oder Bordeaux-Cuvées mit Säure, Tannin und Tiefe für jahrzehntelange Reife." },
+      "ageing": { "ready": 5, "peakStart": 11, "peakEnd": 27, "hold": 42 },
+      "source": { "title": "Consorzio Vino Chianti Classico", "url": "https://www.chianticlassico.com/en/" }
+    },
+    "person": {
+      "name": "Giacomo Tachis",
+      "role": { "pt": "Enólogo histórico", "en": "Historic oenologist", "de": "Historischer Önologe" },
+      "note": { "pt": "Enólogo decisivo na criação e afirmação de vários tintos toscanos modernos, incluindo Sassicaia.", "en": "A decisive oenologist in the creation and rise of several modern Tuscan reds, including Sassicaia.", "de": "Ein entscheidender Önologe für mehrere moderne Toskana-Rotweine, darunter Sassicaia." },
+      "source": { "title": "Tenuta San Guido — History", "url": "https://www.tenutasanguido.com/en/history/" }
+    }
+  },
+  "acores": {
+    "reviewedAt": "2026-07-27",
+    "confidence": "high",
+    "wine": {
+      "style": { "pt": "Arinto dos Açores vulcânico", "en": "Volcanic Arinto dos Açores", "de": "Vulkanischer Arinto dos Açores" },
+      "examples": ["Azores Wine Company Arinto dos Açores", "Czar Arinto dos Açores"],
+      "profile": { "pt": "Branco atlântico de acidez incisiva, salinidade e notas cítricas e fumadas.", "en": "Atlantic white with incisive acidity, salinity, citrus and smoky notes.", "de": "Atlantischer Weißwein mit prägnanter Säure, Salzigkeit, Zitrus- und Rauchnoten." },
+      "ageing": { "ready": 1, "peakStart": 3, "peakEnd": 8, "hold": 13 },
+      "source": { "title": "Wines of Azores", "url": "https://www.cvracores.pt/" }
+    },
+    "person": {
+      "name": "António Maçanita",
+      "role": { "pt": "Enólogo e cofundador", "en": "Winemaker and co-founder", "de": "Önologe und Mitgründer" },
+      "note": { "pt": "Cofundador da Azores Wine Company, envolvido na recuperação de castas e vinhas históricas do Pico.", "en": "Co-founder of Azores Wine Company, involved in recovering historic Pico varieties and vineyards.", "de": "Mitgründer der Azores Wine Company und an der Wiederbelebung historischer Pico-Reben beteiligt." },
+      "source": { "title": "Azores Wine Company", "url": "https://www.azoreswinecompany.com/" }
+    }
+  },
+  "madeira": {
+    "reviewedAt": "2026-07-27",
+    "confidence": "high",
+    "wine": {
+      "style": { "pt": "Madeira Frasqueira", "en": "Vintage Madeira (Frasqueira)", "de": "Jahrgangs-Madeira (Frasqueira)" },
+      "examples": ["Blandy’s Bual Frasqueira", "Barbeito Malvasia Frasqueira"],
+      "profile": { "pt": "Fortificado de acidez extraordinária, com frutos secos, especiaria e enorme estabilidade após abertura.", "en": "Fortified wine with extraordinary acidity, dried fruit, spice and remarkable stability after opening.", "de": "Likörwein mit außergewöhnlicher Säure, Trockenfrucht, Würze und großer Stabilität nach dem Öffnen." },
+      "ageing": { "ready": 10, "peakStart": 20, "peakEnd": 55, "hold": 100 },
+      "source": { "title": "Instituto do Vinho, do Bordado e do Artesanato da Madeira", "url": "https://vinhomadeira.com/" }
+    },
+    "person": {
+      "name": "Francisco Albuquerque",
+      "role": { "pt": "Enólogo", "en": "Winemaker", "de": "Önologe" },
+      "note": { "pt": "Enólogo da Madeira Wine Company, com trabalho reconhecido na seleção e loteamento de vinhos da Madeira.", "en": "Winemaker at Madeira Wine Company, recognised for selecting and blending Madeira wines.", "de": "Önologe der Madeira Wine Company, bekannt für Auswahl und Assemblage von Madeira." },
+      "source": { "title": "Madeira Wine Company — Team", "url": "https://www.madeirawinecompany.com/en/about-us/our-team.html" }
+    }
+  },
+  "rias-baixas": {
+    "reviewedAt": "2026-07-27",
+    "confidence": "high",
+    "wine": {
+      "style": { "pt": "Albariño de guarda", "en": "Ageworthy Albariño", "de": "Reifefähiger Albariño" },
+      "examples": ["Pazo de Señorans Selección de Añada", "Do Ferreiro Cepas Vellas"],
+      "profile": { "pt": "Albariño concentrado, salino e ácido, capaz de ganhar notas melosas e minerais com o tempo.", "en": "Concentrated, saline and acidic Albariño that can gain honeyed and mineral notes over time.", "de": "Konzentrierter, salziger Albariño, der mit der Zeit Honig- und Mineralnoten entwickelt." },
+      "ageing": { "ready": 1, "peakStart": 4, "peakEnd": 10, "hold": 16 },
+      "source": { "title": "DO Rías Baixas", "url": "https://doriasbaixas.com/en/" }
+    },
+    "person": {
+      "name": "Katia Álvarez",
+      "role": { "pt": "Enóloga", "en": "Winemaker", "de": "Önologin" },
+      "note": { "pt": "Enóloga ligada à Martín Códax e à expressão contemporânea do Albariño do Salnés.", "en": "A winemaker associated with Martín Códax and contemporary Albariño from the Salnés valley.", "de": "Eine mit Martín Códax und modernem Albariño aus dem Salnés-Tal verbundene Önologin." },
+      "source": { "title": "Martín Códax", "url": "https://www.martincodax.com/en/" }
+    }
+  },
+  "ribera-del-duero": {
+    "reviewedAt": "2026-07-27",
+    "confidence": "high",
+    "wine": {
+      "style": { "pt": "Tinto Fino de longa guarda", "en": "Long-lived Tinto Fino", "de": "Langlebiger Tinto Fino" },
+      "examples": ["Vega Sicilia Único", "Dominio de Pingus Pingus"],
+      "profile": { "pt": "Tempranillo de altitude, concentrado e firme, com fruta escura, especiaria e grande longevidade.", "en": "Concentrated, firm high-altitude Tempranillo with dark fruit, spice and major longevity.", "de": "Konzentrierter, fester Höhen-Tempranillo mit dunkler Frucht, Würze und großer Langlebigkeit." },
+      "ageing": { "ready": 5, "peakStart": 11, "peakEnd": 27, "hold": 42 },
+      "source": { "title": "DO Ribera del Duero", "url": "https://www.riberadelduero.es/en" }
+    },
+    "person": {
+      "name": "Peter Sisseck",
+      "role": { "pt": "Enólogo e produtor", "en": "Winemaker and producer", "de": "Önologe und Erzeuger" },
+      "note": { "pt": "Criador do Dominio de Pingus e figura influente na interpretação moderna do Tinto Fino.", "en": "Creator of Dominio de Pingus and an influential figure in the modern interpretation of Tinto Fino.", "de": "Gründer von Dominio de Pingus und prägende Figur für die moderne Interpretation des Tinto Fino." },
+      "source": { "title": "Dominio de Pingus", "url": "https://www.dominiodepingus.com/" }
+    }
+  },
+  "priorat": {
+    "reviewedAt": "2026-07-27",
+    "confidence": "high",
+    "wine": {
+      "style": { "pt": "Tinto de llicorella do Priorat", "en": "Priorat llicorella red", "de": "Priorat-Rotwein von Llicorella-Böden" },
+      "examples": ["Álvaro Palacios L’Ermita", "Clos Mogador"],
+      "profile": { "pt": "Garnacha e Cariñena de encosta, concentradas mas minerais, com tanino e profundidade.", "en": "Slope-grown Garnacha and Cariñena, concentrated yet mineral, with tannin and depth.", "de": "Garnacha und Cariñena vom Hang, konzentriert und mineralisch, mit Tannin und Tiefe." },
+      "ageing": { "ready": 3, "peakStart": 8, "peakEnd": 19, "hold": 30 },
+      "source": { "title": "DOQ Priorat", "url": "https://www.doqpriorat.org/en/" }
+    },
+    "person": {
+      "name": "René Barbier",
+      "role": { "pt": "Enólogo e produtor", "en": "Winemaker and producer", "de": "Önologe und Erzeuger" },
+      "note": { "pt": "Pioneiro da renovação moderna do Priorat e fundador do Clos Mogador.", "en": "A pioneer of Priorat’s modern revival and founder of Clos Mogador.", "de": "Pionier der modernen Renaissance des Priorat und Gründer von Clos Mogador." },
+      "source": { "title": "Clos Mogador", "url": "https://closmogador.com/" }
+    }
+  },
+  "rueda": {
+    "reviewedAt": "2026-07-27",
+    "confidence": "high",
+    "wine": {
+      "style": { "pt": "Verdejo fermentado ou criado em madeira", "en": "Oak-fermented or aged Verdejo", "de": "Im Holz vergorener oder gereifter Verdejo" },
+      "examples": ["Belondrade y Lurton", "José Pariente Finca Las Comas"],
+      "profile": { "pt": "Verdejo texturado, com ervas, citrinos e acidez suficiente para uma evolução de médio prazo.", "en": "Textured Verdejo with herbs, citrus and enough acidity for medium-term development.", "de": "Texturierter Verdejo mit Kräutern, Zitrus und Säure für mittlere Reife." },
+      "ageing": { "ready": 1, "peakStart": 3, "peakEnd": 8, "hold": 14 },
+      "source": { "title": "DO Rueda", "url": "https://www.dorueda.com/en/" }
+    },
+    "person": {
+      "name": "Victoria Pariente",
+      "role": { "pt": "Enóloga e fundadora", "en": "Winemaker and founder", "de": "Önologin und Gründerin" },
+      "note": { "pt": "Fundadora da José Pariente, projeto familiar dedicado à Verdejo e aos solos de Rueda.", "en": "Founder of José Pariente, a family project devoted to Verdejo and the soils of Rueda.", "de": "Gründerin von José Pariente, einem Familienprojekt für Verdejo und die Böden Ruedas." },
+      "source": { "title": "José Pariente — The winery", "url": "https://josepariente.com/en_us/la-bodega/" }
+    }
+  },
+  "tras-os-montes": {
+    "reviewedAt": "2026-07-27",
+    "confidence": "medium",
+    "wine": {
+      "style": { "pt": "Tinto transmontano de altitude", "en": "High-altitude Trás-os-Montes red", "de": "Höhenrotwein aus Trás-os-Montes" },
+      "examples": ["Quinta de Arcossó Superior", "Valle Pradinhos Grande Reserva"],
+      "profile": { "pt": "Tintos de clima continental, com fruta madura, frescura de altitude e estrutura para evoluir.", "en": "Continental-climate reds with ripe fruit, altitude freshness and structure to develop.", "de": "Kontinental geprägte Rotweine mit reifer Frucht, Höhenfrische und Reifestruktur." },
+      "ageing": { "ready": 2, "peakStart": 5, "peakEnd": 12, "hold": 20 },
+      "source": { "title": "CVR Trás-os-Montes", "url": "https://cvrtm.pt/historia/" }
+    },
+    "person": {
+      "name": "José Francisco Lopes Preto",
+      "role": { "pt": "Enólogo e produtor", "en": "Winemaker and producer", "de": "Önologe und Erzeuger" },
+      "note": { "pt": "Produtor com formação em enologia no Planalto Mirandês, ligado a uma exploração familiar de três gerações.", "en": "A trained winemaker in the Planalto Mirandês, linked to a three-generation family estate.", "de": "Ausgebildeter Önologe im Planalto Mirandês, verbunden mit einem Familienbetrieb in dritter Generation." },
+      "source": { "title": "CVR Trás-os-Montes — José Preto", "url": "https://cvrtm.pt/jose-francisco-lopes-preto/" }
+    }
+  },
+  "tavora-varosa": {
+    "reviewedAt": "2026-07-27",
+    "confidence": "high",
+    "wine": {
+      "style": { "pt": "Espumante de método tradicional", "en": "Traditional-method sparkling wine", "de": "Traditionell erzeugter Schaumwein" },
+      "examples": ["Murganheira Czar Grand Cuvée", "Vértice Gouveio"],
+      "profile": { "pt": "Espumante de altitude, com acidez firme, bolha fina e notas de autólise após estágio prolongado.", "en": "High-altitude sparkling wine with firm acidity, fine bubbles and autolytic notes after long ageing.", "de": "Höhen-Schaumwein mit fester Säure, feiner Perlage und Autolyse-Noten nach langer Reife." },
+      "ageing": { "ready": 1, "peakStart": 3, "peakEnd": 8, "hold": 13 },
+      "source": { "title": "CVR Távora-Varosa", "url": "https://www.vinhoseespumantestavoravarosa.pt/" }
+    },
+    "person": {
+      "name": "Marta Lourenço",
+      "role": { "pt": "Enóloga", "en": "Winemaker", "de": "Önologin" },
+      "note": { "pt": "Enóloga ligada à Murganheira e à produção de espumantes de método tradicional na região.", "en": "A winemaker associated with Murganheira and the region’s traditional-method sparkling wines.", "de": "Eine mit Murganheira und den traditionell erzeugten Schaumweinen der Region verbundene Önologin." },
+      "source": { "title": "CVR Távora-Varosa — Producers", "url": "https://www.vinhoseespumantestavoravarosa.pt/produtores/" }
+    }
+  },
+  "beira-interior": {
+    "reviewedAt": "2026-07-27",
+    "confidence": "high",
+    "wine": {
+      "style": { "pt": "Tinto de altitude da Beira Interior", "en": "High-altitude Beira Interior red", "de": "Höhenrotwein aus Beira Interior" },
+      "examples": ["Beyra Grande Reserva", "Quinta dos Termos Reserva do Patrão"],
+      "profile": { "pt": "Tintos continentais de altitude, com fruta escura, frescura, especiaria e tanino presente.", "en": "Continental high-altitude reds with dark fruit, freshness, spice and present tannin.", "de": "Kontinentale Höhenrotweine mit dunkler Frucht, Frische, Würze und spürbarem Tannin." },
+      "ageing": { "ready": 2, "peakStart": 5, "peakEnd": 12, "hold": 19 },
+      "source": { "title": "Vinhos da Beira Interior", "url": "https://vinhosdabeirainterior.pt/en/" }
+    },
+    "person": {
+      "name": "Rui Roboredo Madeira",
+      "role": { "pt": "Enólogo e produtor", "en": "Winemaker and producer", "de": "Önologe und Erzeuger" },
+      "note": { "pt": "Produtor ligado ao projeto Beyra e à valorização das vinhas de altitude da Beira Interior.", "en": "A producer associated with Beyra and the elevation of Beira Interior’s high-altitude vineyards.", "de": "Ein mit Beyra und der Aufwertung hoch gelegener Weinberge der Beira Interior verbundener Erzeuger." },
+      "source": { "title": "Rui Roboredo Madeira — About", "url": "https://www.ruimadeira.com/en/about/the-winemaker-the-family-the-history/" }
+    }
+  },
+  "lisboa": {
+    "reviewedAt": "2026-07-27",
+    "confidence": "high",
+    "wine": {
+      "style": { "pt": "Tinto atlântico de Lisboa", "en": "Atlantic Lisboa red", "de": "Atlantischer Rotwein aus Lisboa" },
+      "examples": ["Quinta da Chocapalha Guarita da Chocapalha", "Quinta do Monte d’Oiro Reserva"],
+      "profile": { "pt": "Tintos influenciados pelo Atlântico, combinando fruta madura, frescura, ervas e estrutura.", "en": "Atlantic-influenced reds combining ripe fruit, freshness, herbs and structure.", "de": "Atlantisch geprägte Rotweine mit reifer Frucht, Frische, Kräutern und Struktur." },
+      "ageing": { "ready": 2, "peakStart": 5, "peakEnd": 12, "hold": 20 },
+      "source": { "title": "Vinhos de Lisboa", "url": "https://vinhosdelisboa.com/" }
+    },
+    "person": {
+      "name": "Sandra Tavares da Silva",
+      "role": { "pt": "Enóloga responsável", "en": "Lead winemaker", "de": "Verantwortliche Önologin" },
+      "note": { "pt": "Responsável de enologia na Quinta da Chocapalha, trabalhando vinhos de Alenquer e da Estremadura atlântica.", "en": "Lead winemaker at Quinta da Chocapalha, working with Alenquer and the Atlantic Estremadura.", "de": "Verantwortliche Önologin der Quinta da Chocapalha mit Fokus auf Alenquer und die atlantische Estremadura." },
+      "source": { "title": "Quinta da Chocapalha — Team", "url": "https://chocapalha.pt/equipa/" }
+    }
+  },
+  "tejo": {
+    "reviewedAt": "2026-07-27",
+    "confidence": "medium",
+    "wine": {
+      "style": { "pt": "Tinto de guarda do Tejo", "en": "Ageworthy Tejo red", "de": "Reifefähiger Tejo-Rotwein" },
+      "examples": ["Quinta da Alorna Grande Reserva", "Falua Conde Vimioso Reserva"],
+      "profile": { "pt": "Tintos maduros e especiados, moderados pela influência do rio e por solos de charneca ou bairro.", "en": "Ripe, spicy reds moderated by the river and by charneca or bairro soils.", "de": "Reife, würzige Rotweine, geprägt vom Fluss sowie von Charneca- oder Bairro-Böden." },
+      "ageing": { "ready": 2, "peakStart": 5, "peakEnd": 11, "hold": 17 },
+      "source": { "title": "Wines of Tejo", "url": "https://www.winesoftejo.com/" }
+    },
+    "person": {
+      "name": "Peter Bright",
+      "role": { "pt": "Enólogo", "en": "Winemaker", "de": "Önologe" },
+      "note": { "pt": "Enólogo de origem australiana ligado durante décadas à Falua e ao desenvolvimento de estilos modernos no Tejo.", "en": "An Australian-born winemaker associated for decades with Falua and modern styles in Tejo.", "de": "Ein in Australien geborener Önologe, lange mit Falua und modernen Tejo-Stilen verbunden." },
+      "source": { "title": "Falua — Our story", "url": "https://www.falua.pt/en/" }
+    }
+  },
+  "peninsula-setubal": {
+    "reviewedAt": "2026-07-27",
+    "confidence": "high",
+    "wine": {
+      "style": { "pt": "Moscatel de Setúbal", "en": "Moscatel de Setúbal", "de": "Moscatel de Setúbal" },
+      "examples": ["José Maria da Fonseca Moscatel Roxo", "Bacalhôa Moscatel de Setúbal"],
+      "profile": { "pt": "Fortificado doce e aromático, com casca de laranja, flores, especiaria e grande longevidade.", "en": "Sweet, aromatic fortified wine with orange peel, flowers, spice and major longevity.", "de": "Süßer, aromatischer Likörwein mit Orangenschale, Blüten, Würze und großer Langlebigkeit." },
+      "ageing": { "ready": 3, "peakStart": 9, "peakEnd": 28, "hold": 50 },
+      "source": { "title": "Comissão Vitivinícola Regional da Península de Setúbal", "url": "https://www.vinhosdapeninsuladesetubal.org/" }
+    },
+    "person": {
+      "name": "Domingos Soares Franco",
+      "role": { "pt": "Enólogo", "en": "Winemaker", "de": "Önologe" },
+      "note": { "pt": "Enólogo da José Maria da Fonseca e representante de uma longa tradição familiar na região de Setúbal.", "en": "Winemaker at José Maria da Fonseca and representative of a long family tradition in Setúbal.", "de": "Önologe bei José Maria da Fonseca und Vertreter einer langen Familientradition in Setúbal." },
+      "source": { "title": "José Maria da Fonseca", "url": "https://www.jmf.pt/" }
+    }
+  },
+  "algarve": {
+    "reviewedAt": "2026-07-27",
+    "confidence": "medium",
+    "wine": {
+      "style": { "pt": "Tinto de Negra Mole", "en": "Negra Mole red", "de": "Negra-Mole-Rotwein" },
+      "examples": ["Morgado do Quintão Negra Mole", "Villa Alvor Negra Mole"],
+      "profile": { "pt": "Tinto leve a médio, com fruta vermelha, ervas mediterrânicas e tanino suave.", "en": "Light- to medium-bodied red with red fruit, Mediterranean herbs and gentle tannin.", "de": "Leichter bis mittlerer Rotwein mit roter Frucht, mediterranen Kräutern und sanftem Tannin." },
+      "ageing": { "ready": 1, "peakStart": 3, "peakEnd": 7, "hold": 11 },
+      "source": { "title": "Vinhos do Algarve", "url": "https://vinhosdoalgarve.pt/" }
+    },
+    "person": {
+      "name": "Mariana Salvador",
+      "role": { "pt": "Enóloga principal", "en": "Lead winemaker", "de": "Leitende Önologin" },
+      "note": { "pt": "Enóloga principal no Morgado do Quintão, com foco em vinhas antigas e castas algarvias como a Negra Mole.", "en": "Lead winemaker at Morgado do Quintão, focused on old vines and Algarve varieties such as Negra Mole.", "de": "Leitende Önologin bei Morgado do Quintão mit Fokus auf alte Reben und Sorten wie Negra Mole." },
+      "source": { "title": "Morgado do Quintão — A new chapter", "url": "https://www.morgadodoquintao.pt/journal/2026/5/18/a-new-chapter-at-morgado-do-quinto" }
+    }
+  }
+}

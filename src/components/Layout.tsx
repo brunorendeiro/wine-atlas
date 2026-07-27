@@ -53,7 +53,7 @@ export function Layout({ children }: { children: ReactNode }) {
   const navigate = useNavigate()
 
   useEffect(() => {
-    window.scrollTo({ top: 0, behavior: 'instant' })
+    window.scrollTo({ top: 0, left: 0, behavior: 'instant' })
     setMenuOpen(false)
     setSearchOpen(false)
   }, [location.pathname])

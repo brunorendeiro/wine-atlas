@@ -99,7 +99,8 @@ const sourceByCountry: Record<string, Source[]> = {
 export function DataQuality({ reviewedAt = '2026-07-27', confidence = 'medium', sources, countryCode }: { reviewedAt?: string; confidence?: 'high' | 'medium'; sources?: Source[]; countryCode?: string }) {
   const { locale } = useApp()
   const t = copy[locale]
-  const resolved = sources?.length ? sources : (countryCode && sourceByCountry[countryCode]) || [{ title: 'OIV — International Organisation of Vine and Wine', url: 'https://www.oiv.int/' }]
+  const official = (countryCode && sourceByCountry[countryCode]) || [{ title: 'OIV — International Organisation of Vine and Wine', url: 'https://www.oiv.int/' }]
+  const resolved = [...official, ...(sources ?? [])].filter((source, index, all) => all.findIndex((item) => item.url === source.url) === index)
   return (
     <footer className="mt-14 border-t border-line pt-8 dark:border-white/15">
       <div className="flex flex-wrap gap-x-8 gap-y-3 text-sm">
@@ -109,7 +110,7 @@ export function DataQuality({ reviewedAt = '2026-07-27', confidence = 'medium', 
       <p className="mt-3 text-sm text-muted">{t.evidence}</p>
       <h2 className="mt-6 text-sm font-bold uppercase tracking-widest">{t.sources}</h2>
       <ul className="mt-3 flex flex-wrap gap-2">
-        {resolved.map((source) => <li key={source.url}><a className="chip inline-flex min-h-10 items-center hover:text-wine-light dark:hover:text-gold" href={source.url} target="_blank" rel="noreferrer">{source.title}</a></li>)}
+        {resolved.map((source, index) => <li key={`${source.url}-${index}`}><a className="chip inline-flex min-h-10 items-center hover:text-wine-light dark:hover:text-gold" href={source.url} target="_blank" rel="noreferrer">{source.title}</a></li>)}
       </ul>
     </footer>
   )

@@ -105,6 +105,29 @@ export interface Source {
   url: string
 }
 
+export interface RegionWineCulture {
+  reviewedAt: string
+  confidence: 'high' | 'medium'
+  wine: {
+    style: LocalizedText
+    examples: string[]
+    profile: LocalizedText
+    ageing: {
+      ready: number
+      peakStart: number
+      peakEnd: number
+      hold: number
+    }
+    source: Source
+  }
+  person: {
+    name: string
+    role: LocalizedText
+    note: LocalizedText
+    source: Source
+  }
+}
+
 export interface SavedLocation {
   id: string
   label: LocalizedText

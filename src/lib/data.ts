@@ -2,12 +2,14 @@ import regionsJson from '../data/regions.json'
 import grapesJson from '../data/grapes.json'
 import articlesJson from '../data/articles.json'
 import guideExpansionJson from '../data/guide-expansion.json'
+import regionWineCultureJson from '../data/region-wine-culture.json'
 import sommelierJson from '../data/sommelier.json'
-import type { Article, Grape, Locale, LocalizedList, LocalizedText, Region, SommelierGuide } from '../types'
+import type { Article, Grape, Locale, LocalizedList, LocalizedText, Region, RegionWineCulture, SommelierGuide } from '../types'
 
 export const regions = regionsJson as Region[]
 export const grapes = grapesJson as Grape[]
 export const articles = [...articlesJson, ...guideExpansionJson] as Article[]
+export const regionWineCulture = regionWineCultureJson as Record<string, RegionWineCulture>
 export const sommelierGuide = sommelierJson as SommelierGuide
 
 export function text(value: LocalizedText, locale: Locale) {

@@ -4,10 +4,11 @@ import { Link, Navigate, useParams } from 'react-router-dom'
 import { FavoriteButton, GrapeCard } from '../components/Cards'
 import { DataQuality, NearbyRegionGrid } from '../components/DiscoveryEnhancements'
 import { InfoCard, SectionHeading } from '../components/PagePrimitives'
+import { RegionWineCulture } from '../components/RegionWineCulture'
 import { useApp } from '../context/AppContext'
 import detailCopyJson from '../data/detail-copy.json'
 import { trackEvent } from '../lib/analytics'
-import { countryFlag, getGrape, getRegion, list, regions, text } from '../lib/data'
+import { countryFlag, getGrape, getRegion, list, regions, regionWineCulture, text } from '../lib/data'
 import type { Grape, Locale } from '../types'
 
 const detailCopy = detailCopyJson as Record<Locale, Record<string, string>>
@@ -52,6 +53,7 @@ export default function RegionDetailPage() {
   if (!region) return <Navigate to="/404" replace />
   const regionGrapes = region.grapeIds.map(getGrape).filter(Boolean) as Grape[]
   const otherRegionGrapes = (region.otherGrapeIds ?? []).map(getGrape).filter(Boolean) as Grape[]
+  const wineCulture = regionWineCulture[region.id]
   const d = detailCopy[locale]
   const related = regions
     .filter((item) => item.id !== region.id)
@@ -118,6 +120,8 @@ export default function RegionDetailPage() {
         )}
       </section>
 
+      {wineCulture && <RegionWineCulture data={wineCulture} />}
+
       <section className="border-y border-line bg-paper dark:border-white/10 dark:bg-night-soft">
         <div className="page-shell grid gap-10 py-12 md:grid-cols-2 sm:py-16">
           <div>
@@ -145,7 +149,15 @@ export default function RegionDetailPage() {
             </div>
           </div>
         </div>
-        <DataQuality reviewedAt={region.reviewedAt} confidence={region.confidence} sources={region.sources} countryCode={region.countryCode} />
+        <DataQuality
+          reviewedAt={wineCulture?.reviewedAt ?? region.reviewedAt}
+          confidence={wineCulture?.confidence ?? region.confidence}
+          sources={[
+            ...(region.sources ?? []),
+            ...(wineCulture ? [wineCulture.wine.source, wineCulture.person.source] : []),
+          ]}
+          countryCode={region.countryCode}
+        />
       </section>
     </>
   )
