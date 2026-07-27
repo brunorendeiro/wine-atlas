@@ -49,4 +49,30 @@ export interface Article {
   featured: boolean
 }
 
+export interface SommelierGuide {
+  eyebrow: LocalizedText
+  title: LocalizedText
+  intro: LocalizedText
+  note: LocalizedText
+  glassesTitle: LocalizedText
+  glassesIntro: LocalizedText
+  steps: {
+    id: string
+    icon: string
+    title: LocalizedText
+    body: LocalizedText
+    action: LocalizedText
+  }[]
+  glasses: {
+    id: string
+    title: LocalizedText
+    examples: LocalizedText
+    glass: LocalizedText
+    why: LocalizedText
+    temperature: string
+  }[]
+  rulesTitle: LocalizedText
+  rules: LocalizedList
+}
+
 export type Favorite = { type: 'region' | 'grape'; id: string }

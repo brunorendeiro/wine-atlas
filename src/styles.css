@@ -751,6 +751,159 @@
 .detail-pattern::before { inset: 2.5rem; }
 .detail-pattern::after { inset: 5rem; }
 
+.sommelier-feature {
+  position: relative;
+  display: grid;
+  min-height: 20rem;
+  overflow: hidden;
+  border-radius: 2rem;
+  background: linear-gradient(125deg, #39101f, #69233c 62%, #233f33);
+  color: var(--color-cream);
+  box-shadow: 0 18px 50px rgba(52, 18, 31, .16);
+}
+
+.sommelier-feature-art {
+  position: absolute;
+  right: 2rem;
+  bottom: 1rem;
+  display: grid;
+  width: 9rem;
+  height: 9rem;
+  place-items: center;
+  border: 1px solid rgba(255, 255, 255, .15);
+  border-radius: 50%;
+  color: var(--color-gold);
+}
+
+.sommelier-feature-orbit {
+  position: absolute;
+  width: 15rem;
+  height: 7rem;
+  border: 1px solid rgba(255, 255, 255, .11);
+  border-radius: 50%;
+  transform: rotate(-22deg);
+}
+
+.sommelier-step {
+  border: 1px solid var(--color-line);
+  border-radius: 1.5rem;
+  background: color-mix(in srgb, var(--color-canvas) 88%, white);
+  padding: 1.4rem;
+}
+
+  .dark .sommelier-step {
+    border-color: rgba(255, 255, 255, .18);
+    background: rgba(255, 255, 255, .055);
+  }
+
+  .dark .sommelier-step .text-muted,
+  .dark .glass-card .text-muted {
+    color: #e0d7da;
+  }
+
+.sommelier-step-icon {
+  display: grid;
+  width: 3rem;
+  height: 3rem;
+  flex: 0 0 auto;
+  place-items: center;
+  border-radius: 1rem;
+  background: rgba(95, 24, 49, .09);
+  color: var(--color-wine-light);
+}
+
+.dark .sommelier-step-icon {
+  background: rgba(200, 161, 91, .1);
+  color: var(--color-gold);
+}
+
+.glass-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  border: 1px solid var(--color-line);
+  border-radius: 1.5rem;
+  background: var(--color-canvas);
+  padding: 1.2rem;
+}
+
+.dark .glass-card {
+  border-color: rgba(255, 255, 255, .17);
+  background: rgba(255, 255, 255, .055);
+}
+
+.glass-shape {
+  position: relative;
+  width: 3.3rem;
+  height: 6.8rem;
+  flex: 0 0 auto;
+}
+
+.glass-bowl {
+  position: absolute;
+  z-index: 1;
+  width: 3.1rem;
+  height: 3.6rem;
+  left: .1rem;
+  top: 0;
+  overflow: hidden;
+  border: 1.5px solid color-mix(in srgb, var(--color-ink) 48%, transparent);
+  border-top: 0;
+  border-radius: .2rem .2rem 1.5rem 1.5rem;
+}
+
+.dark .glass-bowl {
+  border-color: rgba(255, 255, 255, .55);
+  border-top: 0;
+}
+
+.glass-bowl i {
+  position: absolute;
+  right: 2px;
+  bottom: 2px;
+  left: 2px;
+  height: 34%;
+  border-radius: .15rem .15rem 1.2rem 1.2rem;
+  background: rgba(95, 24, 49, .78);
+}
+
+.glass-stem {
+  position: absolute;
+  width: 1.5px;
+  height: 2.6rem;
+  left: 50%;
+  top: 3.5rem;
+  background: color-mix(in srgb, var(--color-ink) 48%, transparent);
+}
+
+.dark .glass-stem,
+.dark .glass-foot {
+  background: rgba(255, 255, 255, .55);
+}
+
+.glass-foot {
+  position: absolute;
+  width: 2.6rem;
+  height: 1.5px;
+  left: calc(50% - 1.3rem);
+  bottom: .55rem;
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--color-ink) 48%, transparent);
+}
+
+.glass-sparkling .glass-bowl { width: 1.8rem; height: 4.5rem; left: .75rem; border-radius: .15rem .15rem .9rem .9rem; }
+.glass-sparkling .glass-stem { top: 4.45rem; height: 1.7rem; }
+.glass-sparkling .glass-bowl i { height: 48%; border-radius: .1rem .1rem .7rem .7rem; background: rgba(200, 161, 91, .72); }
+.glass-fresh-white .glass-bowl { width: 2.5rem; height: 3.8rem; left: .4rem; }
+.glass-fresh-white .glass-bowl i,
+.glass-full-white .glass-bowl i { background: rgba(200, 177, 91, .68); }
+.glass-full-white .glass-bowl { width: 3.2rem; height: 3.5rem; }
+.glass-light-red .glass-bowl { width: 3.3rem; height: 3.4rem; border-radius: .2rem .2rem 1.7rem 1.7rem; }
+.glass-full-red .glass-bowl { width: 2.8rem; height: 4.1rem; left: .25rem; border-radius: .2rem .2rem 1.35rem 1.35rem; }
+.glass-full-red .glass-stem { top: 4rem; height: 2.1rem; }
+.glass-sweet .glass-bowl { width: 2.1rem; height: 2.8rem; left: .6rem; }
+.glass-sweet .glass-stem { top: 2.75rem; height: 3.35rem; }
+
 .loader-grape {
   position: relative;
   width: 3.5rem;

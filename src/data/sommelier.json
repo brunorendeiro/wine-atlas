@@ -1,0 +1,181 @@
+{
+  "eyebrow": {
+    "pt": "Um ritual simples, sem pretensão",
+    "en": "A simple ritual, without pretence",
+    "de": "Ein einfaches Ritual, ganz ohne Getue"
+  },
+  "title": {
+    "pt": "Prova como um sommelier",
+    "en": "Taste like a sommelier",
+    "de": "Verkoste wie ein Sommelier"
+  },
+  "intro": {
+    "pt": "Não precisas de decorar aromas impossíveis. Precisas de atenção, um copo limpo e alguns minutos para observar como o vinho muda.",
+    "en": "You do not need to memorise impossible aromas. You need attention, a clean glass and a few minutes to notice how the wine changes.",
+    "de": "Du musst keine unmöglichen Aromen auswendig lernen. Du brauchst Aufmerksamkeit, ein sauberes Glas und ein paar Minuten für die Veränderungen im Wein."
+  },
+  "note": {
+    "pt": "Não há respostas erradas: a prova combina sentidos, memória e contexto. Descreve o que realmente sentes.",
+    "en": "There are no wrong answers: tasting combines senses, memory and context. Describe what you genuinely notice.",
+    "de": "Es gibt keine falschen Antworten: Verkosten verbindet Sinne, Erinnerung und Kontext. Beschreibe, was du wirklich wahrnimmst."
+  },
+  "glassesTitle": {
+    "pt": "Que copo devo usar?",
+    "en": "Which glass should I use?",
+    "de": "Welches Glas soll ich nehmen?"
+  },
+  "glassesIntro": {
+    "pt": "Não precisas de uma coleção infinita. Um bom copo universal resolve quase tudo; estes formatos ajudam a tirar mais de cada estilo.",
+    "en": "You do not need an endless collection. A good universal glass handles almost everything; these shapes help each style show more.",
+    "de": "Du brauchst keine endlose Sammlung. Ein gutes Universalglas löst fast alles; diese Formen holen aus jedem Stil etwas mehr heraus."
+  },
+  "steps": [
+    {
+      "id": "prepare",
+      "icon": "sparkles",
+      "title": { "pt": "Prepara", "en": "Prepare", "de": "Vorbereiten" },
+      "body": {
+        "pt": "Usa um copo limpo, luz natural e evita perfumes fortes. Serve apenas um terço do copo para teres espaço para rodar.",
+        "en": "Use a clean glass, natural light and avoid strong fragrances. Fill only one third so there is room to swirl.",
+        "de": "Nutze ein sauberes Glas und Tageslicht, vermeide starke Düfte. Fülle nur ein Drittel ein, damit Platz zum Schwenken bleibt."
+      },
+      "action": { "pt": "Segura sempre pela haste.", "en": "Always hold the stem.", "de": "Immer am Stiel halten." }
+    },
+    {
+      "id": "see",
+      "icon": "eye",
+      "title": { "pt": "Observa a cor", "en": "Observe the colour", "de": "Farbe beobachten" },
+      "body": {
+        "pt": "Inclina o copo sobre um fundo branco. Repara na limpidez, intensidade e diferença entre o centro e a borda.",
+        "en": "Tilt the glass over a white background. Notice clarity, intensity and the difference between centre and rim.",
+        "de": "Neige das Glas über weissem Hintergrund. Achte auf Klarheit, Intensität und den Unterschied zwischen Mitte und Rand."
+      },
+      "action": { "pt": "Uma borda acastanhada pode indicar evolução.", "en": "A brownish rim can suggest age.", "de": "Ein bräunlicher Rand kann auf Reife hindeuten." }
+    },
+    {
+      "id": "first-nose",
+      "icon": "wind",
+      "title": { "pt": "Cheira sem rodar", "en": "Smell before swirling", "de": "Vor dem Schwenken riechen" },
+      "body": {
+        "pt": "A primeira impressão revela aromas delicados e ajuda a detetar defeitos antes de o vinho receber mais oxigénio.",
+        "en": "The first impression reveals delicate aromas and helps detect faults before the wine receives more oxygen.",
+        "de": "Der erste Eindruck zeigt feine Aromen und hilft, Fehler zu erkennen, bevor mehr Sauerstoff an den Wein kommt."
+      },
+      "action": { "pt": "Procura famílias: fruta, flor, erva, especiaria ou terra.", "en": "Look for families: fruit, flowers, herbs, spice or earth.", "de": "Suche nach Familien: Frucht, Blüten, Kräuter, Gewürze oder Erde." }
+    },
+    {
+      "id": "swirl",
+      "icon": "refresh",
+      "title": { "pt": "Roda e volta a cheirar", "en": "Swirl and smell again", "de": "Schwenken und erneut riechen" },
+      "body": {
+        "pt": "Faz pequenos círculos com a base apoiada na mesa. O oxigénio liberta novos aromas e torna o vinho mais expressivo.",
+        "en": "Make small circles with the base resting on the table. Oxygen releases new aromas and makes the wine more expressive.",
+        "de": "Ziehe kleine Kreise, während der Fuss auf dem Tisch bleibt. Sauerstoff setzt neue Aromen frei und macht den Wein ausdrucksvoller."
+      },
+      "action": { "pt": "Compara com o primeiro aroma: ficou mais intenso?", "en": "Compare with the first smell: is it more intense?", "de": "Vergleiche mit dem ersten Duft: Ist er intensiver?" }
+    },
+    {
+      "id": "taste",
+      "icon": "wine",
+      "title": { "pt": "Prova", "en": "Taste", "de": "Probieren" },
+      "body": {
+        "pt": "Dá um pequeno gole e deixa o vinho percorrer a boca. Identifica doçura, acidez, taninos, álcool, corpo e sabores.",
+        "en": "Take a small sip and let the wine move across your mouth. Identify sweetness, acidity, tannin, alcohol, body and flavours.",
+        "de": "Nimm einen kleinen Schluck und verteile den Wein im Mund. Erkenne Süsse, Säure, Tannin, Alkohol, Körper und Aromen."
+      },
+      "action": { "pt": "A acidez faz salivar; o tanino seca as gengivas.", "en": "Acidity makes you salivate; tannin dries the gums.", "de": "Säure lässt Speichel fliessen; Tannin trocknet das Zahnfleisch." }
+    },
+    {
+      "id": "finish",
+      "icon": "timer",
+      "title": { "pt": "Avalia o final", "en": "Evaluate the finish", "de": "Den Abgang bewerten" },
+      "body": {
+        "pt": "Depois de engolir ou cuspir, conta quanto tempo os sabores permanecem. Repara se o conjunto parece equilibrado e agradável.",
+        "en": "After swallowing or spitting, notice how long flavours remain. Ask whether the whole feels balanced and enjoyable.",
+        "de": "Achte nach dem Schlucken oder Ausspucken darauf, wie lange die Aromen bleiben. Wirkt das Ganze ausgewogen und angenehm?"
+      },
+      "action": { "pt": "A pergunta final: apetece-te outro gole?", "en": "The final question: do you want another sip?", "de": "Die letzte Frage: Möchtest du noch einen Schluck?" }
+    }
+  ],
+  "glasses": [
+    {
+      "id": "sparkling",
+      "title": { "pt": "Espumante", "en": "Sparkling", "de": "Schaumwein" },
+      "examples": { "pt": "Champagne, Cava, Espumante", "en": "Champagne, Cava, sparkling wine", "de": "Champagner, Cava, Sekt" },
+      "glass": { "pt": "Tulipa estreita", "en": "Narrow tulip", "de": "Schmale Tulpe" },
+      "why": { "pt": "Preserva as bolhas sem esconder os aromas.", "en": "Preserves bubbles without hiding aroma.", "de": "Bewahrt die Perlage, ohne Aromen zu verstecken." },
+      "temperature": "6–8 °C"
+    },
+    {
+      "id": "fresh-white",
+      "title": { "pt": "Branco fresco", "en": "Fresh white", "de": "Frischer Weisswein" },
+      "examples": { "pt": "Alvarinho, Riesling, Sauvignon Blanc", "en": "Albariño, Riesling, Sauvignon Blanc", "de": "Albariño, Riesling, Sauvignon Blanc" },
+      "glass": { "pt": "Branco médio e fechado", "en": "Medium, tapered white glass", "de": "Mittleres, verjüngtes Weissweinglas" },
+      "why": { "pt": "Mantém frescura e concentra aromas delicados.", "en": "Keeps freshness and focuses delicate aromas.", "de": "Bewahrt Frische und bündelt feine Aromen." },
+      "temperature": "7–10 °C"
+    },
+    {
+      "id": "full-white",
+      "title": { "pt": "Branco encorpado", "en": "Full-bodied white", "de": "Kräftiger Weisswein" },
+      "examples": { "pt": "Chardonnay, Encruzado com madeira", "en": "Chardonnay, oak-aged Encruzado", "de": "Chardonnay, Encruzado mit Holzausbau" },
+      "glass": { "pt": "Branco amplo", "en": "Broad white glass", "de": "Breites Weissweinglas" },
+      "why": { "pt": "Mais espaço revela textura e aromas complexos.", "en": "More room reveals texture and complex aromas.", "de": "Mehr Raum zeigt Textur und komplexe Aromen." },
+      "temperature": "10–13 °C"
+    },
+    {
+      "id": "light-red",
+      "title": { "pt": "Tinto leve", "en": "Light red", "de": "Leichter Rotwein" },
+      "examples": { "pt": "Pinot Noir, Gamay", "en": "Pinot Noir, Gamay", "de": "Pinot Noir, Gamay" },
+      "glass": { "pt": "Borgonha largo", "en": "Wide Burgundy bowl", "de": "Breites Burgunderglas" },
+      "why": { "pt": "O bojo largo valoriza perfume e delicadeza.", "en": "The broad bowl enhances perfume and delicacy.", "de": "Der breite Kelch betont Duft und Feinheit." },
+      "temperature": "12–15 °C"
+    },
+    {
+      "id": "full-red",
+      "title": { "pt": "Tinto estruturado", "en": "Structured red", "de": "Strukturierter Rotwein" },
+      "examples": { "pt": "Touriga Nacional, Cabernet, Baga", "en": "Touriga Nacional, Cabernet, Baga", "de": "Touriga Nacional, Cabernet, Baga" },
+      "glass": { "pt": "Bordeaux alto", "en": "Tall Bordeaux glass", "de": "Hohes Bordeauxglas" },
+      "why": { "pt": "Direciona aromas e suaviza a sensação dos taninos.", "en": "Directs aromas and softens the feel of tannin.", "de": "Bündelt Aromen und mildert den Tannineindruck." },
+      "temperature": "16–18 °C"
+    },
+    {
+      "id": "sweet",
+      "title": { "pt": "Doce ou fortificado", "en": "Sweet or fortified", "de": "Süss- oder Likörwein" },
+      "examples": { "pt": "Porto, Sauternes, colheita tardia", "en": "Port, Sauternes, late harvest", "de": "Port, Sauternes, Spätlese" },
+      "glass": { "pt": "Pequeno, com bojo suficiente", "en": "Small, with enough bowl", "de": "Klein, mit ausreichendem Kelch" },
+      "why": { "pt": "Controla a dose sem concentrar apenas o álcool.", "en": "Controls the serving without focusing only alcohol.", "de": "Kontrolliert die Menge, ohne nur Alkohol zu bündeln." },
+      "temperature": "8–14 °C"
+    }
+  ],
+  "rulesTitle": {
+    "pt": "Boas regras para qualquer prova",
+    "en": "Good rules for any tasting",
+    "de": "Gute Regeln für jede Verkostung"
+  },
+  "rules": {
+    "pt": [
+      "Prova dos vinhos mais leves para os mais intensos.",
+      "Serve pouco de cada vez e segura o copo pela haste.",
+      "Água e pão neutro ajudam a limpar o palato.",
+      "Cuspir é normal numa prova com vários vinhos.",
+      "Evita perfumes, velas aromáticas e comida muito intensa.",
+      "As preferências pessoais importam mais do que parecer especialista."
+    ],
+    "en": [
+      "Taste from lighter wines to more intense ones.",
+      "Pour small amounts and hold the glass by the stem.",
+      "Water and plain bread help cleanse the palate.",
+      "Spitting is normal when tasting several wines.",
+      "Avoid perfume, scented candles and very intense food.",
+      "Personal preference matters more than sounding like an expert."
+    ],
+    "de": [
+      "Von leichteren zu intensiveren Weinen verkosten.",
+      "Kleine Mengen einschenken und das Glas am Stiel halten.",
+      "Wasser und neutrales Brot reinigen den Gaumen.",
+      "Ausspucken ist bei mehreren Weinen völlig normal.",
+      "Parfüm, Duftkerzen und sehr intensive Speisen vermeiden.",
+      "Persönliche Vorlieben zählen mehr als Expertengehabe."
+    ]
+  }
+}

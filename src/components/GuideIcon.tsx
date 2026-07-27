@@ -1,23 +1,29 @@
 import {
   Eye,
+  RefreshCcw,
+  Sparkles,
   Tag,
   Thermometer,
   Timer,
   TriangleAlert,
   Utensils,
   Warehouse,
+  Wind,
   Wine,
   type LucideProps,
 } from 'lucide-react'
 
 const icons = {
   eye: Eye,
+  refresh: RefreshCcw,
+  sparkles: Sparkles,
   tag: Tag,
   thermometer: Thermometer,
   timer: Timer,
   'triangle-alert': TriangleAlert,
   utensils: Utensils,
   warehouse: Warehouse,
+  wind: Wind,
   wine: Wine,
 }
 
