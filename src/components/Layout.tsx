@@ -6,6 +6,7 @@ import {
   Heart,
   Menu,
   Search,
+  Sparkles,
   Wine,
   X,
 } from 'lucide-react'
@@ -32,8 +33,11 @@ const navItems = [
   { to: '/regioes', key: 'navRegions', icon: Compass, end: false },
   { to: '/castas', key: 'navGrapes', icon: Grape, end: false },
   { to: '/guia', key: 'navGuide', icon: BookOpen, end: false },
+  { to: '/guia/sommelier', key: 'navSommelier', icon: Sparkles, end: true },
   { to: '/favoritos', key: 'navFavorites', icon: Heart, end: false },
 ] as const
+
+const mobileNavItems = navItems.filter(({ key }) => key !== 'navSommelier')
 
 export function Layout({ children }: { children: ReactNode }) {
   const { locale, setLocale, theme, toggleTheme, t } = useApp()
@@ -197,7 +201,7 @@ export function Layout({ children }: { children: ReactNode }) {
       </footer>
 
       <nav className="mobile-nav lg:hidden" aria-label="Mobile navigation">
-        {navItems.slice(0, 5).map(({ to, key, icon: Icon, end }) => (
+        {mobileNavItems.map(({ to, key, icon: Icon, end }) => (
           <NavLink key={to} to={to} end={end} className={({ isActive }) => `mobile-nav-link ${isActive ? 'mobile-nav-active' : ''}`}>
             <Icon size={19} strokeWidth={1.8} />
             <span>{t(key)}</span>

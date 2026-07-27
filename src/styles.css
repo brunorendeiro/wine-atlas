@@ -277,6 +277,39 @@
     color: #d7cdd0;
   }
 
+  .grape-location,
+  .grape-description {
+    color: var(--color-muted);
+  }
+
+  .dark .grape-card {
+    border-color: rgba(226, 173, 190, .28);
+    background: #2c2025;
+    color: #fff8eb;
+  }
+
+  .dark .grape-card h3 {
+    color: #fffaf1;
+  }
+
+  .dark .grape-card .grape-location {
+    color: #f0dce3;
+  }
+
+  .dark .grape-card .grape-location svg {
+    color: #e9b7c7;
+  }
+
+  .dark .grape-card .grape-description {
+    color: #eadfe2;
+  }
+
+  .dark .grape-card .chip {
+    border-color: rgba(240, 220, 227, .3);
+    background: rgba(255, 255, 255, .075);
+    color: #f3e6ea;
+  }
+
   .card:hover {
     z-index: 2;
     border-color: color-mix(in srgb, var(--color-wine) 30%, var(--color-line));
@@ -374,10 +407,10 @@
   .region-visual {
     position: relative;
     display: flex;
-    height: 8.5rem;
-    align-items: flex-start;
+    height: 5rem;
+    align-items: center;
     overflow: hidden;
-    padding: 1.1rem;
+    padding: .9rem 1.1rem;
     background:
       linear-gradient(130deg, color-mix(in srgb, var(--region-color) 94%, black), color-mix(in srgb, var(--region-color) 80%, white));
     isolation: isolate;

@@ -33,7 +33,7 @@ export function RegionCard({ region, distance, featured = false }: { region: Reg
       <div className="region-visual" style={{ '--region-color': region.color } as React.CSSProperties}>
         <span className="region-orbit region-orbit-one" />
         <span className="region-orbit region-orbit-two" />
-        <span className="relative text-4xl drop-shadow-sm">{countryFlag(region.countryCode)}</span>
+        <span className="relative text-2xl drop-shadow-sm">{countryFlag(region.countryCode)}</span>
         {distance !== undefined && (
           <span className="relative ml-auto rounded-full bg-black/25 px-3 py-1.5 text-xs font-semibold text-white backdrop-blur">
             {Math.round(distance)} km
@@ -64,7 +64,7 @@ export function GrapeCard({ grape, distance }: { grape: Grape; distance?: number
   const { locale, t } = useApp()
   const nearest = grape.regionIds.map(getRegion).find(Boolean)
   return (
-    <article className="card group relative overflow-hidden">
+    <article className="card grape-card group relative overflow-hidden">
       <div className="flex items-center gap-4 p-5 pb-3">
         <div className="grape-mark" style={{ '--grape-color': grape.color } as React.CSSProperties}>
           <span /><span /><span /><span /><span />
@@ -72,12 +72,12 @@ export function GrapeCard({ grape, distance }: { grape: Grape; distance?: number
         <div className="min-w-0 flex-1">
           <p className="eyebrow mb-1">{t(grape.type)}</p>
           <h3 className="truncate font-display text-xl font-semibold">{text(grape.name, locale)}</h3>
-          {nearest && <p className="mt-1 flex items-center gap-1 text-xs text-muted"><MapPin size={12} />{text(nearest.name, locale)}</p>}
+          {nearest && <p className="grape-location mt-1 flex items-center gap-1 text-xs"><MapPin size={12} />{text(nearest.name, locale)}</p>}
         </div>
         <FavoriteButton type="grape" id={grape.id} />
       </div>
       <div className="px-5 pb-5">
-        <p className="line-clamp-2 min-h-12 text-sm leading-6 text-muted">{text(grape.description, locale)}</p>
+        <p className="grape-description line-clamp-2 min-h-12 text-sm leading-6">{text(grape.description, locale)}</p>
         <div className="mt-4 flex items-center justify-between gap-3">
           <div className="flex flex-wrap gap-1.5">
             {list(grape.aromas, locale).slice(0, 2).map((aroma) => <span key={aroma} className="chip">{aroma}</span>)}
