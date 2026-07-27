@@ -7,7 +7,7 @@ const articles = [
   ...JSON.parse(await readFile(new URL('src/data/articles.json', root), 'utf8')),
   ...JSON.parse(await readFile(new URL('src/data/guide-expansion.json', root), 'utf8')),
 ]
-const base = 'https://wine-atlas.app'
+const base = process.env.WINE_ATLAS_SITE_URL || 'https://wine-atlas-eta.vercel.app'
 const paths = [
   '', '/regioes', '/castas', '/guia', '/ferramentas', '/favoritos',
   ...regions.map(({ id }) => `/regioes/${id}`),

@@ -11,19 +11,22 @@ const copy = {
     manual: 'Escolher localização', placeholder: 'País, cidade ou região vinícola…', useDevice: 'Usar localização do dispositivo',
     nearby: 'Regiões vinícolas próximas', travel: 'de carro (estimativa)', selected: 'Localização escolhida',
     reviewed: 'Última revisão', sources: 'Fontes', confidence: 'Nível de confiança', high: 'Alto', medium: 'Médio',
-    evidence: 'Conteúdo revisto com fontes institucionais. As condições e regras locais podem mudar.',
+    evidence: 'Consulta as fontes indicadas. As condições, classificações e regras locais podem mudar.',
+    country: 'País', city: 'Cidade', region: 'Região', device: 'Dispositivo',
   },
   en: {
     manual: 'Choose location', placeholder: 'Country, city or wine region…', useDevice: 'Use device location',
     nearby: 'Nearby wine regions', travel: 'by car (estimate)', selected: 'Selected location',
     reviewed: 'Last reviewed', sources: 'Sources', confidence: 'Confidence level', high: 'High', medium: 'Medium',
-    evidence: 'Content reviewed against institutional sources. Local conditions and rules may change.',
+    evidence: 'Consult the listed sources. Local conditions, classifications and rules may change.',
+    country: 'Country', city: 'City', region: 'Region', device: 'Device',
   },
   de: {
     manual: 'Standort wählen', placeholder: 'Land, Stadt oder Weinregion…', useDevice: 'Gerätestandort verwenden',
     nearby: 'Weinregionen in der Nähe', travel: 'mit dem Auto (Schätzung)', selected: 'Gewählter Standort',
     reviewed: 'Zuletzt geprüft', sources: 'Quellen', confidence: 'Vertrauensniveau', high: 'Hoch', medium: 'Mittel',
-    evidence: 'Inhalte anhand institutioneller Quellen geprüft. Lokale Bedingungen und Regeln können sich ändern.',
+    evidence: 'Bitte die angegebenen Quellen beachten. Lokale Bedingungen, Klassifikationen und Regeln können sich ändern.',
+    country: 'Land', city: 'Stadt', region: 'Region', device: 'Gerät',
   },
 } as const
 
@@ -42,8 +45,8 @@ export function LocationSelector() {
       {query && (
         <div className="mt-2 grid max-h-56 gap-1 overflow-y-auto" role="listbox">
           {options.map((option) => (
-            <button key={option.id} type="button" className="flex min-h-11 items-center gap-2 rounded-xl px-3 text-left text-sm font-semibold hover:bg-white/10 focus-visible:bg-white/15" onClick={() => { selectLocation(option); setQuery('') }}>
-              <MapPin size={15} /><span>{text(option.label, locale)}</span><span className="ml-auto text-[10px] uppercase tracking-wider text-white/50">{option.kind}</span>
+            <button key={option.id} type="button" role="option" aria-selected={selectedLocation?.id === option.id} className="flex min-h-11 items-center gap-2 rounded-xl px-3 text-left text-sm font-semibold hover:bg-white/10 focus-visible:bg-white/15" onClick={() => { selectLocation(option); setQuery('') }}>
+              <MapPin size={15} /><span>{text(option.label, locale)}</span><span className="ml-auto text-[10px] uppercase tracking-wider text-white/50">{t[option.kind]}</span>
             </button>
           ))}
         </div>
@@ -121,7 +124,7 @@ const sourceByCountry: Record<string, Source[]> = {
   IT: [{ title: 'Ministero dell’agricoltura', url: 'https://www.masaf.gov.it/' }],
 }
 
-export function DataQuality({ reviewedAt = '2026-07-27', confidence = 'high', sources, countryCode }: { reviewedAt?: string; confidence?: 'high' | 'medium'; sources?: Source[]; countryCode?: string }) {
+export function DataQuality({ reviewedAt = '2026-07-27', confidence = 'medium', sources, countryCode }: { reviewedAt?: string; confidence?: 'high' | 'medium'; sources?: Source[]; countryCode?: string }) {
   const { locale } = useApp()
   const t = copy[locale]
   const resolved = sources?.length ? sources : (countryCode && sourceByCountry[countryCode]) || [{ title: 'OIV — International Organisation of Vine and Wine', url: 'https://www.oiv.int/' }]

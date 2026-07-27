@@ -84,10 +84,11 @@ npm run build
 
 ```text
 src/
-├── components/  # Componentes de interface e ferramentas interativas
+├── components/  # Componentes de interface reutilizáveis
 ├── context/     # Idioma, tema, favoritos e localização
 ├── data/        # Regiões, castas e conteúdos editoriais
-└── lib/         # Acesso aos dados e analytics
+├── lib/         # Pesquisa, dados, localização, SEO e analytics
+└── pages/       # Um módulo lazy-loaded por página/rota
 ```
 
 ## Licença

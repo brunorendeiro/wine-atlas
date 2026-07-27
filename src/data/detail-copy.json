@@ -1,0 +1,53 @@
+{
+  "pt": {
+    "subregion": "Sub-região",
+    "terroir": "Terroir",
+    "elevation": "Altitude",
+    "harvest": "Período de vindima",
+    "related": "Regiões relacionadas",
+    "map": "Mapa da região",
+    "typicalColour": "Cor típica",
+    "alcohol": "Tendência alcoólica",
+    "ageing": "Potencial de guarda",
+    "typicalWines": "Vinhos típicos",
+    "similar": "Castas semelhantes",
+    "unavailable": "Informação específica ainda não verificada",
+    "variable": "Varia por sub-região e produtor",
+    "northHarvest": "Agosto a outubro, consoante o ano e a altitude",
+    "southHarvest": "Fevereiro a abril, consoante o ano e a altitude"
+  },
+  "en": {
+    "subregion": "Sub-region",
+    "terroir": "Terroir",
+    "elevation": "Elevation",
+    "harvest": "Harvest period",
+    "related": "Related regions",
+    "map": "Region map",
+    "typicalColour": "Typical colour",
+    "alcohol": "Alcohol tendency",
+    "ageing": "Ageing potential",
+    "typicalWines": "Typical wines",
+    "similar": "Similar grape varieties",
+    "unavailable": "Specific information not yet verified",
+    "variable": "Varies by sub-region and producer",
+    "northHarvest": "August to October, depending on year and elevation",
+    "southHarvest": "February to April, depending on year and elevation"
+  },
+  "de": {
+    "subregion": "Teilregion",
+    "terroir": "Terroir",
+    "elevation": "Höhenlage",
+    "harvest": "Lesezeit",
+    "related": "Verwandte Regionen",
+    "map": "Regionalkarte",
+    "typicalColour": "Typische Farbe",
+    "alcohol": "Alkoholtendenz",
+    "ageing": "Reifepotenzial",
+    "typicalWines": "Typische Weine",
+    "similar": "Ähnliche Rebsorten",
+    "unavailable": "Spezifische Information noch nicht geprüft",
+    "variable": "Je nach Teilregion und Erzeuger unterschiedlich",
+    "northHarvest": "August bis Oktober, je nach Jahr und Höhenlage",
+    "southHarvest": "Februar bis April, je nach Jahr und Höhenlage"
+  }
+}

@@ -52,10 +52,30 @@ export function LocationIntro() {
 }
 
 export function CookieConsent() {
-  const { t } = useApp()
+  const { locale, t } = useApp()
   const [visible, setVisible] = useState(() => !getStoredConsent())
   const [settings, setSettings] = useState(false)
   const [choice, setChoice] = useState<Consent>(() => getStoredConsent() ?? 'denied')
+  const settingsCopy = {
+    pt: {
+      title: 'Definições de cookies',
+      analytics: 'Google Analytics',
+      description: 'Estatísticas anónimas de utilização. Nunca enviamos notas, coordenadas ou dados pessoais.',
+      save: 'Guardar preferências',
+    },
+    en: {
+      title: 'Cookie Settings',
+      analytics: 'Google Analytics',
+      description: 'Anonymous usage statistics. We never send notes, coordinates or personal data.',
+      save: 'Save preferences',
+    },
+    de: {
+      title: 'Cookie-Einstellungen',
+      analytics: 'Google Analytics',
+      description: 'Anonyme Nutzungsstatistiken. Notizen, Koordinaten oder persönliche Daten werden nie gesendet.',
+      save: 'Einstellungen speichern',
+    },
+  }[locale]
 
   useEffect(() => {
     initialiseConsentMode()
@@ -98,17 +118,17 @@ export function CookieConsent() {
           <section role="dialog" aria-modal="true" aria-labelledby="cookie-settings-title" className="w-full max-w-lg rounded-[2rem] bg-canvas p-6 shadow-2xl dark:bg-night-soft sm:p-8" onClick={(event) => event.stopPropagation()}>
             <button type="button" className="icon-button float-right" onClick={() => setSettings(false)} aria-label={t('close')}><X size={19} /></button>
             <ShieldCheck className="mb-5 text-leaf dark:text-leaf-light" size={28} />
-            <h2 id="cookie-settings-title" className="font-display text-3xl font-semibold">Cookie Settings</h2>
+            <h2 id="cookie-settings-title" className="font-display text-3xl font-semibold">{settingsCopy.title}</h2>
             <p className="mt-3 leading-7 text-muted">{t('analyticsBody')}</p>
             <div className="mt-6 rounded-2xl border border-line p-4 dark:border-white/15">
               <div className="flex items-center justify-between gap-4">
-                <div><p className="font-bold">Google Analytics</p><p className="mt-1 text-xs leading-5 text-muted">Anonymous usage statistics. No notes, coordinates or personal data.</p></div>
+                <div><p className="font-bold">{settingsCopy.analytics}</p><p className="mt-1 text-xs leading-5 text-muted">{settingsCopy.description}</p></div>
                 <button type="button" role="switch" aria-checked={choice === 'granted'} onClick={() => setChoice(choice === 'granted' ? 'denied' : 'granted')} className={`relative h-7 w-12 rounded-full transition ${choice === 'granted' ? 'bg-leaf' : 'bg-line dark:bg-white/20'}`}>
                   <span className={`absolute top-1 size-5 rounded-full bg-white shadow transition ${choice === 'granted' ? 'left-6' : 'left-1'}`} />
                 </button>
               </div>
             </div>
-            <button type="button" className="button-primary mt-6 w-full" onClick={() => save(choice)}>Save preferences</button>
+            <button type="button" className="button-primary mt-6 w-full" onClick={() => save(choice)}>{settingsCopy.save}</button>
           </section>
         </div>
       )}

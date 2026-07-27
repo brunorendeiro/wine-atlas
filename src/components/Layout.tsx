@@ -1,4 +1,4 @@
-import { useEffect, useState, type FormEvent, type ReactNode } from 'react'
+import { lazy, Suspense, useEffect, useState, type FormEvent, type ReactNode } from 'react'
 import {
   BookOpen,
   Compass,
@@ -15,7 +15,7 @@ import { Link, NavLink, useLocation, useNavigate } from 'react-router-dom'
 import { useApp } from '../context/AppContext'
 import type { Locale } from '../types'
 import { CookieConsent } from './Overlays'
-import { Seo } from './Seo'
+const Seo = lazy(() => import('./Seo').then((module) => ({ default: module.Seo })))
 
 function Brand() {
   return (
@@ -67,7 +67,7 @@ export function Layout({ children }: { children: ReactNode }) {
 
   return (
     <div className="min-h-dvh overflow-x-hidden bg-canvas text-ink transition-colors dark:bg-night dark:text-cream">
-      <Seo />
+      <Suspense fallback={null}><Seo /></Suspense>
       <a href="#main-content" className="skip-link">Skip to content</a>
       <header className="sticky top-0 z-40 border-b border-line/70 bg-canvas/88 backdrop-blur-xl dark:border-white/10 dark:bg-night/88">
         <div className="page-shell flex h-16 items-center justify-between gap-4 lg:h-[74px]">
@@ -202,7 +202,9 @@ export function Layout({ children }: { children: ReactNode }) {
               <span aria-hidden="true">·</span>
               <Link to="/privacidade" className="hover:text-ink dark:hover:text-white">{t('privacy')}</Link>
               <span aria-hidden="true">·</span>
-              <button type="button" className="hover:text-ink dark:hover:text-white" onClick={() => window.dispatchEvent(new Event('wine-atlas:cookie-settings'))}>Cookie Settings</button>
+              <button type="button" className="hover:text-ink dark:hover:text-white" onClick={() => window.dispatchEvent(new Event('wine-atlas:cookie-settings'))}>
+                {locale === 'pt' ? 'Definições de cookies' : locale === 'de' ? 'Cookie-Einstellungen' : 'Cookie Settings'}
+              </button>
             </div>
           </div>
         </div>
