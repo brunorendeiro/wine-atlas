@@ -32,7 +32,7 @@ const navItems = [
   { to: '/', key: 'navHome', icon: Compass, end: true },
   { to: '/regioes', key: 'navRegions', icon: Compass, end: false },
   { to: '/castas', key: 'navGrapes', icon: Grape, end: false },
-  { to: '/guia', key: 'navGuide', icon: BookOpen, end: false },
+  { to: '/guia', key: 'navGuide', icon: BookOpen, end: true },
   { to: '/guia/sommelier', key: 'navSommelier', icon: Sparkles, end: true },
   { to: '/guia/aromas', key: 'navAromas', icon: Wine, end: true },
   { to: '/guia/historia', key: 'navHistory', icon: BookOpen, end: true },
