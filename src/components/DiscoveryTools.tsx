@@ -15,9 +15,10 @@ import {
 import { Link } from 'react-router-dom'
 import { useApp } from '../context/AppContext'
 import aromaJson from '../data/aroma-wheel.json'
-import { getGrape, getRegion, grapes, list, text } from '../lib/data'
+import { getGrape, getRegion, grapes, list, regions, text } from '../lib/data'
 import type { Grape, Locale, LocalizedList, LocalizedText } from '../types'
 import { GrapeCard } from './Cards'
+import { trackEvent } from '../lib/analytics'
 
 type Level = 'low' | 'medium' | 'high'
 type WineType = 'red' | 'white' | 'either'
@@ -370,6 +371,11 @@ export function GuidedTastingPage() {
   const [structure, setStructure] = useState({ body: '', acidity: '', tannins: '' })
   const [conclusion, setConclusion] = useState('')
   const totalSteps = 5
+  const advance = () => {
+    if (step === 0) trackEvent('tasting_started')
+    if (step === totalSteps - 1) trackEvent('tasting_completed')
+    setStep((current) => current + 1)
+  }
 
   const toggleAroma = (value: string) => setAromas((current) => current.includes(value) ? current.filter((item) => item !== value) : [...current, value])
   const reset = () => {
@@ -446,7 +452,7 @@ export function GuidedTastingPage() {
         {step < totalSteps && (
           <div className="mt-5 flex justify-between gap-3">
             <button type="button" className="button-secondary" disabled={step === 0} onClick={() => setStep((current) => Math.max(0, current - 1))}><ArrowLeft size={17} />{t.previous}</button>
-            <button type="button" className="button-primary" onClick={() => setStep((current) => current + 1)}>{step === totalSteps - 1 ? t.finish : t.next}<ArrowRight size={17} /></button>
+            <button type="button" className="button-primary" onClick={advance}>{step === totalSteps - 1 ? t.finish : t.next}<ArrowRight size={17} /></button>
           </div>
         )}
       </section>
@@ -506,20 +512,66 @@ const foodRules: { id: string; label: LocalizedText; reason: LocalizedText; grap
   },
 ]
 
+const recommendationCopy = {
+  pt: {
+    budget: 'Orçamento', country: 'País', sweetness: 'Doçura', occasion: 'Ocasião', colour: 'Cor', body: 'Corpo',
+    any: 'Qualquer', value: 'Económico', mid: 'Intermédio', premium: 'Especial', dry: 'Seco', offDry: 'Meio-seco', sweet: 'Doce',
+    everyday: 'Dia a dia', dinner: 'Jantar', celebration: 'Celebração', gift: 'Presente',
+    regions: 'Regiões a explorar', styles: 'Estilos a procurar', whyGrape: 'Perfil e harmonização adequados às escolhas.',
+    whyRegion: 'Cultiva castas recomendadas e produz estilos alinhados com os filtros.',
+    whyStyle: 'Combina a intensidade, cor e contexto escolhidos.',
+  },
+  en: {
+    budget: 'Budget', country: 'Country', sweetness: 'Sweetness', occasion: 'Occasion', colour: 'Colour', body: 'Body',
+    any: 'Any', value: 'Value', mid: 'Mid-range', premium: 'Special', dry: 'Dry', offDry: 'Off-dry', sweet: 'Sweet',
+    everyday: 'Everyday', dinner: 'Dinner', celebration: 'Celebration', gift: 'Gift',
+    regions: 'Regions to explore', styles: 'Styles to look for', whyGrape: 'Its profile and pairing fit the selected choices.',
+    whyRegion: 'It grows recommended grapes and makes styles aligned with the filters.',
+    whyStyle: 'It matches the selected intensity, colour and context.',
+  },
+  de: {
+    budget: 'Budget', country: 'Land', sweetness: 'Süße', occasion: 'Anlass', colour: 'Farbe', body: 'Körper',
+    any: 'Beliebig', value: 'Preiswert', mid: 'Mittelklasse', premium: 'Besonders', dry: 'Trocken', offDry: 'Halbtrocken', sweet: 'Süß',
+    everyday: 'Alltag', dinner: 'Abendessen', celebration: 'Feier', gift: 'Geschenk',
+    regions: 'Regionen entdecken', styles: 'Stile suchen', whyGrape: 'Profil und Speisenbegleitung passen zur Auswahl.',
+    whyRegion: 'Dort wachsen empfohlene Sorten und passende Stile entstehen.',
+    whyStyle: 'Passt zu Intensität, Farbe und gewähltem Anlass.',
+  },
+} as const
+
 export function WineChooserPage() {
   const { locale } = useApp()
   const t = c(locale)
   const [food, setFood] = useState(foodRules[0].id)
   const [preference, setPreference] = useState<WineType>('either')
   const [intensity, setIntensity] = useState<'light' | 'medium' | 'full'>('medium')
+  const [budget, setBudget] = useState<'value' | 'mid' | 'premium'>('mid')
+  const [country, setCountry] = useState('any')
+  const [sweetness, setSweetness] = useState<'dry' | 'offDry' | 'sweet'>('dry')
+  const [occasion, setOccasion] = useState<'everyday' | 'dinner' | 'celebration' | 'gift'>('dinner')
   const [show, setShow] = useState(false)
+  const rc = recommendationCopy[locale]
   const rule = foodRules.find((item) => item.id === food)!
   const candidates = rule.grapeIds.map(getGrape).filter(Boolean) as Grape[]
   const preferred = preference === 'either' ? candidates : candidates.filter((grape) => grape.type === preference)
-  const matching = preferred.filter((grape) => grape.body === intensity)
+  const countryGrapes = country === 'any' ? preferred : preferred.filter((grape) => grape.regionIds.some((id) => getRegion(id)?.countryCode === country))
+  const sweetnessPreferred = sweetness === 'dry' ? countryGrapes : countryGrapes.filter((grape) => ['riesling', 'gewurztraminer'].includes(grape.id))
+  const budgetPreferred = budget === 'value'
+    ? sweetnessPreferred.filter((grape) => grape.regionIds.length > 1)
+    : budget === 'premium' ? sweetnessPreferred.filter((grape) => grape.body === 'full' || grape.acidity === 'high') : sweetnessPreferred
+  const matching = budgetPreferred.filter((grape) => grape.body === intensity)
   const suggestions = [...new Map(
-    [...matching, ...preferred, ...candidates].map((grape) => [grape.id, grape]),
+    [...matching, ...budgetPreferred, ...preferred, ...candidates].map((grape) => [grape.id, grape]),
   ).values()].slice(0, 4)
+  const suggestedRegions = [...new Map(suggestions.flatMap((grape) => grape.regionIds.map(getRegion)).filter(Boolean).map((region) => [region!.id, region!])).values()]
+    .filter((region) => country === 'any' || region.countryCode === country).slice(0, 3)
+  const suggestedStyles = [...new Set(suggestedRegions.flatMap((region) => list(region.wineTypes, locale)))].slice(0, 4)
+  const countries = [...new Map(regions.map((region) => [region.countryCode, text(region.country, locale)])).entries()]
+
+  function generate() {
+    setShow(true)
+    trackEvent('recommendation_generated', { budget, country, colour: preference, sweetness, body: intensity, occasion, meal: food })
+  }
 
   return (
     <>
@@ -532,7 +584,13 @@ export function WineChooserPage() {
             <ChooserField label={t.whatFood}>{foodRules.map((item) => <button type="button" key={item.id} className={optionClass(food === item.id)} onClick={() => { setFood(item.id); setShow(false) }}>{text(item.label, locale)}</button>)}</ChooserField>
             <ChooserField label={t.preference}>{(['either', 'red', 'white'] as WineType[]).map((item) => <button type="button" key={item} className={optionClass(preference === item)} onClick={() => { setPreference(item); setShow(false) }}>{item === 'either' ? t.any : t[item]}</button>)}</ChooserField>
             <ChooserField label={t.intensity}>{(['light', 'medium', 'full'] as const).map((item) => <button type="button" key={item} className={optionClass(intensity === item)} onClick={() => { setIntensity(item); setShow(false) }}>{item === 'light' ? t.low : item === 'full' ? t.high : t.medium}</button>)}</ChooserField>
-            <button type="button" className="button-primary mt-7 w-full" onClick={() => setShow(true)}>{t.seeSuggestions}<ArrowRight size={17} /></button>
+            <ChooserField label={rc.budget}>{(['value', 'mid', 'premium'] as const).map((item) => <button type="button" key={item} className={optionClass(budget === item)} onClick={() => { setBudget(item); setShow(false) }}>{rc[item]}</button>)}</ChooserField>
+            <ChooserField label={rc.country}>
+              <select className="filter-control" value={country} onChange={(event) => { setCountry(event.target.value); setShow(false) }}><option value="any">{rc.any}</option>{countries.map(([code, name]) => <option key={code} value={code}>{name}</option>)}</select>
+            </ChooserField>
+            <ChooserField label={rc.sweetness}>{(['dry', 'offDry', 'sweet'] as const).map((item) => <button type="button" key={item} className={optionClass(sweetness === item)} onClick={() => { setSweetness(item); setShow(false) }}>{rc[item]}</button>)}</ChooserField>
+            <ChooserField label={rc.occasion}>{(['everyday', 'dinner', 'celebration', 'gift'] as const).map((item) => <button type="button" key={item} className={optionClass(occasion === item)} onClick={() => { setOccasion(item); setShow(false) }}>{rc[item]}</button>)}</ChooserField>
+            <button type="button" className="button-primary mt-7 w-full" onClick={generate}>{t.seeSuggestions}<ArrowRight size={17} /></button>
           </div>
           <div className="min-h-96 rounded-[2rem] border border-line p-6 dark:border-white/15 sm:p-8">
             {!show ? (
@@ -549,10 +607,13 @@ export function WineChooserPage() {
                     <Link key={grape.id} to={`/castas/${grape.id}`} className="rounded-2xl border border-line p-4 transition hover:border-wine dark:border-white/15">
                       <div className="flex items-center gap-3"><span className="size-3 rounded-full" style={{ background: grape.color }} /><h3 className="font-display text-xl font-semibold">{text(grape.name, locale)}</h3></div>
                       <p className="mt-2 text-sm text-muted">{text(grape.origin, locale)}</p>
+                      <p className="mt-3 text-xs leading-5 text-muted"><strong>{t.why}:</strong> {text(rule.reason, locale)} {rc.whyGrape}</p>
                       <p className="mt-3 text-xs font-bold text-wine-light dark:text-gold">{t.service}: {text(grape.service, locale)}</p>
                     </Link>
                   ))}
                 </div>
+                {suggestedRegions.length > 0 && <div className="mt-8"><h3 className="font-display text-2xl font-semibold">{rc.regions}</h3><div className="mt-3 grid gap-2">{suggestedRegions.map((region) => <Link key={region.id} to={`/regioes/${region.id}`} className="rounded-xl border border-line p-3 text-sm dark:border-white/15"><strong>{text(region.name, locale)}</strong><span className="mt-1 block text-xs text-muted"><strong>{t.why}:</strong> {rc.whyRegion}</span></Link>)}</div></div>}
+                {suggestedStyles.length > 0 && <div className="mt-8"><h3 className="font-display text-2xl font-semibold">{rc.styles}</h3><div className="mt-3 flex flex-wrap gap-2">{suggestedStyles.map((style) => <span key={style} className="chip max-w-xs"><strong>{style}</strong> · {rc.whyStyle}</span>)}</div></div>}
                 <button type="button" className="button-secondary mt-6" onClick={() => setShow(false)}><RotateCcw size={17} />{t.resetChoice}</button>
               </div>
             )}
@@ -584,8 +645,8 @@ export function GrapeComparePage() {
       </ToolHero>
       <section className="page-shell py-10 sm:py-14">
         <div className="mb-7 grid gap-4 rounded-[1.75rem] border border-line bg-paper p-5 dark:border-white/15 dark:bg-white/[0.04] sm:grid-cols-2 sm:p-6">
-          <GrapeSelect label={t.firstGrape} value={firstId} onChange={setFirstId} grapes={sorted} locale={locale} />
-          <GrapeSelect label={t.secondGrape} value={secondId} onChange={setSecondId} grapes={sorted} locale={locale} />
+          <GrapeSelect label={t.firstGrape} value={firstId} onChange={(value) => { setFirstId(value); trackEvent('compare_grapes_used') }} grapes={sorted} locale={locale} />
+          <GrapeSelect label={t.secondGrape} value={secondId} onChange={(value) => { setSecondId(value); trackEvent('compare_grapes_used') }} grapes={sorted} locale={locale} />
         </div>
         {same ? <p className="rounded-2xl border border-gold/30 bg-gold/10 p-5 text-center font-semibold">{t.sameGrape}</p> : first && second ? (
           <div className="overflow-hidden rounded-[1.75rem] border border-line dark:border-white/15">

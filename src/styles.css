@@ -65,6 +65,11 @@
     -webkit-tap-highlight-color: transparent;
   }
 
+  :where(a, button, input, select, textarea):focus-visible {
+    outline: 3px solid color-mix(in srgb, var(--color-gold) 85%, white);
+    outline-offset: 3px;
+  }
+
   button:disabled {
     cursor: wait;
     opacity: .65;
@@ -72,6 +77,19 @@
 
   ::selection {
     background: color-mix(in srgb, var(--color-wine) 22%, transparent);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *, *::before, *::after {
+    scroll-behavior: auto !important;
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
   }
 }
 

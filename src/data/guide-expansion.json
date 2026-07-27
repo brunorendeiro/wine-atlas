@@ -1,0 +1,87 @@
+[
+  {
+    "id": "cellaring",
+    "title": { "pt": "Criar uma pequena garrafeira", "en": "Build a small cellar", "de": "Einen kleinen Weinkeller aufbauen" },
+    "eyebrow": { "pt": "Guardar para evoluir", "en": "Keep to develop", "de": "Zum Reifen lagern" },
+    "summary": { "pt": "Nem todos os vinhos melhoram com tempo; escolhe estrutura, equilíbrio e proveniência.", "en": "Not every wine improves with time; choose structure, balance and provenance.", "de": "Nicht jeder Wein wird mit Zeit besser; achte auf Struktur, Balance und Herkunft." },
+    "intro": { "pt": "Acidez, tanino, concentração e açúcar podem ajudar um vinho a evoluir, mas não garantem longevidade. Compra a produtores fiáveis e guarda as garrafas em condições estáveis.", "en": "Acidity, tannin, concentration and sugar can help a wine develop but do not guarantee longevity. Buy from reliable producers and keep bottles in stable conditions.", "de": "Säure, Tannin, Konzentration und Zucker können die Reife fördern, garantieren aber keine Langlebigkeit. Kaufe bei verlässlichen Erzeugern und lagere stabil." },
+    "tips": {
+      "pt": ["Começa com poucas garrafas e regista a data ideal de prova", "Mantém 10–15 °C com pouca variação", "Protege de luz, calor e vibração", "Prova garrafas iguais em momentos diferentes"],
+      "en": ["Start with a few bottles and note a drinking window", "Keep 10–15°C with little variation", "Protect from light, heat and vibration", "Taste matching bottles at different times"],
+      "de": ["Mit wenigen Flaschen beginnen und Trinkfenster notieren", "10–15 °C möglichst konstant halten", "Vor Licht, Wärme und Vibration schützen", "Gleiche Flaschen zu verschiedenen Zeiten probieren"]
+    },
+    "icon": "warehouse",
+    "featured": false,
+    "reviewedAt": "2026-07-27",
+    "confidence": "high",
+    "sources": [{ "title": "OIV — International Organisation of Vine and Wine", "url": "https://www.oiv.int/" }]
+  },
+  {
+    "id": "closures",
+    "title": { "pt": "Rolhas e outros vedantes", "en": "Corks and other closures", "de": "Korken und andere Verschlüsse" },
+    "eyebrow": { "pt": "Fechar a garrafa", "en": "Seal the bottle", "de": "Die Flasche verschließen" },
+    "summary": { "pt": "Cortiça, rosca e materiais técnicos protegem o vinho de formas diferentes.", "en": "Cork, screwcap and technical materials protect wine in different ways.", "de": "Kork, Schraubverschluss und technische Materialien schützen Wein unterschiedlich." },
+    "intro": { "pt": "O vedante influencia a entrada de oxigénio e a consistência entre garrafas. Nenhum formato determina, por si só, a qualidade do vinho.", "en": "The closure influences oxygen ingress and bottle consistency. No format alone determines wine quality.", "de": "Der Verschluss beeinflusst Sauerstoffeintrag und Flaschenkonstanz. Kein Format bestimmt allein die Weinqualität." },
+    "tips": {
+      "pt": ["Cortiça natural permite variação entre unidades", "Rolhas técnicas procuram maior consistência", "Rosca não significa vinho inferior", "Depois de abrir, volta a fechar e refrigera"],
+      "en": ["Natural cork can vary between units", "Technical corks aim for greater consistency", "Screwcap does not mean inferior wine", "After opening, reseal and refrigerate"],
+      "de": ["Naturkork kann zwischen Flaschen variieren", "Technische Korken zielen auf mehr Konstanz", "Schraubverschluss bedeutet nicht geringere Qualität", "Nach dem Öffnen verschließen und kühlen"]
+    },
+    "icon": "circle-dot",
+    "featured": false,
+    "reviewedAt": "2026-07-27",
+    "confidence": "high",
+    "sources": [{ "title": "Amorim Cork — Knowledge", "url": "https://www.amorimcork.com/" }]
+  },
+  {
+    "id": "sparkling-service",
+    "title": { "pt": "Servir vinho espumante", "en": "Serve sparkling wine", "de": "Schaumwein servieren" },
+    "eyebrow": { "pt": "Bolhas com segurança", "en": "Bubbles, safely", "de": "Sicher mit Perlen" },
+    "summary": { "pt": "Frio, controlo e um copo em tulipa preservam frescura e aroma.", "en": "Cold, control and a tulip glass preserve freshness and aroma.", "de": "Kühle, Kontrolle und ein Tulpenglas bewahren Frische und Aroma." },
+    "intro": { "pt": "Uma garrafa de espumante tem pressão elevada. Arrefece bem, segura a rolha e roda lentamente a garrafa — o objetivo é um suspiro, não um disparo.", "en": "A sparkling bottle is under high pressure. Chill it well, hold the cork and slowly turn the bottle—the aim is a sigh, not a shot.", "de": "Eine Schaumweinflasche steht unter hohem Druck. Gut kühlen, Korken halten und die Flasche langsam drehen – Ziel ist ein Seufzer, kein Knall." },
+    "tips": {
+      "pt": ["Arrefece a 6–10 °C conforme o estilo", "Aponta sempre para longe de pessoas", "Mantém o polegar sobre a rolha", "Serve devagar em duas etapas"],
+      "en": ["Chill to 6–10°C depending on style", "Always point away from people", "Keep a thumb over the cork", "Pour slowly in two stages"],
+      "de": ["Je nach Stil auf 6–10 °C kühlen", "Immer von Personen weg richten", "Daumen auf dem Korken halten", "Langsam in zwei Etappen einschenken"]
+    },
+    "icon": "sparkles",
+    "featured": false,
+    "reviewedAt": "2026-07-27",
+    "confidence": "high",
+    "sources": [{ "title": "Comité Champagne", "url": "https://www.champagne.fr/" }]
+  },
+  {
+    "id": "dessert-wines",
+    "title": { "pt": "Vinhos de sobremesa", "en": "Dessert wines", "de": "Dessertweine" },
+    "eyebrow": { "pt": "Doçura com equilíbrio", "en": "Sweetness with balance", "de": "Süße mit Balance" },
+    "summary": { "pt": "Açúcar, acidez e intensidade devem trabalhar em conjunto.", "en": "Sugar, acidity and intensity should work together.", "de": "Zucker, Säure und Intensität sollten zusammenspielen." },
+    "intro": { "pt": "A doçura pode vir de uvas secas, vindima tardia, botrytis, congelação ou interrupção da fermentação. A acidez evita que o resultado pareça pesado.", "en": "Sweetness may come from dried grapes, late harvest, botrytis, freezing or stopping fermentation. Acidity keeps the result from feeling heavy.", "de": "Süße kann aus getrockneten Trauben, Spätlese, Botrytis, Gefrieren oder gestoppter Gärung kommen. Säure verhindert Schwere." },
+    "tips": {
+      "pt": ["O vinho deve ser tão doce quanto a sobremesa", "Combina intensidade, não apenas açúcar", "Serve porções pequenas e frescas", "Queijos salgados podem criar contraste"],
+      "en": ["Wine should be as sweet as the dessert", "Match intensity, not sugar alone", "Serve small, cool portions", "Salty cheese can create contrast"],
+      "de": ["Wein sollte so süß wie das Dessert sein", "Intensität statt nur Zucker abstimmen", "Kleine, kühle Portionen servieren", "Salziger Käse schafft Kontrast"]
+    },
+    "icon": "cake-slice",
+    "featured": false,
+    "reviewedAt": "2026-07-27",
+    "confidence": "high",
+    "sources": [{ "title": "OIV — International Organisation of Vine and Wine", "url": "https://www.oiv.int/" }]
+  },
+  {
+    "id": "fortified-wines",
+    "title": { "pt": "Vinhos fortificados", "en": "Fortified wines", "de": "Likörweine" },
+    "eyebrow": { "pt": "Vinho e aguardente vínica", "en": "Wine and grape spirit", "de": "Wein und Weinbrand" },
+    "summary": { "pt": "Porto, Madeira, Jerez e outros estilos usam fortificação com objetivos distintos.", "en": "Port, Madeira, Sherry and other styles use fortification for different aims.", "de": "Portwein, Madeira, Sherry und andere Stile nutzen Aufspritung mit verschiedenen Zielen." },
+    "intro": { "pt": "Adicionar aguardente vínica pode preservar açúcar ou estabilizar um vinho já seco. O momento da fortificação e o estágio determinam grande parte do estilo.", "en": "Adding grape spirit can preserve sugar or stabilise an already dry wine. Timing and ageing determine much of the style.", "de": "Weinbrand kann Zucker bewahren oder bereits trockenen Wein stabilisieren. Zeitpunkt und Ausbau prägen den Stil." },
+    "tips": {
+      "pt": ["Porto pode ser ruby, tawny, branco ou rosé", "Madeira combina calor, oxidação e acidez", "Jerez inclui estilos secos e doces", "Serve fresco e conserva aberto conforme o estilo"],
+      "en": ["Port may be ruby, tawny, white or rosé", "Madeira combines heat, oxidation and acidity", "Sherry includes dry and sweet styles", "Serve cool and store opened according to style"],
+      "de": ["Portwein kann Ruby, Tawny, weiß oder rosé sein", "Madeira verbindet Wärme, Oxidation und Säure", "Sherry umfasst trockene und süße Stile", "Kühl servieren und je nach Stil geöffnet lagern"]
+    },
+    "icon": "wine",
+    "featured": false,
+    "reviewedAt": "2026-07-27",
+    "confidence": "high",
+    "sources": [{ "title": "Instituto dos Vinhos do Douro e do Porto", "url": "https://www.ivdp.pt/" }, { "title": "Instituto do Vinho, do Bordado e do Artesanato da Madeira", "url": "https://ivbam.madeira.gov.pt/" }]
+  }
+]

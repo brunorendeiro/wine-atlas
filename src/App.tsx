@@ -1,10 +1,11 @@
-import { Component, useEffect, useMemo, useState, type ErrorInfo, type FormEvent, type ReactNode } from 'react'
+import { Component, lazy, Suspense, useEffect, useMemo, useState, type ErrorInfo, type FormEvent, type ReactNode } from 'react'
 import {
   ArrowLeft,
   ArrowRight,
   Check,
   ChevronRight,
   CircleGauge,
+  Clock,
   CloudSun,
   Heart,
   LocateFixed,
@@ -27,7 +28,7 @@ import {
 } from 'react-router-dom'
 import { ArticleCard, EmptyState, FavoriteButton, GrapeCard, RegionCard } from './components/Cards'
 import { AromaWheel } from './components/AromaWheel'
-import { GrapeComparePage, GuidedTastingPage, ToolsHubPage, WineChooserPage } from './components/DiscoveryTools'
+import { DataQuality, GrapeRadar, LocationSelector, NearbyRegionGrid, RegionMap } from './components/DiscoveryEnhancements'
 import { GuideIcon } from './components/GuideIcon'
 import { Layout } from './components/Layout'
 import { LocationIntro } from './components/Overlays'
@@ -49,6 +50,13 @@ import {
   text,
 } from './lib/data'
 import type { Grape as GrapeType, LocalizedText, Region } from './types'
+import { getRecentSearches, rememberSearch, unifiedSearch, type SearchCategory } from './lib/search'
+import { trackEvent } from './lib/analytics'
+
+const ToolsHubPage = lazy(() => import('./components/DiscoveryTools').then((module) => ({ default: module.ToolsHubPage })))
+const GuidedTastingPage = lazy(() => import('./components/DiscoveryTools').then((module) => ({ default: module.GuidedTastingPage })))
+const WineChooserPage = lazy(() => import('./components/DiscoveryTools').then((module) => ({ default: module.WineChooserPage })))
+const GrapeComparePage = lazy(() => import('./components/DiscoveryTools').then((module) => ({ default: module.GrapeComparePage })))
 
 const wineHistory = historyJson as {
   eyebrow: LocalizedText
@@ -56,6 +64,30 @@ const wineHistory = historyJson as {
   intro: LocalizedText
   events: { period: LocalizedText; place: LocalizedText; title: LocalizedText; body: LocalizedText }[]
 }
+
+const detailCopy = {
+  pt: {
+    subregion: 'Sub-região', terroir: 'Terroir', elevation: 'Altitude', harvest: 'Período de vindima',
+    related: 'Regiões relacionadas', map: 'Mapa da região', typicalColour: 'Cor típica', alcohol: 'Tendência alcoólica',
+    ageing: 'Potencial de guarda', typicalWines: 'Vinhos típicos', similar: 'Castas semelhantes',
+    unavailable: 'Informação específica ainda não verificada', variable: 'Varia por sub-região e produtor',
+    northHarvest: 'Agosto a outubro, consoante o ano e a altitude', southHarvest: 'Fevereiro a abril, consoante o ano e a altitude',
+  },
+  en: {
+    subregion: 'Sub-region', terroir: 'Terroir', elevation: 'Elevation', harvest: 'Harvest period',
+    related: 'Related regions', map: 'Region map', typicalColour: 'Typical colour', alcohol: 'Alcohol tendency',
+    ageing: 'Ageing potential', typicalWines: 'Typical wines', similar: 'Similar grape varieties',
+    unavailable: 'Specific information not yet verified', variable: 'Varies by sub-region and producer',
+    northHarvest: 'August to October, depending on year and elevation', southHarvest: 'February to April, depending on year and elevation',
+  },
+  de: {
+    subregion: 'Teilregion', terroir: 'Terroir', elevation: 'Höhenlage', harvest: 'Lesezeit',
+    related: 'Verwandte Regionen', map: 'Regionalkarte', typicalColour: 'Typische Farbe', alcohol: 'Alkoholtendenz',
+    ageing: 'Reifepotenzial', typicalWines: 'Typische Weine', similar: 'Ähnliche Rebsorten',
+    unavailable: 'Spezifische Information noch nicht geprüft', variable: 'Je nach Teilregion und Erzeuger unterschiedlich',
+    northHarvest: 'August bis Oktober, je nach Jahr und Höhenlage', southHarvest: 'Februar bis April, je nach Jahr und Höhenlage',
+  },
+} as const
 
 function SectionHeading({ eyebrow, title, body, action, to }: { eyebrow?: string; title: string; body?: string; action?: string; to?: string }) {
   return (
@@ -93,7 +125,11 @@ function SearchBar({ compact = false }: { compact?: boolean }) {
   const navigate = useNavigate()
   function submit(event: FormEvent) {
     event.preventDefault()
-    if (query.trim()) navigate(`/pesquisa?q=${encodeURIComponent(query.trim())}`)
+    if (query.trim()) {
+      rememberSearch(query)
+      trackEvent('search_performed', { query_length: query.trim().length })
+      navigate(`/pesquisa?q=${encodeURIComponent(query.trim())}`)
+    }
   }
   return (
     <form onSubmit={submit} className={`relative ${compact ? '' : 'max-w-2xl'}`}>
@@ -112,7 +148,7 @@ function SearchBar({ compact = false }: { compact?: boolean }) {
 }
 
 function LocationBlock() {
-  const { locale, location, locationStatus, requestLocation, t } = useApp()
+  const { locale, location, locationStatus, requestLocation, selectedLocation, t } = useApp()
   const nearby = useMemo(() => {
     if (!location) return []
     return regions
@@ -120,14 +156,6 @@ function LocationBlock() {
       .sort((a, b) => a.distance - b.distance)
       .slice(0, 4)
   }, [location])
-  const nearbyGrapes = useMemo(() => {
-    const result = new Map<string, { grape: GrapeType; distance: number; region: Region }>()
-    nearby.forEach(({ region, distance }) => [...region.grapeIds, ...(region.otherGrapeIds ?? [])].forEach((id) => {
-      const grape = getGrape(id)
-      if (grape && (!result.has(id) || distance < result.get(id)!.distance)) result.set(id, { grape, distance, region })
-    }))
-    return [...result.values()].sort((a, b) => a.distance - b.distance).slice(0, 6)
-  }, [nearby])
 
   if (locationStatus === 'granted' && nearby.length) {
     return (
@@ -136,23 +164,19 @@ function LocationBlock() {
           <div className="mb-7 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
             <div>
               <p className="mb-2 text-xs font-bold uppercase tracking-[0.2em] text-leaf-light">{t('nearbyTitle')}</p>
-              <h2 className="font-display text-3xl font-semibold sm:text-4xl">{t('foundNear')}</h2>
-              <p className="mt-2 text-sm text-white/65">{t('basedOn')} · {t('mapHint')}</p>
+              <h2 className="font-display text-3xl font-semibold sm:text-4xl">{t('nearbyTitle')}</h2>
+              <p className="mt-2 text-sm text-white/65">{selectedLocation ? text(selectedLocation.label, locale) : t('basedOn')} · {t('mapHint')}</p>
             </div>
             <div className="flex items-center gap-2 rounded-full bg-white/10 px-4 py-2 text-sm">
               <MapPin size={16} /> {text(nearby[0].region.name, locale)} · {Math.round(nearby[0].distance)} km
             </div>
           </div>
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {nearbyGrapes.map(({ grape, distance, region }) => <GrapeCard key={grape.id} grape={grape} distance={distance} contextRegion={region} />)}
-          </div>
-          <div className="mt-7 flex gap-3 overflow-x-auto pb-2">
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {nearby.map(({ region, distance }) => (
-              <Link key={region.id} to={`/regioes/${region.id}`} className="flex shrink-0 items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-sm font-semibold hover:bg-white/15">
-                {countryFlag(region.countryCode)} {text(region.name, locale)} <span className="text-white/55">{Math.round(distance)} km</span>
-              </Link>
+              <RegionCard key={region.id} region={region} distance={distance} />
             ))}
           </div>
+          <LocationSelector />
         </div>
       </section>
     )
@@ -174,6 +198,7 @@ function LocationBlock() {
             <LocateFixed size={18} className={locationStatus === 'loading' ? 'animate-pulse' : ''} />
             {locationStatus === 'loading' ? t('locating') : locationStatus === 'denied' || locationStatus === 'unavailable' ? t('tryAgain') : t('allowLocation')}
           </button>
+          <LocationSelector />
           <p className="mt-3 text-xs text-white/50">{t('locationPrivate')}</p>
         </div>
       </div>
@@ -301,14 +326,35 @@ function RegionDetailPage() {
   const { id } = useParams()
   const { locale, t } = useApp()
   const region = id ? getRegion(id) : undefined
+  useEffect(() => {
+    if (id) trackEvent('region_opened', { region_id: id })
+  }, [id])
   if (!region) return <Navigate to="/404" replace />
   const regionGrapes = region.grapeIds.map(getGrape).filter(Boolean) as GrapeType[]
   const otherRegionGrapes = (region.otherGrapeIds ?? []).map(getGrape).filter(Boolean) as GrapeType[]
+  const d = detailCopy[locale]
+  const related = regions
+    .filter((item) => item.id !== region.id)
+    .map((item) => ({
+      item,
+      relevance: (item.countryCode === region.countryCode ? 3 : 0) +
+        list(item.wineTypes, locale).filter((style) => list(region.wineTypes, locale).includes(style)).length,
+    }))
+    .sort((a, b) => b.relevance - a.relevance)
+    .slice(0, 3)
   return (
     <>
       <section className="relative overflow-hidden text-white" style={{ backgroundColor: region.color }}>
         <div className="detail-pattern" />
-        <div className="page-shell relative py-10 sm:py-16">
+        <div className="absolute inset-y-0 right-0 hidden w-[44%] opacity-30 lg:block" aria-hidden="true">
+          <svg viewBox="0 0 600 450" preserveAspectRatio="xMidYMid slice" className="h-full w-full">
+            <path d="M0 320 Q120 180 250 270 T600 170 V450 H0Z" fill="#fff" opacity=".25" />
+            <path d="M0 390 Q180 230 330 340 T600 260 V450 H0Z" fill="#171014" opacity=".3" />
+            {Array.from({ length: 9 }, (_, index) => <path key={index} d={`M${index * 78 - 50} 450 Q${index * 72 + 30} 300 ${index * 76 + 115} 190`} fill="none" stroke="#fff" strokeWidth="2" opacity=".25" />)}
+            <circle cx="455" cy="85" r="44" fill="#f3d99b" opacity=".65" />
+          </svg>
+        </div>
+        <div className="page-shell relative py-10 sm:py-16 lg:pr-[38%]">
           <Link to="/regioes" className="mb-10 inline-flex items-center gap-2 text-sm font-semibold text-white/70 hover:text-white"><ArrowLeft size={17} />{t('backRegions')}</Link>
           <div className="flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
             <div className="max-w-3xl">
@@ -326,6 +372,16 @@ function RegionDetailPage() {
           <InfoCard icon={<Thermometer />} label={t('serviceTemperature')} value={text(region.service, locale)} />
           <InfoCard icon={<Wine />} label={t('wineStyles')} value={list(region.wineTypes, locale).join(' · ')} />
         </div>
+        <div className="mt-5 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
+          <InfoCard icon={<MapPin />} label={d.subregion} value={region.subregion ? text(region.subregion, locale) : d.variable} />
+          <InfoCard icon={<Sparkles />} label={d.terroir} value={region.terroir ? text(region.terroir, locale) : text(region.climate, locale)} />
+          <InfoCard icon={<CircleGauge />} label={d.elevation} value={region.elevation ? text(region.elevation, locale) : d.unavailable} />
+          <InfoCard icon={<Wine />} label={d.harvest} value={region.harvest ? text(region.harvest, locale) : region.coordinates.lat >= 0 ? d.northHarvest : d.southHarvest} />
+        </div>
+      </section>
+      <section className="page-shell pb-12 sm:pb-16">
+        <SectionHeading title={d.map} />
+        <RegionMap region={region} />
       </section>
       <section className="page-shell pb-12 sm:pb-16">
         <SectionHeading title={t('mainGrapes')} />
@@ -352,6 +408,18 @@ function RegionDetailPage() {
             <p className="font-display text-2xl leading-relaxed sm:text-3xl">{text(region.fact, locale)}</p>
           </div>
         </div>
+      </section>
+      <section className="page-shell py-12 sm:py-16">
+        <div className="grid gap-12 lg:grid-cols-2">
+          <NearbyRegionGrid current={region} />
+          <div>
+            <h2 className="font-display text-3xl font-semibold">{d.related}</h2>
+            <div className="mt-5 grid gap-3">
+              {related.map(({ item }) => <Link key={item.id} to={`/regioes/${item.id}`} className="flex min-h-14 items-center gap-3 rounded-2xl border border-line px-4 transition hover:border-wine dark:border-white/15"><span className="size-3 rounded-full" style={{ background: item.color }} /><strong>{text(item.name, locale)}</strong><ChevronRight className="ml-auto text-muted" size={18} /></Link>)}
+            </div>
+          </div>
+        </div>
+        <DataQuality reviewedAt={region.reviewedAt} confidence={region.confidence} sources={region.sources} countryCode={region.countryCode} />
       </section>
     </>
   )
@@ -412,8 +480,24 @@ function GrapeDetailPage() {
   const { id } = useParams()
   const { locale, t } = useApp()
   const grape = id ? getGrape(id) : undefined
+  useEffect(() => {
+    if (id) trackEvent('grape_opened', { grape_id: id })
+  }, [id])
   if (!grape) return <Navigate to="/404" replace />
   const grapeRegions = grape.regionIds.map(getRegion).filter(Boolean) as Region[]
+  const d = detailCopy[locale]
+  const profileValue = (value: 'low' | 'medium' | 'high' | undefined, fallback: 'low' | 'medium' | 'high') => t(value ?? fallback)
+  const similar = grapes
+    .filter((item) => item.id !== grape.id && item.type === grape.type)
+    .map((item) => {
+      const score = (item.body === grape.body ? 1 : 0) + (item.acidity === grape.acidity ? 1 : 0) + (item.tannins === grape.tannins ? 1 : 0)
+      return { item, score }
+    })
+    .sort((a, b) => b.score - a.score)
+    .slice(0, 3)
+  const typicalWines = grape.typicalWines
+    ? list(grape.typicalWines, locale)
+    : [...new Set(grapeRegions.flatMap((region) => list(region.wineTypes, locale)))].slice(0, 4)
   return (
     <>
       <section className="page-shell py-9 sm:py-14">
@@ -438,7 +522,9 @@ function GrapeDetailPage() {
             )}
             <div className="mt-7"><FavoriteButton type="grape" id={grape.id} compact={false} /></div>
           </div>
-          <div className="rounded-[2rem] border border-line bg-paper p-6 dark:border-white/10 dark:bg-white/[0.03] sm:p-8">
+          <div>
+            <GrapeRadar grape={grape} />
+          <div className="mt-4 rounded-[2rem] border border-line bg-paper p-6 dark:border-white/10 dark:bg-white/[0.03] sm:p-8">
             <div className="mb-7 flex items-center gap-3"><CircleGauge className="text-wine-light dark:text-gold" /><h2 className="font-display text-2xl font-semibold">{t('freshness')}</h2></div>
             <div className="grid gap-6">
               <Scale label={t('body')} value={grape.body} />
@@ -449,6 +535,7 @@ function GrapeDetailPage() {
               <p className="eyebrow mb-3">{t('aromas')}</p>
               <div className="flex flex-wrap gap-2">{list(grape.aromas, locale).map((aroma) => <span key={aroma} className="chip chip-large">{aroma}</span>)}</div>
             </div>
+          </div>
           </div>
         </div>
       </section>
@@ -469,12 +556,28 @@ function GrapeDetailPage() {
           <div className="grid gap-3">{grapeRegions.map((region) => <Link key={region.id} to={`/regioes/${region.id}`} className="flex items-center gap-4 rounded-2xl border border-line p-4 transition hover:-translate-y-0.5 hover:border-wine dark:border-white/10"><span className="text-2xl">{countryFlag(region.countryCode)}</span><span className="font-semibold">{text(region.name, locale)}</span><ChevronRight className="ml-auto text-muted" size={18} /></Link>)}</div>
         </div>
       </section>
+      <section className="border-y border-line bg-paper dark:border-white/10 dark:bg-night-soft">
+        <div className="page-shell py-12 sm:py-16">
+          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+            <InfoCard icon={<Wine />} label={d.typicalColour} value={grape.typicalColour ? text(grape.typicalColour, locale) : grape.type === 'red' ? t('red') : t('white')} />
+            <InfoCard icon={<CircleGauge />} label={d.alcohol} value={profileValue(grape.alcohol, grape.body === 'full' ? 'high' : 'medium')} />
+            <InfoCard icon={<Clock />} label={d.ageing} value={profileValue(grape.ageing, grape.acidity === 'high' || grape.tannins === 'high' ? 'high' : 'medium')} />
+            <InfoCard icon={<Sparkles />} label={d.typicalWines} value={typicalWines.join(' · ') || d.variable} />
+          </div>
+          <div className="mt-12">
+            <SectionHeading title={d.similar} />
+            <div className="grid gap-4 sm:grid-cols-3">{similar.map(({ item }) => <GrapeCard key={item.id} grape={item} />)}</div>
+          </div>
+          <DataQuality reviewedAt={grape.reviewedAt} confidence={grape.confidence} sources={grape.sources} />
+        </div>
+      </section>
     </>
   )
 }
 
 function GuidePage() {
   const { locale, t } = useApp()
+  useEffect(() => trackEvent('guide_opened', { guide_id: 'index' }), [])
   return (
     <>
       <PageHero eyebrow={t('guideEyebrow')} title={t('guideTitle')} body={t('guideIntro')} />
@@ -510,6 +613,7 @@ function GuidePage() {
           </div>
         </Link>
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">{articles.map((article) => <ArticleCard key={article.id} article={article} />)}</div>
+        <DataQuality />
       </section>
     </>
   )
@@ -582,6 +686,7 @@ function SommelierPage() {
             </div>
           ))}
         </div>
+        <DataQuality />
       </section>
     </>
   )
@@ -615,6 +720,7 @@ function AromaWheelPage() {
       </section>
       <section className="page-shell py-10 sm:py-16">
         <AromaWheel />
+        <DataQuality />
       </section>
     </>
   )
@@ -643,6 +749,7 @@ function HistoryPage() {
             </article>
           ))}
         </div>
+        <DataQuality />
       </section>
     </>
   )
@@ -652,6 +759,9 @@ function ArticleDetailPage() {
   const { id } = useParams()
   const { locale, t } = useApp()
   const article = id ? getArticle(id) : undefined
+  useEffect(() => {
+    if (id) trackEvent('article_opened', { article_id: id })
+  }, [id])
   if (!article) return <Navigate to="/404" replace />
   return (
     <article>
@@ -674,6 +784,7 @@ function ArticleDetailPage() {
             </div>
           ))}
         </div>
+        <DataQuality reviewedAt={article.reviewedAt} confidence={article.confidence} sources={article.sources} />
       </section>
     </article>
   )
@@ -703,36 +814,27 @@ function SearchPage() {
   const [params, setParams] = useSearchParams()
   const query = params.get('q') || ''
   const [input, setInput] = useState(query)
-  const normalizedQuery = normalize(query)
-  const foundRegions = query ? regions.filter((region) =>
-    matchesLocalized(region.name, query) ||
-    matchesLocalized(region.description, query) ||
-    matchesLocalized(region.climate, query) ||
-    list(region.wineTypes, locale).some((item) => normalize(item).includes(normalizedQuery)) ||
-    list(region.pairings, locale).some((item) => normalize(item).includes(normalizedQuery))
-  ) : []
-  const foundGrapes = query ? grapes.filter((grape) =>
-    matchesLocalized(grape.name, query) ||
-    grape.aliases.some((alias) => normalize(alias).includes(normalizedQuery)) ||
-    matchesLocalized(grape.description, query) ||
-    matchesLocalized(grape.origin, query) ||
-    matchesLocalized(grape.glass, query) ||
-    list(grape.aromas, locale).some((item) => normalize(item).includes(normalizedQuery)) ||
-    list(grape.pairings, locale).some((item) => normalize(item).includes(normalizedQuery)) ||
-    grape.regionIds.some((id) => {
-      const region = getRegion(id)
-      return region ? matchesLocalized(region.name, query) : false
-    })
-  ) : []
-  const foundArticles = query ? articles.filter((article) => matchesLocalized(article.title, query) || matchesLocalized(article.summary, query) || matchesLocalized(article.intro, query)) : []
-  const total = foundRegions.length + foundGrapes.length + foundArticles.length
+  const [recent, setRecent] = useState(getRecentSearches)
+  const results = useMemo(() => unifiedSearch(query, locale), [locale, query])
+  const categories: Record<SearchCategory, string> = {
+    region: locale === 'pt' ? 'Região vinícola' : locale === 'de' ? 'Weinregion' : 'Wine Region',
+    grape: locale === 'pt' ? 'Casta' : locale === 'de' ? 'Rebsorte' : 'Grape Variety',
+    guide: locale === 'pt' ? 'Guia de vinho' : locale === 'de' ? 'Weinführer' : 'Wine Guide',
+    article: locale === 'pt' ? 'Artigo' : locale === 'de' ? 'Artikel' : 'Article',
+  }
+  useEffect(() => setInput(query), [query])
   function submit(event: FormEvent) {
     event.preventDefault()
-    setParams(input.trim() ? { q: input.trim() } : {})
+    if (input.trim()) {
+      rememberSearch(input)
+      setRecent(getRecentSearches())
+      trackEvent('search_performed', { query_length: input.trim().length, result_count: unifiedSearch(input, locale).length })
+      setParams({ q: input.trim() })
+    } else setParams({})
   }
   return (
     <>
-      <PageHero eyebrow={t('search')} title={t('searchResults')} body={query ? `${total} ${t('results')} · “${query}”` : t('searchFor')}>
+      <PageHero eyebrow={t('search')} title={t('searchResults')} body={query ? `${results.length} ${t('results')} · “${query}”` : t('searchFor')}>
         <form onSubmit={submit} className="relative mt-7 max-w-2xl">
           <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-muted" size={20} />
           <input value={input} onChange={(event) => setInput(event.target.value)} className="h-14 w-full rounded-2xl border border-line bg-white pl-12 pr-24 outline-none focus:border-wine dark:border-white/15 dark:bg-white/[0.06]" placeholder={t('searchPlaceholder')} />
@@ -740,11 +842,20 @@ function SearchPage() {
         </form>
       </PageHero>
       <section className="page-shell py-9 sm:py-12">
-        {!query ? <EmptyState title={t('searchFor')} body={t('adjustSearch')} /> : !total ? <EmptyState title={`${t('noSearch')} “${query}”`} body={t('adjustSearch')} /> : (
-          <div className="grid gap-14">
-            {foundRegions.length > 0 && <div><SectionHeading title={t('regions')} /><div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">{foundRegions.map((region) => <RegionCard key={region.id} region={region} />)}</div></div>}
-            {foundGrapes.length > 0 && <div><SectionHeading title={t('grapes')} /><div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">{foundGrapes.map((grape) => <GrapeCard key={grape.id} grape={grape} />)}</div></div>}
-            {foundArticles.length > 0 && <div><SectionHeading title={t('articles')} /><div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">{foundArticles.map((article) => <ArticleCard key={article.id} article={article} />)}</div></div>}
+        {!query ? (
+          <div>
+            {recent.length > 0 && <><p className="eyebrow mb-3">{locale === 'pt' ? 'Pesquisas recentes' : locale === 'de' ? 'Letzte Suchen' : 'Recent searches'}</p><div className="flex flex-wrap gap-2">{recent.map((item) => <button key={item} type="button" className="chip min-h-11 px-4" onClick={() => setParams({ q: item })}><Clock size={14} />{item}</button>)}</div></>}
+            {!recent.length && <EmptyState title={t('searchFor')} body={t('adjustSearch')} />}
+          </div>
+        ) : !results.length ? <EmptyState title={`${t('noSearch')} “${query}”`} body={t('adjustSearch')} /> : (
+          <div className="grid gap-3">
+            {results.map((result) => (
+              <Link key={`${result.category}-${result.id}`} to={result.to} className="group flex min-h-24 items-start gap-4 rounded-2xl border border-line bg-paper p-4 transition hover:border-wine dark:border-white/15 dark:bg-white/[0.03]">
+                <span className="mt-0.5 rounded-full bg-wine/10 px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider text-wine-light dark:bg-gold/10 dark:text-gold">{categories[result.category]}</span>
+                <span className="min-w-0 flex-1"><strong className="font-display text-xl">{result.title}</strong><span className="mt-1 line-clamp-2 block text-sm leading-6 text-muted">{result.summary}</span></span>
+                <ChevronRight className="mt-3 shrink-0 text-muted transition group-hover:translate-x-1" size={18} />
+              </Link>
+            ))}
           </div>
         )}
       </section>
@@ -780,24 +891,10 @@ function NotFoundPage() {
 
 function AppRoutes() {
   const { t } = useApp()
-  const [ready, setReady] = useState(false)
-  useEffect(() => {
-    const timer = window.setTimeout(() => setReady(true), 380)
-    return () => window.clearTimeout(timer)
-  }, [])
-  if (!ready) {
-    return (
-      <div className="grid min-h-dvh place-items-center bg-canvas text-ink dark:bg-night dark:text-cream">
-        <div className="text-center">
-          <div className="loader-grape mx-auto mb-5"><span /><span /><span /><span /><span /></div>
-          <p className="eyebrow">{t('loading')}</p>
-        </div>
-      </div>
-    )
-  }
   return (
     <Layout>
-      <Routes>
+      <Suspense fallback={<div className="page-shell grid min-h-[45vh] place-items-center"><p className="eyebrow">{t('loading')}</p></div>}>
+        <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/regioes" element={<RegionsPage />} />
         <Route path="/regioes/:id" element={<RegionDetailPage />} />
@@ -817,7 +914,8 @@ function AppRoutes() {
         <Route path="/privacidade" element={<PrivacyPage />} />
         <Route path="/404" element={<NotFoundPage />} />
         <Route path="*" element={<NotFoundPage />} />
-      </Routes>
+        </Routes>
+      </Suspense>
     </Layout>
   )
 }

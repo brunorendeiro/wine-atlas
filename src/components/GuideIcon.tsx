@@ -1,5 +1,7 @@
 import {
   Eye,
+  CakeSlice,
+  CircleDot,
   RefreshCcw,
   Sparkles,
   Tag,
@@ -14,6 +16,8 @@ import {
 } from 'lucide-react'
 
 const icons = {
+  'cake-slice': CakeSlice,
+  'circle-dot': CircleDot,
   eye: Eye,
   refresh: RefreshCcw,
   sparkles: Sparkles,

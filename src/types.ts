@@ -18,6 +18,13 @@ export interface Region {
   fact: LocalizedText
   featured: boolean
   color: string
+  subregion?: LocalizedText
+  terroir?: LocalizedText
+  elevation?: LocalizedText
+  harvest?: LocalizedText
+  reviewedAt?: string
+  confidence?: 'high' | 'medium'
+  sources?: Source[]
 }
 
 export interface Grape {
@@ -41,6 +48,14 @@ export interface Grape {
   glass: LocalizedText
   decanting: LocalizedText
   color: string
+  alcohol?: 'low' | 'medium' | 'high'
+  ageing?: 'low' | 'medium' | 'high'
+  fruit?: 'low' | 'medium' | 'high'
+  typicalColour?: LocalizedText
+  typicalWines?: LocalizedList
+  reviewedAt?: string
+  confidence?: 'high' | 'medium'
+  sources?: Source[]
 }
 
 export interface Article {
@@ -52,6 +67,9 @@ export interface Article {
   tips: LocalizedList
   icon: string
   featured: boolean
+  reviewedAt?: string
+  confidence?: 'high' | 'medium'
+  sources?: Source[]
 }
 
 export interface SommelierGuide {
@@ -81,3 +99,15 @@ export interface SommelierGuide {
 }
 
 export type Favorite = { type: 'region' | 'grape'; id: string }
+
+export interface Source {
+  title: string
+  url: string
+}
+
+export interface SavedLocation {
+  id: string
+  label: LocalizedText
+  kind: 'country' | 'city' | 'region' | 'device'
+  coordinates: { lat: number; lng: number }
+}
