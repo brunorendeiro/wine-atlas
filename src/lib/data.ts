@@ -22,7 +22,8 @@ export function getRegion(id: string) {
 }
 
 export function getGrape(id: string) {
-  return grapes.find((grape) => grape.id === id)
+  const canonicalId = id === 'tempranillo' ? 'tinta-roriz' : id
+  return grapes.find((grape) => grape.id === canonicalId)
 }
 
 export function getArticle(id: string) {

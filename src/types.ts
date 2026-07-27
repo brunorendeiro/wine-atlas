@@ -10,6 +10,7 @@ export interface Region {
   coordinates: { lat: number; lng: number }
   description: LocalizedText
   grapeIds: string[]
+  otherGrapeIds?: string[]
   wineTypes: LocalizedList
   climate: LocalizedText
   service: LocalizedText
@@ -23,6 +24,10 @@ export interface Grape {
   id: string
   name: LocalizedText
   aliases: string[]
+  regionalNames?: Record<string, LocalizedText>
+  heritage?: 'native' | 'historic' | 'international'
+  rarity?: 'rare' | 'revived'
+  identityNote?: LocalizedText
   origin: LocalizedText
   description: LocalizedText
   type: 'red' | 'white'

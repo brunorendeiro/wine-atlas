@@ -63,6 +63,9 @@ export function RegionCard({ region, distance, featured = false }: { region: Reg
 export function GrapeCard({ grape, distance, contextRegion }: { grape: Grape; distance?: number; contextRegion?: Region }) {
   const { locale, t } = useApp()
   const locationLabel = contextRegion ? text(contextRegion.name, locale) : text(grape.origin, locale)
+  const displayName = contextRegion && grape.regionalNames?.[contextRegion.id]
+    ? text(grape.regionalNames[contextRegion.id], locale)
+    : text(grape.name, locale)
   return (
     <article className="card grape-card group relative overflow-hidden">
       <div className="flex items-center gap-4 p-5 pb-3">
@@ -71,7 +74,7 @@ export function GrapeCard({ grape, distance, contextRegion }: { grape: Grape; di
         </div>
         <div className="min-w-0 flex-1">
           <p className="eyebrow mb-1">{t(grape.type)}</p>
-          <h3 className="truncate font-display text-xl font-semibold">{text(grape.name, locale)}</h3>
+          <h3 className="truncate font-display text-xl font-semibold">{displayName}</h3>
           <p className="grape-location mt-1 flex items-center gap-1 text-xs"><MapPin size={12} />{locationLabel}</p>
         </div>
         <FavoriteButton type="grape" id={grape.id} />

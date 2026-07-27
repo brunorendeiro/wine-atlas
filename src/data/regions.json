@@ -78,7 +78,8 @@
       "en": "Sunny plains, vineyards among cork oaks and generous, fruit-forward wines.",
       "de": "Sonnige Ebenen, Reben zwischen Korkeichen und grosszügige, fruchtbetonte Weine."
     },
-    "grapeIds": ["arinto", "tinta-roriz", "touriga-nacional"],
+    "grapeIds": ["antao-vaz", "arinto", "siria", "tinta-roriz", "trincadeira", "alicante-bouschet", "castelao"],
+    "otherGrapeIds": ["touriga-nacional", "syrah", "chardonnay", "pinot-noir"],
     "wineTypes": { "pt": ["Tinto", "Branco", "Talha"], "en": ["Red", "White", "Clay amphora"], "de": ["Rotwein", "Weisswein", "Amphorenwein"] },
     "climate": {
       "pt": "Mediterrânico, muito quente e seco.",
@@ -494,7 +495,7 @@
       "en": "A region crossed by the Ebro where Tempranillo gains spice, elegance and ageing potential.",
       "de": "Eine vom Ebro durchzogene Region, in der Tempranillo Würze, Eleganz und Reifepotenzial entwickelt."
     },
-    "grapeIds": ["tempranillo"],
+    "grapeIds": ["tinta-roriz"],
     "wineTypes": { "pt": ["Tinto", "Branco", "Rosé"], "en": ["Red", "White", "Rosé"], "de": ["Rotwein", "Weisswein", "Rosé"] },
     "climate": {
       "pt": "Encontro de influências atlântica, continental e mediterrânica.",
@@ -654,7 +655,7 @@
       "en": "High-altitude vineyards along Spain's Duero produce concentrated, fresh Tempranillo built to age.",
       "de": "Hoch gelegene Weinberge am spanischen Duero erzeugen konzentrierten, frischen und lagerfähigen Tempranillo."
     },
-    "grapeIds": ["tempranillo"],
+    "grapeIds": ["tinta-roriz"],
     "wineTypes": { "pt": ["Tinto", "Rosé"], "en": ["Red", "Rosé"], "de": ["Rotwein", "Rosé"] },
     "climate": {
       "pt": "Continental extremo, com verões quentes, invernos frios e noites frescas.",

@@ -112,7 +112,7 @@ function LocationBlock() {
   }, [location])
   const nearbyGrapes = useMemo(() => {
     const result = new Map<string, { grape: GrapeType; distance: number; region: Region }>()
-    nearby.forEach(({ region, distance }) => region.grapeIds.forEach((id) => {
+    nearby.forEach(({ region, distance }) => [...region.grapeIds, ...(region.otherGrapeIds ?? [])].forEach((id) => {
       const grape = getGrape(id)
       if (grape && (!result.has(id) || distance < result.get(id)!.distance)) result.set(id, { grape, distance, region })
     }))
@@ -292,6 +292,7 @@ function RegionDetailPage() {
   const region = id ? getRegion(id) : undefined
   if (!region) return <Navigate to="/404" replace />
   const regionGrapes = region.grapeIds.map(getGrape).filter(Boolean) as GrapeType[]
+  const otherRegionGrapes = (region.otherGrapeIds ?? []).map(getGrape).filter(Boolean) as GrapeType[]
   return (
     <>
       <section className="relative overflow-hidden text-white" style={{ backgroundColor: region.color }}>
@@ -318,6 +319,12 @@ function RegionDetailPage() {
       <section className="page-shell pb-12 sm:pb-16">
         <SectionHeading title={t('mainGrapes')} />
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">{regionGrapes.map((grape) => <GrapeCard key={grape.id} grape={grape} contextRegion={region} />)}</div>
+        {otherRegionGrapes.length > 0 && (
+          <div className="mt-12 border-t border-line pt-10 dark:border-white/10">
+            <SectionHeading title={t('otherGrapes')} body={t('otherGrapesIntro')} />
+            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">{otherRegionGrapes.map((grape) => <GrapeCard key={grape.id} grape={grape} contextRegion={region} />)}</div>
+          </div>
+        )}
       </section>
       <section className="border-y border-line bg-paper dark:border-white/10 dark:bg-night-soft">
         <div className="page-shell grid gap-10 py-12 md:grid-cols-2 sm:py-16">
@@ -407,6 +414,17 @@ function GrapeDetailPage() {
             <h1 className="font-display text-5xl font-semibold leading-none tracking-tight sm:text-7xl">{text(grape.name, locale)}</h1>
             {grape.aliases.length > 0 && <p className="mt-3 text-sm text-muted">{t('alsoKnownAs')}: {grape.aliases.join(' · ')}</p>}
             <p className="mt-6 max-w-2xl text-lg leading-8 text-muted">{text(grape.description, locale)}</p>
+            {(grape.aliases.length > 0 || grape.heritage || grape.rarity || grape.identityNote) && (
+              <div className="mt-6 max-w-2xl rounded-2xl border border-line bg-paper/70 p-4 dark:border-white/15 dark:bg-white/[0.045]">
+                <p className="mb-3 text-xs font-bold uppercase tracking-[.16em] text-wine-light dark:text-gold">{t('namesAndHeritage')}</p>
+                <div className="mb-3 flex flex-wrap gap-2">
+                  {grape.heritage && <span className="chip">{t(grape.heritage === 'native' ? 'nativeGrape' : grape.heritage === 'historic' ? 'historicGrape' : 'internationalGrape')}</span>}
+                  {grape.rarity && <span className="chip">{t(grape.rarity === 'rare' ? 'rareGrape' : 'revivedGrape')}</span>}
+                  {grape.aliases.map((alias) => <span key={alias} className="chip">{alias}</span>)}
+                </div>
+                <p className="text-sm leading-6 text-muted">{grape.identityNote ? text(grape.identityNote, locale) : t('namesVaryNote')}</p>
+              </div>
+            )}
             <div className="mt-7"><FavoriteButton type="grape" id={grape.id} compact={false} /></div>
           </div>
           <div className="rounded-[2rem] border border-line bg-paper p-6 dark:border-white/10 dark:bg-white/[0.03] sm:p-8">
@@ -596,7 +614,7 @@ function SearchPage() {
   const query = params.get('q') || ''
   const [input, setInput] = useState(query)
   const foundRegions = query ? regions.filter((region) => matchesLocalized(region.name, query) || matchesLocalized(region.description, query)) : []
-  const foundGrapes = query ? grapes.filter((grape) => matchesLocalized(grape.name, query) || matchesLocalized(grape.description, query) || list(grape.aromas, locale).some((item) => normalize(item).includes(normalize(query)))) : []
+  const foundGrapes = query ? grapes.filter((grape) => matchesLocalized(grape.name, query) || grape.aliases.some((alias) => normalize(alias).includes(normalize(query))) || matchesLocalized(grape.description, query) || list(grape.aromas, locale).some((item) => normalize(item).includes(normalize(query)))) : []
   const foundArticles = query ? articles.filter((article) => matchesLocalized(article.title, query) || matchesLocalized(article.summary, query) || matchesLocalized(article.intro, query)) : []
   const total = foundRegions.length + foundGrapes.length + foundArticles.length
   function submit(event: FormEvent) {
