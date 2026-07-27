@@ -1036,6 +1036,14 @@
   background: rgba(255, 255, 255, .05);
 }
 
+.dark .aroma-panel .text-muted {
+  color: #f0e5e8;
+}
+
+.dark .aroma-panel .eyebrow {
+  color: #e4c47f;
+}
+
 .aroma-chip {
   border: 1px solid color-mix(in srgb, var(--aroma-accent) 45%, var(--color-line));
   border-radius: 999px;
