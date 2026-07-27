@@ -5,9 +5,8 @@ import {
   Grape,
   Heart,
   Menu,
-  Moon,
   Search,
-  Sun,
+  Wine,
   X,
 } from 'lucide-react'
 import { Link, NavLink, useLocation, useNavigate } from 'react-router-dom'
@@ -92,8 +91,9 @@ export function Layout({ children }: { children: ReactNode }) {
               </select>
               <span className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 text-[9px]">⌄</span>
             </label>
-            <button type="button" className="icon-button" onClick={toggleTheme} aria-label={t('theme')}>
-              {theme === 'light' ? <Moon size={18} /> : <Sun size={18} />}
+            <button type="button" className="theme-wine-button" onClick={toggleTheme} aria-label={`${t('theme')}: ${theme === 'light' ? t('whiteWine') : t('redWine')}`}>
+              <Wine size={18} fill={theme === 'dark' ? 'currentColor' : 'none'} />
+              <span>{theme === 'light' ? t('whiteWine') : t('redWine')}</span>
             </button>
             <button type="button" className="icon-button lg:hidden" onClick={() => setMenuOpen(true)} aria-label={t('menu')}>
               <Menu size={20} />
@@ -134,6 +134,23 @@ export function Layout({ children }: { children: ReactNode }) {
                     {item}
                   </button>
                 ))}
+              </div>
+              <p className="mb-3 mt-6 text-xs font-bold uppercase tracking-widest text-muted">{t('theme')}</p>
+              <div className="grid grid-cols-2 gap-2">
+                <button
+                  type="button"
+                  className={`theme-choice ${theme === 'light' ? 'theme-choice-active-light' : ''}`}
+                  onClick={() => theme !== 'light' && toggleTheme()}
+                >
+                  <Wine size={18} /> {t('whiteWine')}
+                </button>
+                <button
+                  type="button"
+                  className={`theme-choice ${theme === 'dark' ? 'theme-choice-active-dark' : ''}`}
+                  onClick={() => theme !== 'dark' && toggleTheme()}
+                >
+                  <Wine size={18} fill="currentColor" /> {t('redWine')}
+                </button>
               </div>
             </div>
           </div>

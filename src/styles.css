@@ -156,6 +156,63 @@
     background: rgba(255, 255, 255, .45);
   }
 
+  .theme-wine-button {
+    display: inline-flex;
+    height: 2.5rem;
+    align-items: center;
+    justify-content: center;
+    gap: .42rem;
+    border: 1px solid var(--color-line);
+    border-radius: 999px;
+    padding-inline: .7rem;
+    color: var(--color-wine-light);
+    font-size: .68rem;
+    font-weight: 800;
+    letter-spacing: .04em;
+    transition: border-color .2s, background .2s, color .2s, transform .2s;
+  }
+
+  .dark .theme-wine-button {
+    border-color: rgba(255, 255, 255, .14);
+    background: rgba(128, 34, 66, .16);
+    color: #d7a3b4;
+  }
+
+  .theme-wine-button:hover {
+    border-color: var(--color-wine);
+    background: rgba(95, 24, 49, .06);
+    transform: translateY(-1px);
+  }
+
+  .theme-choice {
+    display: flex;
+    min-height: 2.8rem;
+    align-items: center;
+    justify-content: center;
+    gap: .45rem;
+    border: 1px solid var(--color-line);
+    border-radius: .8rem;
+    color: var(--color-muted);
+    font-size: .82rem;
+    font-weight: 750;
+  }
+
+  .dark .theme-choice {
+    border-color: rgba(255, 255, 255, .14);
+  }
+
+  .theme-choice-active-light {
+    border-color: var(--color-gold);
+    background: rgba(200, 161, 91, .13);
+    color: var(--color-gold-dark);
+  }
+
+  .theme-choice-active-dark {
+    border-color: #913652 !important;
+    background: rgba(128, 34, 66, .2);
+    color: #e2adbe;
+  }
+
   .dark .icon-button:hover {
     border-color: rgba(255, 255, 255, .13);
     background: rgba(255, 255, 255, .05);
@@ -196,17 +253,28 @@
     border: 1px solid var(--color-line);
     border-radius: 1.5rem;
     background: color-mix(in srgb, var(--color-canvas) 86%, white);
+    color: var(--color-ink);
     box-shadow: 0 1px 0 rgba(37, 29, 32, .02);
     transition: transform .25s ease, border-color .25s ease, box-shadow .25s ease;
   }
 
   .dark .card {
-    border-color: rgba(255, 255, 255, .1);
-    background: rgba(255, 255, 255, .035);
+    border-color: rgba(255, 255, 255, .18);
+    background: rgba(255, 255, 255, .065);
+    color: var(--color-cream);
   }
 
   .dark .text-muted {
-    color: #a99da1;
+    color: #b9adb0;
+  }
+
+  .dark .card .text-muted {
+    color: #e0d7da;
+  }
+
+  .dark .card .chip {
+    border-color: rgba(255, 255, 255, .24);
+    color: #d7cdd0;
   }
 
   .card:hover {
@@ -720,6 +788,17 @@
 
   .section-space {
     padding-block: 5.75rem;
+  }
+}
+
+@media (max-width: 420px) {
+  .theme-wine-button {
+    width: 2.5rem;
+    padding-inline: 0;
+  }
+
+  .theme-wine-button span {
+    display: none;
   }
 }
 
