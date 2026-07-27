@@ -200,9 +200,9 @@ export function Layout({ children }: { children: ReactNode }) {
             <div className="flex items-center gap-3 text-muted">
               <span>© {new Date().getFullYear()} Wine Atlas</span>
               <span aria-hidden="true">·</span>
-              <Link to="/privacidade" className="hover:text-ink dark:hover:text-white">{t('privacy')}</Link>
+              <Link to="/privacidade" className="inline-flex min-h-11 items-center hover:text-ink dark:hover:text-white">{t('privacy')}</Link>
               <span aria-hidden="true">·</span>
-              <button type="button" className="hover:text-ink dark:hover:text-white" onClick={() => window.dispatchEvent(new Event('wine-atlas:cookie-settings'))}>
+              <button type="button" className="min-h-11 hover:text-ink dark:hover:text-white" onClick={() => window.dispatchEvent(new Event('wine-atlas:cookie-settings'))}>
                 {locale === 'pt' ? 'Definições de cookies' : locale === 'de' ? 'Cookie-Einstellungen' : 'Cookie Settings'}
               </button>
             </div>

@@ -1,5 +1,5 @@
 import { useMemo, useState } from 'react'
-import { Clock, MapPin, Search, ShieldCheck } from 'lucide-react'
+import { Clock, MapPin, Minus, Plus, Search, ShieldCheck } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import { useApp } from '../context/AppContext'
 import { distanceKm, regions, text } from '../lib/data'
@@ -89,31 +89,157 @@ export function NearbyRegionGrid({ current }: { current?: Region }) {
 
 export function RegionMap({ region }: { region: Region }) {
   const { locale } = useApp()
-  const nearby = regions
-    .filter((item) => item.id !== region.id)
+  const [zoom, setZoom] = useState(1)
+  const labels = {
+    pt: { map: 'Mapa interativo', current: 'Região atual', nearby: 'Região próxima', zoomIn: 'Aproximar mapa', zoomOut: 'Afastar mapa' },
+    en: { map: 'Interactive map', current: 'Current region', nearby: 'Nearby region', zoomIn: 'Zoom in', zoomOut: 'Zoom out' },
+    de: { map: 'Interaktive Karte', current: 'Aktuelle Region', nearby: 'Nahe Region', zoomIn: 'Vergrößern', zoomOut: 'Verkleinern' },
+  }[locale]
+  const baseBounds = mapBounds(region)
+  const bounds = zoomBounds(baseBounds, region.coordinates, zoom)
+  const points = regions
+    .filter((item) => insideBounds(item.coordinates, bounds))
     .map((item) => ({ item, distance: distanceKm(region.coordinates, item.coordinates) }))
     .sort((a, b) => a.distance - b.distance)
-    .slice(0, 5)
-  const points = [region, ...nearby.map(({ item }) => item)]
-  const lats = points.map((item) => item.coordinates.lat)
-  const lngs = points.map((item) => item.coordinates.lng)
-  const minLat = Math.min(...lats) - 1
-  const maxLat = Math.max(...lats) + 1
-  const minLng = Math.min(...lngs) - 1
-  const maxLng = Math.max(...lngs) + 1
+    .slice(0, 8)
+    .map(({ item }) => item)
+
   return (
-    <div className="relative h-72 overflow-hidden rounded-[2rem] border border-line bg-leaf/8 dark:border-white/15 dark:bg-leaf/20" aria-label={`Map: ${text(region.name, locale)}`}>
-      <div className="absolute inset-0 opacity-40" style={{ backgroundImage: 'linear-gradient(rgba(81,104,81,.18) 1px, transparent 1px), linear-gradient(90deg, rgba(81,104,81,.18) 1px, transparent 1px)', backgroundSize: '32px 32px' }} />
-      {points.map((item) => {
-        const left = ((item.coordinates.lng - minLng) / (maxLng - minLng)) * 82 + 9
-        const top = (1 - (item.coordinates.lat - minLat) / (maxLat - minLat)) * 72 + 12
-        const active = item.id === region.id
-        return <Link key={item.id} to={`/regioes/${item.id}`} aria-label={text(item.name, locale)} title={text(item.name, locale)} className={`absolute -translate-x-1/2 -translate-y-1/2 rounded-full shadow-lg transition hover:scale-110 focus-visible:ring-4 ${active ? 'z-10 grid size-12 place-items-center bg-wine text-white' : 'grid size-8 place-items-center bg-cream text-wine'}`} style={{ left: `${left}%`, top: `${top}%` }}><MapPin size={active ? 22 : 16} /></Link>
-      })}
-      <div className="absolute bottom-3 left-3 rounded-full bg-canvas/90 px-3 py-1.5 text-xs font-semibold shadow backdrop-blur dark:bg-night/90">{region.coordinates.lat.toFixed(2)}°, {region.coordinates.lng.toFixed(2)}°</div>
-    </div>
+    <figure>
+      <div className="relative h-80 overflow-hidden rounded-[2rem] border border-line bg-[#dce8e3] shadow-sm dark:border-white/15 dark:bg-[#23342f]" aria-label={`${labels.map}: ${text(region.name, locale)}`}>
+        <svg className="absolute inset-0 size-full" viewBox="0 0 1000 560" preserveAspectRatio="none" aria-hidden="true">
+          <defs>
+            <linearGradient id="wine-atlas-sea" x1="0" y1="0" x2="1" y2="1">
+              <stop stopColor="#e8f1ed" />
+              <stop offset="1" stopColor="#cadbd4" />
+            </linearGradient>
+            <pattern id="wine-atlas-grid" width="80" height="80" patternUnits="userSpaceOnUse">
+              <path d="M80 0H0V80" fill="none" stroke="#516851" strokeOpacity=".12" strokeWidth="1" />
+            </pattern>
+          </defs>
+          <rect width="1000" height="560" fill="url(#wine-atlas-sea)" />
+          <rect width="1000" height="560" fill="url(#wine-atlas-grid)" />
+          {mapLand.map((land) => (
+            <polygon
+              key={land.id}
+              points={land.coordinates.map(([lng, lat]) => projectPoint({ lat, lng }, bounds)).join(' ')}
+              fill={land.countryCodes.includes(region.countryCode) ? '#d8c99d' : '#f4edda'}
+              stroke="#718173"
+              strokeWidth="3"
+              vectorEffect="non-scaling-stroke"
+            />
+          ))}
+          {mapRivers.map((river) => (
+            <polyline
+              key={river.id}
+              points={river.coordinates.map(([lng, lat]) => projectPoint({ lat, lng }, bounds)).join(' ')}
+              fill="none"
+              stroke="#86aeb8"
+              strokeOpacity=".75"
+              strokeWidth="2"
+              vectorEffect="non-scaling-stroke"
+            />
+          ))}
+        </svg>
+
+        {points.map((item) => {
+          const { left, top } = projectPercent(item.coordinates, bounds)
+          const active = item.id === region.id
+          return (
+            <Link
+              key={item.id}
+              to={`/regioes/${item.id}`}
+              aria-label={`${active ? labels.current : labels.nearby}: ${text(item.name, locale)}`}
+              title={text(item.name, locale)}
+              className={`absolute -translate-x-1/2 -translate-y-1/2 rounded-full shadow-lg transition hover:scale-110 focus-visible:ring-4 focus-visible:ring-gold ${active ? 'z-10 grid size-12 place-items-center bg-wine text-white' : 'grid size-9 place-items-center border-2 border-wine bg-cream text-wine'}`}
+              style={{ left: `${left}%`, top: `${top}%` }}
+            >
+              <MapPin size={active ? 22 : 17} aria-hidden="true" />
+              {active && <span className="absolute left-1/2 top-full mt-1 -translate-x-1/2 whitespace-nowrap rounded-full bg-night/90 px-2.5 py-1 text-[11px] font-bold text-white">{text(item.name, locale)}</span>}
+            </Link>
+          )
+        })}
+
+        <div className="absolute right-3 top-3 grid overflow-hidden rounded-xl border border-line bg-canvas/95 shadow backdrop-blur dark:border-white/15 dark:bg-night/95">
+          <button type="button" className="grid size-11 place-items-center border-b border-line text-ink hover:bg-paper disabled:opacity-35 dark:border-white/15 dark:text-white dark:hover:bg-white/10" aria-label={labels.zoomIn} disabled={zoom >= 2} onClick={() => setZoom((value) => Math.min(2, value + 0.5))}><Plus size={18} aria-hidden="true" /></button>
+          <button type="button" className="grid size-11 place-items-center text-ink hover:bg-paper disabled:opacity-35 dark:text-white dark:hover:bg-white/10" aria-label={labels.zoomOut} disabled={zoom <= 1} onClick={() => setZoom((value) => Math.max(1, value - 0.5))}><Minus size={18} aria-hidden="true" /></button>
+        </div>
+        <figcaption className="absolute bottom-3 left-3 rounded-full bg-canvas/95 px-3 py-1.5 text-xs font-semibold shadow backdrop-blur dark:bg-night/95">
+          {region.coordinates.lat.toFixed(2)}°, {region.coordinates.lng.toFixed(2)}°
+        </figcaption>
+      </div>
+      <div className="mt-3 flex flex-wrap gap-x-5 gap-y-2 text-xs text-muted">
+        <span className="inline-flex items-center gap-2"><span className="size-3 rounded-full bg-wine" />{labels.current}</span>
+        <span className="inline-flex items-center gap-2"><span className="size-3 rounded-full border-2 border-wine bg-cream" />{labels.nearby}</span>
+      </div>
+    </figure>
   )
 }
+
+type MapBounds = { minLng: number; maxLng: number; minLat: number; maxLat: number }
+
+const countryBounds: Record<string, MapBounds> = {
+  PT: { minLng: -10.4, maxLng: -5.8, minLat: 36.5, maxLat: 42.4 },
+  ES: { minLng: -10.2, maxLng: 4.2, minLat: 35.5, maxLat: 44.4 },
+  FR: { minLng: -5.8, maxLng: 9.8, minLat: 41.2, maxLat: 51.5 },
+  CH: { minLng: 5.4, maxLng: 10.8, minLat: 45.4, maxLat: 48.2 },
+  IT: { minLng: 6, maxLng: 19, minLat: 36, maxLat: 48 },
+}
+
+function mapBounds(region: Region): MapBounds {
+  if (region.coordinates.lng < -20) return { minLng: -29.8, maxLng: -24.2, minLat: 36.2, maxLat: 40.1 }
+  if (region.coordinates.lng < -14) return { minLng: -18.2, maxLng: -15.2, minLat: 31.8, maxLat: 33.8 }
+  return countryBounds[region.countryCode] ?? { minLng: -11, maxLng: 20, minLat: 35, maxLat: 52 }
+}
+
+function zoomBounds(bounds: MapBounds, center: Region['coordinates'], zoom: number): MapBounds {
+  if (zoom === 1) return bounds
+  const width = (bounds.maxLng - bounds.minLng) / zoom
+  const height = (bounds.maxLat - bounds.minLat) / zoom
+  return {
+    minLng: center.lng - width / 2,
+    maxLng: center.lng + width / 2,
+    minLat: center.lat - height / 2,
+    maxLat: center.lat + height / 2,
+  }
+}
+
+function insideBounds(point: Region['coordinates'], bounds: MapBounds) {
+  return point.lng >= bounds.minLng && point.lng <= bounds.maxLng && point.lat >= bounds.minLat && point.lat <= bounds.maxLat
+}
+
+function projectPoint(point: Region['coordinates'], bounds: MapBounds) {
+  const x = (point.lng - bounds.minLng) / (bounds.maxLng - bounds.minLng) * 1000
+  const y = (bounds.maxLat - point.lat) / (bounds.maxLat - bounds.minLat) * 560
+  return `${x.toFixed(1)},${y.toFixed(1)}`
+}
+
+function projectPercent(point: Region['coordinates'], bounds: MapBounds) {
+  return {
+    left: (point.lng - bounds.minLng) / (bounds.maxLng - bounds.minLng) * 100,
+    top: (bounds.maxLat - point.lat) / (bounds.maxLat - bounds.minLat) * 100,
+  }
+}
+
+const mapLand: { id: string; countryCodes: string[]; coordinates: [number, number][] }[] = [
+  { id: 'portugal', countryCodes: ['PT'], coordinates: [[-9.5, 42.1], [-8.2, 42], [-8.1, 41.2], [-6.8, 41], [-7.1, 39.7], [-7.5, 38.3], [-7.2, 37], [-8.9, 37], [-9.5, 38.7], [-9.1, 40.1], [-9.5, 42.1]] },
+  { id: 'spain', countryCodes: ['ES'], coordinates: [[-9.3, 43.7], [-6.5, 43.6], [-3, 43.5], [0.5, 42.8], [3.2, 42.4], [2.9, 40.8], [0.5, 38.8], [-0.7, 37.1], [-5.6, 36], [-7.2, 37], [-7.5, 38.3], [-7.1, 39.7], [-6.8, 41], [-8.2, 42], [-9.3, 43.7]] },
+  { id: 'france', countryCodes: ['FR'], coordinates: [[-4.8, 48.5], [-1.8, 46.8], [-1.5, 43.5], [2.9, 42.4], [7.5, 43.7], [7.6, 48.6], [4.8, 50.1], [1.6, 50.9], [-1.7, 49.7], [-4.8, 48.5]] },
+  { id: 'central-europe', countryCodes: ['DE', 'CH'], coordinates: [[5.8, 47.9], [7.6, 48.6], [7.5, 53], [14.8, 53.8], [16.8, 48.6], [13.8, 46.3], [10.5, 46], [9.5, 47.5], [5.8, 47.9]] },
+  { id: 'switzerland', countryCodes: ['CH'], coordinates: [[5.9, 47.5], [6.8, 46.2], [8.4, 45.8], [10.5, 46], [9.5, 47.5], [8.5, 47.8], [5.9, 47.5]] },
+  { id: 'italy', countryCodes: ['IT'], coordinates: [[7.5, 46.2], [12.2, 47], [13.7, 45.7], [12.5, 44.2], [15.7, 41.9], [17.9, 40.5], [16.5, 39.7], [14.7, 41], [12.3, 42.3], [10, 43.8], [8.1, 44.1], [7.5, 46.2]] },
+  { id: 'sicily', countryCodes: ['IT'], coordinates: [[12.4, 38.2], [15.7, 38.2], [15.2, 36.7], [12.7, 37.2], [12.4, 38.2]] },
+  { id: 'sardinia', countryCodes: ['IT'], coordinates: [[8.1, 41.3], [9.8, 41.2], [9.5, 38.8], [8.2, 39.1], [8.1, 41.3]] },
+  { id: 'azores', countryCodes: ['PT'], coordinates: [[-28.9, 38.9], [-27.5, 39.1], [-25, 37.3], [-25.8, 36.9], [-28.9, 38.9]] },
+  { id: 'madeira', countryCodes: ['PT'], coordinates: [[-17.4, 32.9], [-16.6, 33.1], [-16.2, 32.6], [-17.1, 32.5], [-17.4, 32.9]] },
+]
+
+const mapRivers: { id: string; coordinates: [number, number][] }[] = [
+  { id: 'douro', coordinates: [[-8.8, 41.15], [-7.8, 41.1], [-6.8, 41.4], [-5.5, 41.6], [-3.7, 41.7]] },
+  { id: 'tagus', coordinates: [[-9.2, 38.7], [-8.1, 39.1], [-6.8, 39.6], [-4.8, 39.8], [-3.7, 40.1]] },
+  { id: 'rhone', coordinates: [[4.8, 46.2], [4.9, 44.8], [4.7, 43.4]] },
+  { id: 'rhine', coordinates: [[8, 47.6], [7.6, 49], [6.8, 50.5]] },
+]
 
 const sourceByCountry: Record<string, Source[]> = {
   PT: [{ title: 'Instituto da Vinha e do Vinho', url: 'https://www.ivv.gov.pt/' }, { title: 'Wines of Portugal', url: 'https://www.winesofportugal.com/' }],
