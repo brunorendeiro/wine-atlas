@@ -546,5 +546,337 @@
     },
     "featured": false,
     "color": "#a4663e"
+  },
+  {
+    "id": "acores",
+    "name": { "pt": "Açores", "en": "Azores", "de": "Azoren" },
+    "country": { "pt": "Portugal", "en": "Portugal", "de": "Portugal" },
+    "countryCode": "PT",
+    "coordinates": { "lat": 38.5102, "lng": -28.5397 },
+    "description": {
+      "pt": "Vinhas atlânticas plantadas em solos vulcânicos e protegidas por muros de pedra negra, com vinhos tensos, salinos e muito frescos.",
+      "en": "Atlantic vineyards planted in volcanic soils and sheltered by black-stone walls, producing taut, saline and very fresh wines.",
+      "de": "Atlantische Weinberge auf Vulkanböden, geschützt von schwarzen Steinmauern, mit straffen, salzigen und sehr frischen Weinen."
+    },
+    "grapeIds": ["arinto-dos-acores", "verdelho", "terrantez-do-pico"],
+    "wineTypes": { "pt": ["Branco", "Fortificado"], "en": ["White", "Fortified"], "de": ["Weisswein", "Likörwein"] },
+    "climate": {
+      "pt": "Marítimo, húmido e ameno, com forte influência atlântica.",
+      "en": "Mild, humid maritime climate with strong Atlantic influence.",
+      "de": "Mildes, feuchtes Seeklima mit starkem Atlantikeinfluss."
+    },
+    "service": { "pt": "Brancos: 8–11 °C · Fortificados: 10–13 °C", "en": "Whites: 8–11°C · Fortified: 10–13°C", "de": "Weisswein: 8–11 °C · Likörwein: 10–13 °C" },
+    "pairings": {
+      "pt": ["Lapas grelhadas", "Cracas", "Peixe assado", "Queijo de São Jorge"],
+      "en": ["Grilled limpets", "Barnacles", "Roast fish", "São Jorge cheese"],
+      "de": ["Gegrillte Napfschnecken", "Entenmuscheln", "Ofenfisch", "São-Jorge-Käse"]
+    },
+    "fact": {
+      "pt": "A Paisagem da Cultura da Vinha da Ilha do Pico é Património Mundial da UNESCO.",
+      "en": "The Landscape of the Pico Island Vineyard Culture is a UNESCO World Heritage Site.",
+      "de": "Die Weinbaukulturlandschaft der Insel Pico gehört zum UNESCO-Welterbe."
+    },
+    "featured": true,
+    "color": "#304f55"
+  },
+  {
+    "id": "madeira",
+    "name": { "pt": "Madeira", "en": "Madeira", "de": "Madeira" },
+    "country": { "pt": "Portugal", "en": "Portugal", "de": "Portugal" },
+    "countryCode": "PT",
+    "coordinates": { "lat": 32.7607, "lng": -16.9595 },
+    "description": {
+      "pt": "Encostas vulcânicas muito íngremes dão origem ao inconfundível Madeira, fortificado, aquecido e marcado por acidez vibrante e enorme longevidade.",
+      "en": "Very steep volcanic slopes produce unmistakable Madeira: fortified, warmed during ageing and marked by vibrant acidity and extraordinary longevity.",
+      "de": "Sehr steile Vulkanhänge bringen den unverwechselbaren Madeira hervor: aufgespritet, während der Reifung erwärmt, mit lebendiger Säure und enormer Langlebigkeit."
+    },
+    "grapeIds": ["sercial", "verdelho", "tinta-negra"],
+    "wineTypes": { "pt": ["Fortificado", "Branco", "Tinto"], "en": ["Fortified", "White", "Red"], "de": ["Likörwein", "Weisswein", "Rotwein"] },
+    "climate": {
+      "pt": "Subtropical atlântico, ameno e húmido durante todo o ano.",
+      "en": "Mild, humid Atlantic subtropical climate throughout the year.",
+      "de": "Ganzjährig mildes und feuchtes atlantisch-subtropisches Klima."
+    },
+    "service": { "pt": "Seco: 10–12 °C · Meio-doce e doce: 12–14 °C", "en": "Dry: 10–12°C · Medium-sweet and sweet: 12–14°C", "de": "Trocken: 10–12 °C · Halbsüss und süss: 12–14 °C" },
+    "pairings": {
+      "pt": ["Amêndoas torradas", "Sopa de cebola", "Queijo azul", "Chocolate negro"],
+      "en": ["Toasted almonds", "Onion soup", "Blue cheese", "Dark chocolate"],
+      "de": ["Geröstete Mandeln", "Zwiebelsuppe", "Blauschimmelkäse", "Dunkle Schokolade"]
+    },
+    "fact": {
+      "pt": "A combinação de calor e oxidação controlada permite que muitos Madeiras envelheçam durante décadas ou séculos.",
+      "en": "Controlled heat and oxidation allow many Madeiras to age for decades or even centuries.",
+      "de": "Kontrollierte Wärme und Oxidation lassen viele Madeiras über Jahrzehnte oder sogar Jahrhunderte reifen."
+    },
+    "featured": true,
+    "color": "#9a693e"
+  },
+  {
+    "id": "rias-baixas",
+    "name": { "pt": "Rías Baixas", "en": "Rías Baixas", "de": "Rías Baixas" },
+    "country": { "pt": "Espanha", "en": "Spain", "de": "Spanien" },
+    "countryCode": "ES",
+    "coordinates": { "lat": 42.4329, "lng": -8.6444 },
+    "description": {
+      "pt": "A costa húmida da Galiza é a grande casa espanhola da Albariño, com brancos aromáticos, cítricos e salinos.",
+      "en": "Galicia's humid coast is Spain's great home of Albariño, producing aromatic, citrus-driven and saline whites.",
+      "de": "Galiciens feuchte Küste ist Spaniens grosse Heimat des Albariño mit aromatischen, zitrischen und salzigen Weissweinen."
+    },
+    "grapeIds": ["alvarinho"],
+    "wineTypes": { "pt": ["Branco"], "en": ["White"], "de": ["Weisswein"] },
+    "climate": {
+      "pt": "Atlântico, fresco, húmido e chuvoso.",
+      "en": "Cool, humid and rainy Atlantic climate.",
+      "de": "Kühles, feuchtes und regenreiches Atlantikklima."
+    },
+    "service": { "pt": "Brancos: 8–10 °C", "en": "Whites: 8–10°C", "de": "Weisswein: 8–10 °C" },
+    "pairings": {
+      "pt": ["Polvo à galega", "Mexilhões", "Vieiras", "Peixe branco"],
+      "en": ["Galician octopus", "Mussels", "Scallops", "White fish"],
+      "de": ["Galicischer Oktopus", "Miesmuscheln", "Jakobsmuscheln", "Weisser Fisch"]
+    },
+    "fact": {
+      "pt": "A Albariño é a casta-base da denominação e muitas vinhas são conduzidas em pérgola para favorecer a ventilação.",
+      "en": "Albariño is the denomination's key grape, and many vines are trained on pergolas to improve ventilation.",
+      "de": "Albariño ist die Leitsorte; viele Reben wachsen zur besseren Belüftung auf Pergolen."
+    },
+    "featured": false,
+    "color": "#4f8176"
+  },
+  {
+    "id": "ribera-del-duero",
+    "name": { "pt": "Ribera del Duero", "en": "Ribera del Duero", "de": "Ribera del Duero" },
+    "country": { "pt": "Espanha", "en": "Spain", "de": "Spanien" },
+    "countryCode": "ES",
+    "coordinates": { "lat": 41.6693, "lng": -3.6892 },
+    "description": {
+      "pt": "Vinhas de altitude ao longo do Douro espanhol produzem Tempranillo concentrada, fresca e preparada para envelhecer.",
+      "en": "High-altitude vineyards along Spain's Duero produce concentrated, fresh Tempranillo built to age.",
+      "de": "Hoch gelegene Weinberge am spanischen Duero erzeugen konzentrierten, frischen und lagerfähigen Tempranillo."
+    },
+    "grapeIds": ["tempranillo"],
+    "wineTypes": { "pt": ["Tinto", "Rosé"], "en": ["Red", "Rosé"], "de": ["Rotwein", "Rosé"] },
+    "climate": {
+      "pt": "Continental extremo, com verões quentes, invernos frios e noites frescas.",
+      "en": "Extreme continental climate with hot summers, cold winters and cool nights.",
+      "de": "Extrem kontinentales Klima mit heissen Sommern, kalten Wintern und kühlen Nächten."
+    },
+    "service": { "pt": "Tintos: 16–18 °C", "en": "Reds: 16–18°C", "de": "Rotwein: 16–18 °C" },
+    "pairings": {
+      "pt": ["Leitão assado", "Borrego", "Carne grelhada", "Queijo curado"],
+      "en": ["Roast suckling pig", "Lamb", "Grilled meat", "Aged cheese"],
+      "de": ["Spanferkel", "Lamm", "Grillfleisch", "Gereifter Käse"]
+    },
+    "fact": {
+      "pt": "Na região, a Tempranillo é também chamada Tinta del País ou Tinto Fino.",
+      "en": "In the region, Tempranillo is also called Tinta del País or Tinto Fino.",
+      "de": "In der Region heisst Tempranillo auch Tinta del País oder Tinto Fino."
+    },
+    "featured": true,
+    "color": "#773735"
+  },
+  {
+    "id": "priorat",
+    "name": { "pt": "Priorat", "en": "Priorat", "de": "Priorat" },
+    "country": { "pt": "Espanha", "en": "Spain", "de": "Spanien" },
+    "countryCode": "ES",
+    "coordinates": { "lat": 41.1427, "lng": 0.8202 },
+    "description": {
+      "pt": "Encostas íngremes de ardósia na Catalunha dão tintos minerais, intensos e concentrados, sobretudo de Garnacha e Cariñena.",
+      "en": "Steep slate slopes in Catalonia yield mineral, intense and concentrated reds, led by Garnacha and Cariñena.",
+      "de": "Steile Schieferhänge in Katalonien ergeben mineralische, intensive und konzentrierte Rotweine, vor allem aus Garnacha und Cariñena."
+    },
+    "grapeIds": ["garnacha", "carinena"],
+    "wineTypes": { "pt": ["Tinto", "Branco"], "en": ["Red", "White"], "de": ["Rotwein", "Weisswein"] },
+    "climate": {
+      "pt": "Mediterrânico quente e seco, moderado pela altitude.",
+      "en": "Hot, dry Mediterranean climate moderated by altitude.",
+      "de": "Heisses, trockenes Mittelmeerklima, durch die Höhenlage gemildert."
+    },
+    "service": { "pt": "Tintos: 16–18 °C", "en": "Reds: 16–18°C", "de": "Rotwein: 16–18 °C" },
+    "pairings": {
+      "pt": ["Borrego grelhado", "Caça", "Bochecha de porco", "Queijos curados"],
+      "en": ["Grilled lamb", "Game", "Pork cheek", "Aged cheeses"],
+      "de": ["Gegrilltes Lamm", "Wild", "Schweinebäckchen", "Gereifter Käse"]
+    },
+    "fact": {
+      "pt": "O solo local de ardósia quebradiça chama-se llicorella e obriga as raízes a procurar água em profundidade.",
+      "en": "The local fractured slate soil is called llicorella and forces roots to seek water deep underground.",
+      "de": "Der brüchige Schieferboden heisst Llicorella und zwingt die Wurzeln, tief nach Wasser zu suchen."
+    },
+    "featured": false,
+    "color": "#65505b"
+  },
+  {
+    "id": "rueda",
+    "name": { "pt": "Rueda", "en": "Rueda", "de": "Rueda" },
+    "country": { "pt": "Espanha", "en": "Spain", "de": "Spanien" },
+    "countryCode": "ES",
+    "coordinates": { "lat": 41.4125, "lng": -4.9590 },
+    "description": {
+      "pt": "Planalto castelhano especializado em brancos de Verdejo, combinando ervas, citrinos, textura e um final subtilmente amargo.",
+      "en": "A Castilian plateau specialising in Verdejo whites, combining herbs, citrus, texture and a subtly bitter finish.",
+      "de": "Ein kastilisches Hochland, spezialisiert auf Verdejo-Weine mit Kräutern, Zitrus, Textur und feinherbem Finale."
+    },
+    "grapeIds": ["verdejo"],
+    "wineTypes": { "pt": ["Branco", "Espumante", "Tinto", "Rosé"], "en": ["White", "Sparkling", "Red", "Rosé"], "de": ["Weisswein", "Schaumwein", "Rotwein", "Rosé"] },
+    "climate": {
+      "pt": "Continental, seco e de altitude, com grande amplitude térmica.",
+      "en": "Dry, high-altitude continental climate with wide temperature swings.",
+      "de": "Trockenes kontinentales Höhenklima mit grossen Temperaturschwankungen."
+    },
+    "service": { "pt": "Brancos: 8–10 °C", "en": "Whites: 8–10°C", "de": "Weisswein: 8–10 °C" },
+    "pairings": {
+      "pt": ["Peixe grelhado", "Marisco", "Arroz de legumes", "Queijo de cabra"],
+      "en": ["Grilled fish", "Shellfish", "Vegetable rice", "Goat cheese"],
+      "de": ["Gegrillter Fisch", "Meeresfrüchte", "Gemüsereis", "Ziegenkäse"]
+    },
+    "fact": {
+      "pt": "Rueda tornou-se a primeira denominação de origem reconhecida de Castilla y León em 1980.",
+      "en": "Rueda became Castilla y León's first recognised denomination of origin in 1980.",
+      "de": "Rueda wurde 1980 die erste anerkannte Herkunftsbezeichnung von Castilla y León."
+    },
+    "featured": false,
+    "color": "#8c8750"
+  },
+  {
+    "id": "tras-os-montes",
+    "name": { "pt": "Trás-os-Montes", "en": "Trás-os-Montes", "de": "Trás-os-Montes" },
+    "country": { "pt": "Portugal", "en": "Portugal", "de": "Portugal" },
+    "countryCode": "PT",
+    "coordinates": { "lat": 41.8061, "lng": -6.7567 },
+    "description": {
+      "pt": "Planalto do nordeste português de vinhas antigas, verões quentes e noites frescas, com tintos firmes e brancos aromáticos.",
+      "en": "A northeastern Portuguese plateau of old vines, hot summers and cool nights, producing firm reds and aromatic whites.",
+      "de": "Nordostportugiesisches Hochland mit alten Reben, heissen Sommern und kühlen Nächten, für feste Rot- und aromatische Weissweine."
+    },
+    "grapeIds": ["touriga-nacional", "tinta-roriz", "fernao-pires"],
+    "wineTypes": { "pt": ["Tinto", "Branco", "Rosé"], "en": ["Red", "White", "Rosé"], "de": ["Rotwein", "Weisswein", "Rosé"] },
+    "climate": { "pt": "Continental seco, com grande amplitude térmica.", "en": "Dry continental climate with wide temperature swings.", "de": "Trockenes Kontinentalklima mit grossen Temperaturschwankungen." },
+    "service": { "pt": "Tintos: 15–17 °C · Brancos: 8–11 °C", "en": "Reds: 15–17°C · Whites: 8–11°C", "de": "Rotwein: 15–17 °C · Weisswein: 8–11 °C" },
+    "pairings": { "pt": ["Posta mirandesa", "Fumeiro", "Cabrito", "Queijo curado"], "en": ["Mirandesa beef", "Smoked meats", "Roast goat", "Aged cheese"], "de": ["Mirandesa-Rind", "Räucherwaren", "Ziegenbraten", "Gereifter Käse"] },
+    "fact": { "pt": "Algumas vinhas velhas preservam misturas de muitas castas plantadas na mesma parcela.", "en": "Some old vineyards preserve field blends of many grapes planted in the same parcel.", "de": "Manche alten Weinberge bewahren gemischte Sätze vieler Sorten in derselben Parzelle." },
+    "featured": false,
+    "color": "#7b4937"
+  },
+  {
+    "id": "tavora-varosa",
+    "name": { "pt": "Távora-Varosa", "en": "Távora-Varosa", "de": "Távora-Varosa" },
+    "country": { "pt": "Portugal", "en": "Portugal", "de": "Portugal" },
+    "countryCode": "PT",
+    "coordinates": { "lat": 41.0208, "lng": -7.7478 },
+    "description": {
+      "pt": "Região de altitude entre o Douro e o Dão, pioneira portuguesa dos espumantes DOC, com acidez natural e perfil elegante.",
+      "en": "A high-altitude region between Douro and Dão, Portugal's DOC sparkling-wine pioneer, with natural acidity and elegance.",
+      "de": "Hoch gelegene Region zwischen Douro und Dão, Portugals DOC-Pionier für Schaumwein, mit natürlicher Säure und Eleganz."
+    },
+    "grapeIds": ["malvasia-fina", "chardonnay", "pinot-noir"],
+    "wineTypes": { "pt": ["Espumante", "Branco", "Tinto"], "en": ["Sparkling", "White", "Red"], "de": ["Schaumwein", "Weisswein", "Rotwein"] },
+    "climate": { "pt": "Continental de altitude, com noites frias.", "en": "High-altitude continental climate with cold nights.", "de": "Kontinentales Höhenklima mit kalten Nächten." },
+    "service": { "pt": "Espumantes: 6–9 °C · Brancos: 8–10 °C", "en": "Sparkling: 6–9°C · Whites: 8–10°C", "de": "Schaumwein: 6–9 °C · Weisswein: 8–10 °C" },
+    "pairings": { "pt": ["Entradas", "Leitão", "Peixe frito", "Queijos suaves"], "en": ["Appetisers", "Suckling pig", "Fried fish", "Mild cheeses"], "de": ["Vorspeisen", "Spanferkel", "Gebratener Fisch", "Milder Käse"] },
+    "fact": { "pt": "Foi a primeira região portuguesa demarcada especificamente para a produção de espumante DOC.", "en": "It was Portugal's first demarcated region specifically for DOC sparkling wine.", "de": "Sie war Portugals erste speziell für DOC-Schaumwein abgegrenzte Region." },
+    "featured": false,
+    "color": "#64766d"
+  },
+  {
+    "id": "beira-interior",
+    "name": { "pt": "Beira Interior", "en": "Beira Interior", "de": "Beira Interior" },
+    "country": { "pt": "Portugal", "en": "Portugal", "de": "Portugal" },
+    "countryCode": "PT",
+    "coordinates": { "lat": 40.2772, "lng": -7.5083 },
+    "description": {
+      "pt": "Vinhas de altitude junto à fronteira espanhola dão vinhos de grande frescura, com destaque para a branca Síria e tintas portuguesas.",
+      "en": "High-altitude vineyards by the Spanish border produce remarkably fresh wines, led by white Síria and Portuguese reds.",
+      "de": "Hoch gelegene Weinberge an der spanischen Grenze erzeugen besonders frische Weine, angeführt von Síria und portugiesischen Rotweinsorten."
+    },
+    "grapeIds": ["siria", "touriga-nacional", "tinta-roriz"],
+    "wineTypes": { "pt": ["Branco", "Tinto", "Rosé", "Espumante"], "en": ["White", "Red", "Rosé", "Sparkling"], "de": ["Weisswein", "Rotwein", "Rosé", "Schaumwein"] },
+    "climate": { "pt": "Continental de altitude, com invernos frios e verões quentes.", "en": "High-altitude continental climate with cold winters and hot summers.", "de": "Kontinentales Höhenklima mit kalten Wintern und heissen Sommern." },
+    "service": { "pt": "Brancos: 8–11 °C · Tintos: 15–17 °C", "en": "Whites: 8–11°C · Reds: 15–17°C", "de": "Weisswein: 8–11 °C · Rotwein: 15–17 °C" },
+    "pairings": { "pt": ["Borrego", "Cabrito", "Truta", "Queijo da Beira Baixa"], "en": ["Lamb", "Roast goat", "Trout", "Beira Baixa cheese"], "de": ["Lamm", "Ziegenbraten", "Forelle", "Beira-Baixa-Käse"] },
+    "fact": { "pt": "Algumas das vinhas mais altas de Portugal continental encontram-se nesta região.", "en": "Some of mainland Portugal's highest vineyards are found in this region.", "de": "Einige der höchstgelegenen Weinberge des portugiesischen Festlands liegen hier." },
+    "featured": false,
+    "color": "#6f6b49"
+  },
+  {
+    "id": "lisboa",
+    "name": { "pt": "Lisboa", "en": "Lisboa", "de": "Lisboa" },
+    "country": { "pt": "Portugal", "en": "Portugal", "de": "Portugal" },
+    "countryCode": "PT",
+    "coordinates": { "lat": 39.1884, "lng": -9.1828 },
+    "description": {
+      "pt": "Longa faixa atlântica a norte da capital, diversa em solos e microclimas, com brancos frescos e tintos de grande valor.",
+      "en": "A long Atlantic strip north of the capital, diverse in soils and microclimates, with fresh whites and excellent-value reds.",
+      "de": "Langer Atlantikstreifen nördlich der Hauptstadt mit vielfältigen Böden und Mikroklimata, frischen Weiss- und preiswerten Rotweinen."
+    },
+    "grapeIds": ["fernao-pires", "arinto", "castelao"],
+    "wineTypes": { "pt": ["Branco", "Tinto", "Rosé", "Licoroso"], "en": ["White", "Red", "Rosé", "Fortified"], "de": ["Weisswein", "Rotwein", "Rosé", "Likörwein"] },
+    "climate": { "pt": "Atlântico, ventoso e fresco junto à costa.", "en": "Atlantic, windy and cool near the coast.", "de": "Atlantisch, windig und kühl in Küstennähe." },
+    "service": { "pt": "Brancos: 8–10 °C · Tintos: 14–17 °C", "en": "Whites: 8–10°C · Reds: 14–17°C", "de": "Weisswein: 8–10 °C · Rotwein: 14–17 °C" },
+    "pairings": { "pt": ["Peixe grelhado", "Marisco", "Porco assado", "Queijos"], "en": ["Grilled fish", "Shellfish", "Roast pork", "Cheese"], "de": ["Gegrillter Fisch", "Meeresfrüchte", "Schweinebraten", "Käse"] },
+    "fact": { "pt": "A região inclui denominações históricas como Bucelas, Colares e Carcavelos.", "en": "The region includes historic appellations such as Bucelas, Colares and Carcavelos.", "de": "Zur Region gehören historische Herkünfte wie Bucelas, Colares und Carcavelos." },
+    "featured": false,
+    "color": "#52767c"
+  },
+  {
+    "id": "tejo",
+    "name": { "pt": "Tejo", "en": "Tejo", "de": "Tejo" },
+    "country": { "pt": "Portugal", "en": "Portugal", "de": "Portugal" },
+    "countryCode": "PT",
+    "coordinates": { "lat": 39.2355, "lng": -8.6848 },
+    "description": {
+      "pt": "Vinhas nas lezírias, charnecas e bairros do vale do Tejo produzem estilos acessíveis e diversos, de brancos aromáticos a tintos frutados.",
+      "en": "Vineyards across the Tejo valley's floodplains, heathland and clay-limestone zones produce diverse, approachable styles.",
+      "de": "Weinberge in den Auen, Heiden und Kalk-Lehm-Zonen des Tejo-Tals erzeugen vielfältige, zugängliche Weinstile."
+    },
+    "grapeIds": ["fernao-pires", "castelao", "touriga-nacional"],
+    "wineTypes": { "pt": ["Branco", "Tinto", "Rosé", "Espumante"], "en": ["White", "Red", "Rosé", "Sparkling"], "de": ["Weisswein", "Rotwein", "Rosé", "Schaumwein"] },
+    "climate": { "pt": "Mediterrânico com influência atlântica e do rio.", "en": "Mediterranean with Atlantic and river influence.", "de": "Mediterran mit Einfluss von Atlantik und Fluss." },
+    "service": { "pt": "Brancos: 8–10 °C · Tintos: 15–17 °C", "en": "Whites: 8–10°C · Reds: 15–17°C", "de": "Weisswein: 8–10 °C · Rotwein: 15–17 °C" },
+    "pairings": { "pt": ["Sopa da pedra", "Enguias", "Ensopado de borrego", "Queijo"], "en": ["Portuguese bean soup", "Eel", "Lamb stew", "Cheese"], "de": ["Portugiesische Bohnensuppe", "Aal", "Lammeintopf", "Käse"] },
+    "fact": { "pt": "O Tejo é tradicionalmente uma terra de vinhas, olivais, montado e cavalos lusitanos.", "en": "The Tejo is traditionally a land of vineyards, olive groves, cork forests and Lusitano horses.", "de": "Der Tejo ist traditionell eine Landschaft aus Weinbergen, Olivenhainen, Korkeichen und Lusitano-Pferden." },
+    "featured": false,
+    "color": "#8a7544"
+  },
+  {
+    "id": "peninsula-setubal",
+    "name": { "pt": "Península de Setúbal", "en": "Setúbal Peninsula", "de": "Halbinsel Setúbal" },
+    "country": { "pt": "Portugal", "en": "Portugal", "de": "Portugal" },
+    "countryCode": "PT",
+    "coordinates": { "lat": 38.5244, "lng": -8.8935 },
+    "description": {
+      "pt": "Entre os areais de Palmela e a serra da Arrábida nascem tintos de Castelão e o intensamente aromático Moscatel de Setúbal.",
+      "en": "Between Palmela's sands and the Arrábida hills, Castelão reds and intensely aromatic Moscatel de Setúbal are born.",
+      "de": "Zwischen den Sandböden von Palmela und der Serra da Arrábida entstehen Castelão-Rotweine und aromatischer Moscatel de Setúbal."
+    },
+    "grapeIds": ["castelao", "moscatel-setubal"],
+    "wineTypes": { "pt": ["Tinto", "Branco", "Rosé", "Fortificado"], "en": ["Red", "White", "Rosé", "Fortified"], "de": ["Rotwein", "Weisswein", "Rosé", "Likörwein"] },
+    "climate": { "pt": "Mediterrânico, moderado pelo Atlântico e pelos estuários.", "en": "Mediterranean, moderated by the Atlantic and estuaries.", "de": "Mediterran, durch Atlantik und Flussmündungen gemildert." },
+    "service": { "pt": "Tintos: 15–17 °C · Moscatel: 10–12 °C", "en": "Reds: 15–17°C · Moscatel: 10–12°C", "de": "Rotwein: 15–17 °C · Moscatel: 10–12 °C" },
+    "pairings": { "pt": ["Choco frito", "Carne grelhada", "Queijo de Azeitão", "Tarte de laranja"], "en": ["Fried cuttlefish", "Grilled meat", "Azeitão cheese", "Orange tart"], "de": ["Frittierter Tintenfisch", "Grillfleisch", "Azeitão-Käse", "Orangentarte"] },
+    "fact": { "pt": "O Moscatel de Setúbal é um fortificado cuja maceração com películas intensifica aroma e sabor.", "en": "Moscatel de Setúbal is a fortified wine whose skin maceration intensifies aroma and flavour.", "de": "Moscatel de Setúbal ist ein Likörwein, dessen Schalenmazeration Aroma und Geschmack verstärkt." },
+    "featured": true,
+    "color": "#a06b3b"
+  },
+  {
+    "id": "algarve",
+    "name": { "pt": "Algarve", "en": "Algarve", "de": "Algarve" },
+    "country": { "pt": "Portugal", "en": "Portugal", "de": "Portugal" },
+    "countryCode": "PT",
+    "coordinates": { "lat": 37.1377, "lng": -8.0197 },
+    "description": {
+      "pt": "O extremo sul português combina sol abundante, proteção das serras e influência marítima, recuperando castas locais como a Negra Mole.",
+      "en": "Portugal's far south combines abundant sun, mountain shelter and maritime influence, reviving local grapes such as Negra Mole.",
+      "de": "Portugals äusserster Süden verbindet viel Sonne, Bergschutz und Meeresnähe und belebt lokale Sorten wie Negra Mole neu."
+    },
+    "grapeIds": ["negra-mole", "arinto", "touriga-nacional"],
+    "wineTypes": { "pt": ["Tinto", "Branco", "Rosé"], "en": ["Red", "White", "Rosé"], "de": ["Rotwein", "Weisswein", "Rosé"] },
+    "climate": { "pt": "Mediterrânico quente e seco, com influência atlântica.", "en": "Warm, dry Mediterranean climate with Atlantic influence.", "de": "Warmes, trockenes Mittelmeerklima mit Atlantikeinfluss." },
+    "service": { "pt": "Rosés: 8–10 °C · Tintos: 14–16 °C", "en": "Rosés: 8–10°C · Reds: 14–16°C", "de": "Rosé: 8–10 °C · Rotwein: 14–16 °C" },
+    "pairings": { "pt": ["Cataplana", "Atum", "Polvo", "Frango piri-piri"], "en": ["Cataplana", "Tuna", "Octopus", "Piri-piri chicken"], "de": ["Cataplana", "Thunfisch", "Oktopus", "Piri-Piri-Huhn"] },
+    "fact": { "pt": "A serra protege muitas vinhas dos ventos frios do norte, enquanto o oceano modera o calor.", "en": "Mountain ranges shelter many vineyards from cold northern winds while the ocean moderates the heat.", "de": "Gebirge schützen viele Weinberge vor kalten Nordwinden, während der Ozean die Hitze mildert." },
+    "featured": false,
+    "color": "#b17246"
   }
 ]
