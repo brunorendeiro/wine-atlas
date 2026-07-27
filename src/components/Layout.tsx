@@ -6,6 +6,7 @@ import {
   Heart,
   Menu,
   Search,
+  SlidersHorizontal,
   Sparkles,
   Wine,
   X,
@@ -36,10 +37,11 @@ const navItems = [
   { to: '/guia/sommelier', key: 'navSommelier', icon: Sparkles, end: true },
   { to: '/guia/aromas', key: 'navAromas', icon: Wine, end: true },
   { to: '/guia/historia', key: 'navHistory', icon: BookOpen, end: true },
+  { to: '/ferramentas', key: 'navTools', icon: SlidersHorizontal, end: false },
   { to: '/favoritos', key: 'navFavorites', icon: Heart, end: false },
 ] as const
 
-const mobileNavItems = navItems.filter(({ key }) => ['navHome', 'navRegions', 'navGrapes', 'navGuide', 'navFavorites'].includes(key))
+const mobileNavItems = navItems.filter(({ key }) => ['navHome', 'navRegions', 'navGrapes', 'navGuide', 'navTools'].includes(key))
 
 export function Layout({ children }: { children: ReactNode }) {
   const { locale, setLocale, theme, toggleTheme, t } = useApp()

@@ -27,6 +27,7 @@ import {
 } from 'react-router-dom'
 import { ArticleCard, EmptyState, FavoriteButton, GrapeCard, RegionCard } from './components/Cards'
 import { AromaWheel } from './components/AromaWheel'
+import { GrapeComparePage, GuidedTastingPage, ToolsHubPage, WineChooserPage } from './components/DiscoveryTools'
 import { GuideIcon } from './components/GuideIcon'
 import { Layout } from './components/Layout'
 import { LocationIntro } from './components/Overlays'
@@ -702,8 +703,27 @@ function SearchPage() {
   const [params, setParams] = useSearchParams()
   const query = params.get('q') || ''
   const [input, setInput] = useState(query)
-  const foundRegions = query ? regions.filter((region) => matchesLocalized(region.name, query) || matchesLocalized(region.description, query)) : []
-  const foundGrapes = query ? grapes.filter((grape) => matchesLocalized(grape.name, query) || grape.aliases.some((alias) => normalize(alias).includes(normalize(query))) || matchesLocalized(grape.description, query) || list(grape.aromas, locale).some((item) => normalize(item).includes(normalize(query)))) : []
+  const normalizedQuery = normalize(query)
+  const foundRegions = query ? regions.filter((region) =>
+    matchesLocalized(region.name, query) ||
+    matchesLocalized(region.description, query) ||
+    matchesLocalized(region.climate, query) ||
+    list(region.wineTypes, locale).some((item) => normalize(item).includes(normalizedQuery)) ||
+    list(region.pairings, locale).some((item) => normalize(item).includes(normalizedQuery))
+  ) : []
+  const foundGrapes = query ? grapes.filter((grape) =>
+    matchesLocalized(grape.name, query) ||
+    grape.aliases.some((alias) => normalize(alias).includes(normalizedQuery)) ||
+    matchesLocalized(grape.description, query) ||
+    matchesLocalized(grape.origin, query) ||
+    matchesLocalized(grape.glass, query) ||
+    list(grape.aromas, locale).some((item) => normalize(item).includes(normalizedQuery)) ||
+    list(grape.pairings, locale).some((item) => normalize(item).includes(normalizedQuery)) ||
+    grape.regionIds.some((id) => {
+      const region = getRegion(id)
+      return region ? matchesLocalized(region.name, query) : false
+    })
+  ) : []
   const foundArticles = query ? articles.filter((article) => matchesLocalized(article.title, query) || matchesLocalized(article.summary, query) || matchesLocalized(article.intro, query)) : []
   const total = foundRegions.length + foundGrapes.length + foundArticles.length
   function submit(event: FormEvent) {
@@ -788,6 +808,10 @@ function AppRoutes() {
         <Route path="/guia/aromas" element={<AromaWheelPage />} />
         <Route path="/guia/historia" element={<HistoryPage />} />
         <Route path="/guia/:id" element={<ArticleDetailPage />} />
+        <Route path="/ferramentas" element={<ToolsHubPage />} />
+        <Route path="/ferramentas/prova" element={<GuidedTastingPage />} />
+        <Route path="/ferramentas/escolher" element={<WineChooserPage />} />
+        <Route path="/ferramentas/comparar" element={<GrapeComparePage />} />
         <Route path="/favoritos" element={<FavoritesPage />} />
         <Route path="/pesquisa" element={<SearchPage />} />
         <Route path="/privacidade" element={<PrivacyPage />} />
