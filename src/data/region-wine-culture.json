@@ -135,6 +135,74 @@
       "source": { "title": "Domaine Louis Bovard", "url": "https://www.domainebovard.com/en-3-more-info.html" }
     }
   },
+  "geneve": {
+    "reviewedAt": "2026-08-15",
+    "confidence": "medium",
+    "wine": {
+      "style": { "pt": "Tinto de Genebra", "en": "Geneva red", "de": "Genfer Rotwein" },
+      "examples": ["L'Esprit de Genève", "Domaine des Vignolles"],
+      "profile": { "pt": "Gamay como casta principal, dando tintos estruturados e potentes, bem longe do estilo leve do Beaujolais.", "en": "Gamay as the leading grape, giving structured, powerful reds far removed from the light Beaujolais style.", "de": "Gamay als Hauptsorte, die strukturierte, kraftvolle Rotweine ergibt, weit entfernt vom leichten Beaujolais-Stil." },
+      "ageing": { "ready": 1, "peakStart": 2, "peakEnd": 5, "hold": 8 },
+      "source": { "title": "Swiss Wine — Geneva wine region", "url": "https://www.swisswine.com/en/swiss-wine-regions/geneva-wine-region" }
+    },
+    "person": {
+      "name": "Florian Barthassat",
+      "role": { "pt": "Viticultor e produtor", "en": "Winegrower and producer", "de": "Winzer und Erzeuger" },
+      "note": { "pt": "Um dos rostos por trás de L'Esprit de Genève, lote coletivo de Gamay, Gamaret e Merlot que uniu várias caves históricas de Genebra e venceu o Grand Prix du Vin Suisse 2023.", "en": "One of the faces behind L'Esprit de Genève, a collective Gamay, Gamaret and Merlot blend that brought together several historic Geneva cellars and won the Grand Prix du Vin Suisse 2023.", "de": "Einer der Köpfe hinter L'Esprit de Genève, einer gemeinschaftlichen Cuvée aus Gamay, Gamaret und Merlot mehrerer historischer Genfer Kellereien, die 2023 den Grand Prix du Vin Suisse gewann." },
+      "source": { "title": "La Cave de Genève — L'Esprit de Genève", "url": "https://www.cavedegeneve.ch/boutique/lesprit-de-geneve-par-florian-barthassat/" }
+    }
+  },
+  "neuchatel": {
+    "reviewedAt": "2026-08-15",
+    "confidence": "medium",
+    "wine": {
+      "style": { "pt": "Œil-de-Perdrix de Neuchâtel", "en": "Neuchâtel Œil-de-Perdrix", "de": "Neuenburger Œil-de-Perdrix" },
+      "examples": ["Château d'Auvernier Œil-de-Perdrix"],
+      "profile": { "pt": "Rosé delicado feito de Pinot Noir por curta maceração, geralmente de um dia para o outro, com as primeiras referências a datar de 1861.", "en": "A delicate rosé made from Pinot Noir with short maceration, usually overnight, first referenced under this name in 1861.", "de": "Ein delikater Rosé aus Pinot Noir mit kurzer Maischestandzeit, meist über Nacht, erstmals 1861 unter diesem Namen erwähnt." },
+      "ageing": { "ready": 1, "peakStart": 1, "peakEnd": 3, "hold": 5 },
+      "source": { "title": "Château d'Auvernier — Œil-de-Perdrix", "url": "https://chateau-auvernier.ch/en/home" }
+    },
+    "person": {
+      "name": "Henry Grosjean",
+      "role": { "pt": "Viticultor e dono da propriedade", "en": "Winegrower and estate owner", "de": "Winzer und Gutsbesitzer" },
+      "note": { "pt": "Sucedeu ao pai, Thierry Grosjean, em 2022, como 15ª geração da mesma família à frente do Château d'Auvernier desde 1603.", "en": "Succeeded his father, Thierry Grosjean, in 2022 as the 15th generation of the same family running Château d'Auvernier since 1603.", "de": "Trat 2022 die Nachfolge seines Vaters Thierry Grosjean an, als 15. Generation derselben Familie, die das Château d'Auvernier seit 1603 führt." },
+      "source": { "title": "Caves du Château d'Auvernier — Since 1603", "url": "https://chateau-auvernier.ch/en/the-vineyard/since-1603-history" }
+    }
+  },
+  "graubuenden": {
+    "reviewedAt": "2026-08-15",
+    "confidence": "medium",
+    "wine": {
+      "style": { "pt": "Pinot Noir de culto dos Grisões", "en": "Cult Graubünden Pinot Noir", "de": "Bündner Kult-Pinot-Noir" },
+      "examples": ["Gantenbein Pinot Noir"],
+      "profile": { "pt": "Pinot Noir intenso e concentrado, considerado um dos tintos suíços mais aclamados internacionalmente.", "en": "An intense, concentrated Pinot Noir, considered one of Switzerland's most internationally acclaimed reds.", "de": "Ein intensiver, konzentrierter Pinot Noir, der als einer der international am meisten gefeierten Schweizer Rotweine gilt." },
+      "ageing": { "ready": 3, "peakStart": 6, "peakEnd": 14, "hold": 20 },
+      "source": { "title": "Weingut Gantenbein", "url": "https://gantenbeinwine.com/en/" }
+    },
+    "person": {
+      "name": "Daniel e Martha Gantenbein",
+      "role": { "pt": "Viticultores autodidatas", "en": "Self-taught winegrowers", "de": "Autodidaktische Winzer" },
+      "note": { "pt": "Entraram na viticultura em 1982 na pequena vila de Fläsch e transformaram a Gantenbein num dos nomes mais cultuados do Pinot Noir europeu.", "en": "Entered winemaking in 1982 in the small village of Fläsch and turned Gantenbein into one of the most cult names in European Pinot Noir.", "de": "Stiegen 1982 im kleinen Dorf Fläsch in den Weinbau ein und machten Gantenbein zu einem der meistkultivierten Namen im europäischen Pinot Noir." },
+      "source": { "title": "Weingut Gantenbein", "url": "https://gantenbeinwine.com/en/" }
+    }
+  },
+  "zurich": {
+    "reviewedAt": "2026-08-15",
+    "confidence": "medium",
+    "wine": {
+      "style": { "pt": "Räuschling do lago de Zurique", "en": "Lake Zürich Räuschling", "de": "Räuschling vom Zürichsee" },
+      "examples": ["Schwarzenbach Meilener Räuschling Seehalden"],
+      "profile": { "pt": "Branco leve, seco e cítrico, o vinho mais vendido de uma das poucas caves que ainda cultivam esta casta quase extinta.", "en": "A light, dry, citrusy white, the best-seller of one of the few wineries still growing this near-extinct grape.", "de": "Ein leichter, trockener, zitrusbetonter Weisswein, der Bestseller eines der wenigen Betriebe, die diese fast ausgestorbene Sorte noch anbauen." },
+      "ageing": { "ready": 1, "peakStart": 1, "peakEnd": 3, "hold": 5 },
+      "source": { "title": "Schwarzenbach Weinbau", "url": "https://schwarzenbachweinbau.ch/" }
+    },
+    "person": {
+      "name": "Cécile Schwarzenbach",
+      "role": { "pt": "Viticultora, 5ª geração", "en": "Winegrower, 5th generation", "de": "Winzerin, 5. Generation" },
+      "note": { "pt": "Faz parte da 5ª geração da família que cultiva 10 hectares junto ao lago de Zurique, em Meilen, onde o Räuschling é a casta de assinatura.", "en": "Part of the 5th generation of the family farming 10 hectares by Lake Zürich in Meilen, where Räuschling is the signature grape.", "de": "Teil der 5. Generation der Familie, die 10 Hektar am Zürichsee in Meilen bewirtschaftet, wo der Räuschling die Signatursorte ist." },
+      "source": { "title": "Leading Hotels of the World — Cécile Schwarzenbach", "url": "https://www.lhw.com/get-inspired/destination-experiences/zurich/artisan-stories/cecile-schwarzenbach-zurich-schwarzenbach-weinbau" }
+    }
+  },
   "ticino": {
     "reviewedAt": "2026-07-27",
     "confidence": "medium",

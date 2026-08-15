@@ -166,6 +166,7 @@
   },
   {
     "id": "valais",
+    "otherGrapeIds": ["petite-arvine", "amigne", "cornalin", "humagne-rouge", "heida", "humagne-blanche", "reze", "gamaret", "garanoir", "divico"],
     "name": { "pt": "Valais", "en": "Valais", "de": "Wallis" },
     "country": { "pt": "Suíça", "en": "Switzerland", "de": "Schweiz" },
     "countryCode": "CH",
@@ -198,6 +199,7 @@
   },
   {
     "id": "vaud",
+    "otherGrapeIds": ["gamaret", "garanoir"],
     "name": { "pt": "Vaud", "en": "Vaud", "de": "Waadt" },
     "country": { "pt": "Suíça", "en": "Switzerland", "de": "Schweiz" },
     "countryCode": "CH",
@@ -230,6 +232,7 @@
   },
   {
     "id": "lavaux",
+    "otherGrapeIds": ["gamaret", "garanoir"],
     "name": { "pt": "Lavaux", "en": "Lavaux", "de": "Lavaux" },
     "country": { "pt": "Suíça", "en": "Switzerland", "de": "Schweiz" },
     "countryCode": "CH",
@@ -262,6 +265,7 @@
   },
   {
     "id": "ticino",
+    "otherGrapeIds": ["bondola"],
     "name": { "pt": "Ticino", "en": "Ticino", "de": "Tessin" },
     "country": { "pt": "Suíça", "en": "Switzerland", "de": "Schweiz" },
     "countryCode": "CH",
@@ -879,5 +883,69 @@
     "fact": { "pt": "A serra protege muitas vinhas dos ventos frios do norte, enquanto o oceano modera o calor.", "en": "Mountain ranges shelter many vineyards from cold northern winds while the ocean moderates the heat.", "de": "Gebirge schützen viele Weinberge vor kalten Nordwinden, während der Ozean die Hitze mildert." },
     "featured": false,
     "color": "#b17246"
+  },
+  {
+    "id": "geneve",
+    "name": { "pt": "Genebra", "en": "Geneva", "de": "Genf" },
+    "country": { "pt": "Suíça", "en": "Switzerland", "de": "Schweiz" },
+    "countryCode": "CH",
+    "coordinates": { "lat": 46.2044, "lng": 6.1432 },
+    "description": { "pt": "Vinhas junto ao lago Léman, a maior área vinícola contínua da Suíça, dominada por Gamay e Chasselas.", "en": "Vineyards along Lake Geneva, Switzerland's largest continuous wine area, dominated by Gamay and Chasselas.", "de": "Weinberge am Genfersee, das grösste zusammenhängende Weinbaugebiet der Schweiz, geprägt von Gamay und Chasselas." },
+    "grapeIds": ["gamay", "chasselas", "pinot-noir"],
+    "wineTypes": { "pt": ["Tinto", "Branco", "Rosé"], "en": ["Red", "White", "Rosé"], "de": ["Rotwein", "Weisswein", "Rosé"] },
+    "climate": { "pt": "Temperado pelo lago Léman, verões amenos e outonos longos.", "en": "Moderated by Lake Geneva, with mild summers and long autumns.", "de": "Durch den Genfersee gemildert, mit milden Sommern und langen Herbsten." },
+    "service": { "pt": "Brancos: 8–10 °C · Tintos: 13–15 °C", "en": "Whites: 8–10°C · Reds: 13–15°C", "de": "Weisswein: 8–10 °C · Rotwein: 13–15 °C" },
+    "pairings": { "pt": ["Charcutaria", "Queijo local", "Perca do lago"], "en": ["Cured meats", "Local cheese", "Lake perch"], "de": ["Wurstwaren", "Lokaler Käse", "Seebarsch"] },
+    "fact": { "pt": "É a maior região vinícola contínua da Suíça, com o lago Léman a moderar o clima.", "en": "It is Switzerland's largest continuous wine region, with Lake Geneva moderating the climate.", "de": "Es ist das grösste zusammenhängende Weinbaugebiet der Schweiz, dessen Klima vom Genfersee gemildert wird." },
+    "featured": false,
+    "color": "#5c7a5e"
+  },
+  {
+    "id": "neuchatel",
+    "name": { "pt": "Neuchâtel", "en": "Neuchâtel", "de": "Neuenburg" },
+    "country": { "pt": "Suíça", "en": "Switzerland", "de": "Schweiz" },
+    "countryCode": "CH",
+    "coordinates": { "lat": 46.99, "lng": 6.93 },
+    "description": { "pt": "Encostas viradas a sul sobre o lago de Neuchâtel, conhecidas por um Pinot Noir elegante e pelo tradicional rosé Œil-de-Perdrix.", "en": "South-facing slopes above Lake Neuchâtel, known for elegant Pinot Noir and the traditional Œil-de-Perdrix rosé.", "de": "Südhänge über dem Neuenburgersee, bekannt für eleganten Pinot Noir und den traditionellen Rosé Œil-de-Perdrix." },
+    "grapeIds": ["pinot-noir", "chasselas"],
+    "wineTypes": { "pt": ["Tinto", "Branco", "Rosé"], "en": ["Red", "White", "Rosé"], "de": ["Rotwein", "Weisswein", "Rosé"] },
+    "climate": { "pt": "Temperado pelo lago, com boa exposição solar nas encostas.", "en": "Lake-moderated, with strong sun exposure on the slopes.", "de": "Vom See gemildert, mit guter Sonnenexposition an den Hängen." },
+    "service": { "pt": "Brancos e rosés: 8–10 °C · Tintos: 14–16 °C", "en": "Whites and rosés: 8–10°C · Reds: 14–16°C", "de": "Weiss- und Roséwein: 8–10 °C · Rotwein: 14–16 °C" },
+    "pairings": { "pt": ["Filetes de perca", "Queijo local", "Charcutaria"], "en": ["Perch fillets", "Local cheese", "Cured meats"], "de": ["Egli-Filets", "Lokaler Käse", "Wurstwaren"] },
+    "fact": { "pt": "Deu origem ao Œil-de-Perdrix, um dos rosés mais antigos da Suíça, feito a partir de Pinot Noir.", "en": "Birthplace of Œil-de-Perdrix, one of Switzerland's oldest rosés, made from Pinot Noir.", "de": "Geburtsort des Œil-de-Perdrix, einem der ältesten Rosés der Schweiz, hergestellt aus Pinot Noir." },
+    "featured": false,
+    "color": "#4f6d5c"
+  },
+  {
+    "id": "graubuenden",
+    "name": { "pt": "Grisões", "en": "Graubünden", "de": "Graubünden" },
+    "country": { "pt": "Suíça", "en": "Switzerland", "de": "Schweiz" },
+    "countryCode": "CH",
+    "coordinates": { "lat": 46.98, "lng": 9.62 },
+    "description": { "pt": "Encostas viradas a sul junto ao Reno, referência mundial em Pinot Noir suíço, aquecidas pelo vento foehn.", "en": "South-facing slopes along the Rhine, a world reference for Swiss Pinot Noir, warmed by the foehn wind.", "de": "Südhänge entlang des Rheins, eine Weltreferenz für Schweizer Pinot Noir, erwärmt durch den Föhn." },
+    "grapeIds": ["pinot-noir", "completer"],
+    "wineTypes": { "pt": ["Tinto", "Branco"], "en": ["Red", "White"], "de": ["Rotwein", "Weisswein"] },
+    "climate": { "pt": "Continental alpino, aquecido por episódios frequentes de foehn.", "en": "Continental Alpine climate, warmed by frequent foehn wind events.", "de": "Kontinentales Alpenklima, durch häufige Föhnereignisse erwärmt." },
+    "service": { "pt": "Tintos: 14–16 °C · Brancos: 10–12 °C", "en": "Reds: 14–16°C · Whites: 10–12°C", "de": "Rotwein: 14–16 °C · Weisswein: 10–12 °C" },
+    "pairings": { "pt": ["Caça", "Queijo de montanha", "Carne seca dos Grisões"], "en": ["Game", "Mountain cheese", "Bündnerfleisch"], "de": ["Wild", "Bergkäse", "Bündnerfleisch"] },
+    "fact": { "pt": "O vento quente foehn ajuda a amadurecer o Pinot Noir tão a norte quanto os Alpes permitem.", "en": "The warm foehn wind helps ripen Pinot Noir as far north as the Alps allow.", "de": "Der warme Föhn hilft, Pinot Noir so weit nördlich reifen zu lassen, wie es die Alpen erlauben." },
+    "featured": false,
+    "color": "#7d5a3f"
+  },
+  {
+    "id": "zurich",
+    "name": { "pt": "Zurique", "en": "Zürich", "de": "Zürich" },
+    "country": { "pt": "Suíça", "en": "Switzerland", "de": "Schweiz" },
+    "countryCode": "CH",
+    "coordinates": { "lat": 47.30, "lng": 8.68 },
+    "description": { "pt": "Vinhas ao longo do lago de Zurique, terreno histórico do Räuschling, quase exclusivo desta região.", "en": "Vineyards along Lake Zürich, the historic home of Räuschling, grown almost exclusively here.", "de": "Weinberge entlang des Zürichsees, die historische Heimat des Räuschling, der fast ausschliesslich hier wächst." },
+    "grapeIds": ["raeuschling", "pinot-noir"],
+    "wineTypes": { "pt": ["Branco", "Tinto"], "en": ["White", "Red"], "de": ["Weisswein", "Rotwein"] },
+    "climate": { "pt": "Temperado pelo lago de Zurique, com boa luminosidade nas encostas viradas a sul.", "en": "Moderated by Lake Zürich, with good light on south-facing slopes.", "de": "Durch den Zürichsee gemildert, mit guter Sonneneinstrahlung an den Südhängen." },
+    "service": { "pt": "Brancos: 8–10 °C · Tintos: 14–16 °C", "en": "Whites: 8–10°C · Reds: 14–16°C", "de": "Weisswein: 8–10 °C · Rotwein: 14–16 °C" },
+    "pairings": { "pt": ["Felchen (peixe do lago)", "Entradas leves", "Queijo fresco"], "en": ["Felchen (lake whitefish)", "Light starters", "Fresh cheese"], "de": ["Felchen", "Leichte Vorspeisen", "Frischkäse"] },
+    "fact": { "pt": "O Räuschling praticamente só sobrevive junto ao lago de Zurique e a alguns troços do Reno.", "en": "Räuschling survives almost exclusively around Lake Zürich and a few stretches of the Rhine.", "de": "Der Räuschling überlebt fast ausschliesslich am Zürichsee und an wenigen Rheinabschnitten." },
+    "featured": false,
+    "color": "#3f6b74"
   }
 ]
