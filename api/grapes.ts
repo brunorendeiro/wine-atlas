@@ -1,6 +1,12 @@
-import grapesJson from '../src/data/grapes.json'
+import { readFileSync } from 'node:fs'
+import path from 'node:path'
+import { fileURLToPath } from 'node:url'
 
-const grapes = grapesJson as Array<{
+const __dirname = path.dirname(fileURLToPath(import.meta.url))
+
+const grapes = JSON.parse(
+  readFileSync(path.join(__dirname, '../src/data/grapes.json'), 'utf-8'),
+) as Array<{
   id: string
   type: 'red' | 'white'
   heritage?: string

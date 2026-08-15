@@ -1,6 +1,12 @@
-import regionsJson from '../../src/data/regions.json'
+import { readFileSync } from 'node:fs'
+import path from 'node:path'
+import { fileURLToPath } from 'node:url'
 
-const regions = regionsJson as Array<{ id: string; [key: string]: unknown }>
+const __dirname = path.dirname(fileURLToPath(import.meta.url))
+
+const regions = JSON.parse(
+  readFileSync(path.join(__dirname, '../../src/data/regions.json'), 'utf-8'),
+) as Array<{ id: string; [key: string]: unknown }>
 
 function setCommonHeaders(res: any) {
   res.setHeader('Access-Control-Allow-Origin', '*')
