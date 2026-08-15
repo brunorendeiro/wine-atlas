@@ -49,9 +49,9 @@ endpoints públicos, pensados para poderem ser reutilizados noutras
 aplicações:
 
 - `GET /api/regions` — lista todas as regiões (filtros: `?country=CH`, `?featured=true`)
-- `GET /api/regions/:id` — detalhe de uma região
+- `GET /api/regions?id=valais` — detalhe de uma região
 - `GET /api/grapes` — lista todas as castas (filtros: `?type=red`, `?region=valais`, `?heritage=native`)
-- `GET /api/grapes/:id` — detalhe de uma casta
+- `GET /api/grapes?id=completer` — detalhe de uma casta
 
 CORS aberto, sem autenticação. Implementados como Vercel Serverless
 Functions em `api/`.

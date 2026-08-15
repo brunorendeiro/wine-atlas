@@ -32,7 +32,18 @@ export default function handler(req: any, res: any) {
     return
   }
 
-  const { type, region, heritage } = req.query as Record<string, string | undefined>
+  const { id, type, region, heritage } = req.query as Record<string, string | undefined>
+
+  if (typeof id === 'string') {
+    const grape = grapes.find((g) => g.id === id)
+    if (!grape) {
+      res.status(404).json({ error: `Grape "${id}" not found` })
+      return
+    }
+    res.status(200).json({ data: grape })
+    return
+  }
+
   let data = grapes
 
   if (typeof type === 'string') {

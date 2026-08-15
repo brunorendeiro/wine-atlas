@@ -31,7 +31,18 @@ export default function handler(req: any, res: any) {
     return
   }
 
-  const { country, featured } = req.query as Record<string, string | undefined>
+  const { id, country, featured } = req.query as Record<string, string | undefined>
+
+  if (typeof id === 'string') {
+    const region = regions.find((r) => r.id === id)
+    if (!region) {
+      res.status(404).json({ error: `Region "${id}" not found` })
+      return
+    }
+    res.status(200).json({ data: region })
+    return
+  }
+
   let data = regions
 
   if (typeof country === 'string') {
