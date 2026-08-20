@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { LocateFixed, MapPin, ShieldCheck, X } from 'lucide-react'
-import { getStoredConsent, initialiseConsentMode, loadAnalytics, setConsent, type Consent } from '../lib/analytics'
+import { getStoredConsent, initialiseConsentMode, loadAds, loadAnalytics, setConsent, type Consent } from '../lib/analytics'
 import { useApp } from '../context/AppContext'
 
 const LOCATION_PROMPT_KEY = 'wine-atlas-location-intro-seen'
@@ -59,20 +59,20 @@ export function CookieConsent() {
   const settingsCopy = {
     pt: {
       title: 'Definições de cookies',
-      analytics: 'Google Analytics',
-      description: 'Estatísticas anónimas de utilização. Nunca enviamos notas, coordenadas ou dados pessoais.',
+      analytics: 'Google Analytics e Google AdSense',
+      description: 'Estatísticas anónimas de utilização e anúncios. Nunca enviamos notas, coordenadas ou dados pessoais.',
       save: 'Guardar preferências',
     },
     en: {
       title: 'Cookie Settings',
-      analytics: 'Google Analytics',
-      description: 'Anonymous usage statistics. We never send notes, coordinates or personal data.',
+      analytics: 'Google Analytics and Google AdSense',
+      description: 'Anonymous usage statistics and ads. We never send notes, coordinates or personal data.',
       save: 'Save preferences',
     },
     de: {
       title: 'Cookie-Einstellungen',
-      analytics: 'Google Analytics',
-      description: 'Anonyme Nutzungsstatistiken. Notizen, Koordinaten oder persönliche Daten werden nie gesendet.',
+      analytics: 'Google Analytics und Google AdSense',
+      description: 'Anonyme Nutzungsstatistiken und Anzeigen. Notizen, Koordinaten oder persönliche Daten werden nie gesendet.',
       save: 'Einstellungen speichern',
     },
   }[locale]
@@ -80,7 +80,10 @@ export function CookieConsent() {
   useEffect(() => {
     initialiseConsentMode()
     const consent = getStoredConsent()
-    if (consent === 'granted') loadAnalytics()
+    if (consent === 'granted') {
+      loadAnalytics()
+      loadAds()
+    }
     const openSettings = () => {
       setChoice(getStoredConsent() ?? 'denied')
       setSettings(true)

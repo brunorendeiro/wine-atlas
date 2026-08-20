@@ -1,10 +1,12 @@
 const GA_MEASUREMENT_ID = 'G-8PWRSDS62T'
+const AD_CLIENT = 'ca-pub-4561414438757131'
 const CONSENT_KEY = 'wine-atlas-analytics-consent'
 
 declare global {
   interface Window {
     dataLayer: unknown[]
     gtag?: (...args: unknown[]) => void
+    adsbygoogle: unknown[]
   }
 }
 
@@ -28,15 +30,30 @@ export function getStoredConsent(): Consent | null {
 
 export function initialiseConsentMode() {
   ensureDataLayer()
+  const granted = getStoredConsent() === 'granted'
   window.gtag?.('consent', 'default', {
-    ad_storage: 'denied',
-    ad_user_data: 'denied',
-    ad_personalization: 'denied',
-    analytics_storage: getStoredConsent() === 'granted' ? 'granted' : 'denied',
+    ad_storage: granted ? 'granted' : 'denied',
+    ad_user_data: granted ? 'granted' : 'denied',
+    ad_personalization: granted ? 'granted' : 'denied',
+    analytics_storage: granted ? 'granted' : 'denied',
     functionality_storage: 'granted',
     security_storage: 'granted',
     wait_for_update: 500,
   })
+}
+
+export function loadAds() {
+  if (getStoredConsent() !== 'granted') return
+  if (document.getElementById('adsbygoogle-script')) return
+  const script = document.createElement('script')
+  script.id = 'adsbygoogle-script'
+  script.async = true
+  script.crossOrigin = 'anonymous'
+  script.src = `https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${AD_CLIENT}`
+  document.head.appendChild(script)
+
+  window.adsbygoogle = window.adsbygoogle || []
+  window.adsbygoogle.push({ google_ad_client: AD_CLIENT, enable_page_level_ads: true })
 }
 
 export function loadAnalytics() {
@@ -62,11 +79,14 @@ export function setConsent(value: Consent) {
   window.localStorage.setItem(CONSENT_KEY, value)
   window.gtag?.('consent', 'update', {
     analytics_storage: value,
-    ad_storage: 'denied',
-    ad_user_data: 'denied',
-    ad_personalization: 'denied',
+    ad_storage: value,
+    ad_user_data: value,
+    ad_personalization: value,
   })
-  if (value === 'granted') loadAnalytics()
+  if (value === 'granted') {
+    loadAnalytics()
+    loadAds()
+  }
 }
 
 const forbiddenKeys = /coordinate|latitude|longitude|note|email|name|address|user/i
